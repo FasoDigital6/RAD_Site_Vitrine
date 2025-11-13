@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion"
 import Link from "next/link"
 import { MapPin, Calendar, CheckCircle, ArrowRight } from "lucide-react"
+import { Footer } from "@/components/Footer"
 
 // Animations cohérentes
 const fadeUp: Variants = {
@@ -325,6 +326,8 @@ export default function ProjectsPage() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

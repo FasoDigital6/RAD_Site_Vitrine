@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Award, Globe, Users, Target, TrendingUp, CheckCircle } from "lucide-react"
+import { Footer } from "@/components/Footer"
 
 // Animations cohérentes avec la homepage
 const fadeUp: Variants = {
@@ -447,6 +448,8 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

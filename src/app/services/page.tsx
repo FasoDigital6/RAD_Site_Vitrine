@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion"
 import Link from "next/link"
 import { Pickaxe, Building2, ShoppingCart, Truck, GraduationCap, Wrench, ArrowRight, CheckCircle } from "lucide-react"
+import { Footer } from "@/components/Footer"
 
 // Animations cohérentes
 const fadeUp: Variants = {
@@ -437,6 +438,8 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }
