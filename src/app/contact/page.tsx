@@ -1,9 +1,10 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
+import Link from "next/link"
+import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-react"
 
-// ---------------- ANIMATIONS ----------------
-
+// Animations cohérentes
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -44,333 +45,396 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO CONTACT */}
-      <section className="bg-rad-blue-900/95 pb-16 pt-24 text-white">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:px-8 lg:px-0">
+      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900" />
+
+        <div className="relative mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="text-center"
+            className="text-center text-white"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-200">
+            {/* Badge tricolore */}
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
+              <span className="flex h-1 w-10 overflow-hidden rounded-full">
+                <span className="flex-1 bg-rad-green" />
+                <span className="flex-1 bg-rad-yellow" />
+                <span className="flex-1 bg-rad-red" />
+              </span>
               Contact
-            </p>
-            <h1 className="mt-3 text-3xl font-semibold md:text-4xl">
+            </div>
+
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
               Parlons de votre projet
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-100/90 md:text-base">
-              Que ce soit pour un besoin en équipements, en services
-              industriels, en construction ou en logistique, l’équipe du{" "}
-              <strong>Réseau Africain de Développement</strong> est disponible
-              pour vous accompagner.
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
+              Que ce soit pour un besoin en équipements, en services industriels, en construction ou en logistique, l'équipe du Réseau Africain de Développement est disponible pour vous accompagner.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Cartes de contact rapides */}
-          <div className="grid gap-4 md:grid-cols-3">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="rounded-3xl bg-white/5 p-5 backdrop-blur-sm"
-            >
-              <h3 className="text-sm font-semibold">Siège – Guinée</h3>
-              <p className="mt-2 text-xs text-slate-100/90">
-                Conakry, République de Guinée
-                <br />
-                Zone industrielle / secteur minier
-              </p>
-              <p className="mt-3 text-xs">
-                Tél : <span className="font-semibold">+224 620 00 00 00</span>
-                <br />
-                WhatsApp : <span className="font-semibold">+224 620 00 00 00</span>
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
-              className="rounded-3xl bg-white/5 p-5 backdrop-blur-sm"
-            >
-              <h3 className="text-sm font-semibold">Courriel</h3>
-              <p className="mt-2 text-xs text-slate-100/90">
-                Pour toute demande d’information, devis ou partenariat.
-              </p>
-              <a
-                href="mailto:contact@rad-guinee.com"
-                className="mt-3 inline-block text-xs font-semibold text-rad-yellow underline decoration-rad-yellow/60 underline-offset-4"
+      {/* ÉLÉMENTS DE RÉASSURANCE */}
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { icon: <Clock className="h-6 w-6" />, text: "Réponse sous 24h", emoji: "⚡" },
+              { icon: <CheckCircle className="h-6 w-6" />, text: "Consultation gratuite", emoji: "✓" },
+              { icon: <Phone className="h-6 w-6" />, text: "Devis personnalisé", emoji: "💼" },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+                className="flex items-center justify-center gap-3 rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/50 ring-1 ring-slate-100"
               >
-                contact@rad-guinee.com
-              </a>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rad-orange/10 text-rad-orange">
+                  {item.icon}
+                </div>
+                <div className="text-left">
+                  <span className="text-lg font-bold text-rad-blue-900">{item.text}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FORMULAIRE + INFO CONTACT */}
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
+          <div className="grid gap-10 md:grid-cols-2">
+            {/* Colonne gauche – texte & infos */}
+            <motion.div
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="space-y-6"
+            >
+              <div>
+                <h2 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
+                  Entrer en relation avec RAD
+                </h2>
+                <div className="mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
+                  <span className="flex-1 bg-rad-green" />
+                  <span className="flex-1 bg-rad-yellow" />
+                  <span className="flex-1 bg-rad-red" />
+                </div>
+              </div>
+
+              <p className="text-base leading-relaxed text-slate-700">
+                Expliquez-nous votre besoin : fourniture d'équipements, partenariat industriel, projet d'infrastructure, services logistiques ou accompagnement stratégique. Nous vous recontacterons rapidement avec une première analyse et des pistes de collaboration.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: <CheckCircle className="h-5 w-5" />,
+                    text: "Réponse ciblée en fonction de votre secteur (mines, construction, commerce, etc.)"
+                  },
+                  {
+                    icon: <CheckCircle className="h-5 w-5" />,
+                    text: "Possibilité de réunions en ligne avec nos équipes techniques et opérationnelles"
+                  },
+                  {
+                    icon: <CheckCircle className="h-5 w-5" />,
+                    text: "Accompagnement du diagnostic jusqu'à la mise en œuvre sur le terrain"
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-rad-orange/10 text-rad-orange">
+                      {item.icon}
+                    </div>
+                    <p className="pt-1 text-sm leading-relaxed text-slate-700">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Infos de contact direct */}
+              <div className="mt-8 space-y-4 rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-6 text-white shadow-xl shadow-rad-blue-900/30">
+                <h3 className="text-lg font-bold">Nous contacter directement</h3>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/20">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Adresse</p>
+                    <p className="mt-1 text-sm text-slate-200">
+                      Conakry, République de Guinée
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/20">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Téléphone / WhatsApp</p>
+                    <p className="mt-1 text-sm text-slate-200">
+                      +224 XXX XXX XXX
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/20">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <a href="mailto:contact@rad-guinee.com" className="mt-1 block text-sm text-rad-yellow hover:underline">
+                      contact@rad-guinee.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/20">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Horaires (heure locale)</p>
+                    <p className="mt-1 text-sm text-slate-200">
+                      Lundi – Vendredi : 8h00 – 18h00<br />
+                      Samedi : sur rendez-vous
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
+            {/* Colonne droite – formulaire */}
             <motion.div
-              variants={fadeUp}
+              variants={fadeInRight}
               initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-              className="rounded-3xl bg-white/5 p-5 backdrop-blur-sm"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60"
             >
-              <h3 className="text-sm font-semibold">Opérations & support</h3>
-              <p className="mt-2 text-xs text-slate-100/90">
-                Suivi de projets, support après-vente, coordination logistique.
+              <h3 className="text-2xl font-bold text-rad-blue-900">
+                Formulaire de contact rapide
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Remplissez ce formulaire avec un maximum d'informations pour nous permettre de bien comprendre votre demande.
               </p>
-              <p className="mt-3 text-xs">
-                Tél : <span className="font-semibold">+224 655 00 00 00</span>
-              </p>
+
+              <form className="mt-6 space-y-5">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <label htmlFor="nom" className="mb-2 block text-sm font-semibold text-slate-700">
+                      Nom complet *
+                    </label>
+                    <input
+                      id="nom"
+                      name="nom"
+                      type="text"
+                      required
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                      placeholder="Ex : Mamadou Diallo"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="societe" className="mb-2 block text-sm font-semibold text-slate-700">
+                      Société / Organisation
+                    </label>
+                    <input
+                      id="societe"
+                      name="societe"
+                      type="text"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                      placeholder="Nom de votre structure"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-700">
+                      Email *
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                      placeholder="vous@exemple.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="telephone" className="mb-2 block text-sm font-semibold text-slate-700">
+                      Téléphone / WhatsApp
+                    </label>
+                    <input
+                      id="telephone"
+                      name="telephone"
+                      type="tel"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                      placeholder="+224 ..."
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="project-type" className="mb-2 block text-sm font-semibold text-slate-700">
+                    Type de projet *
+                  </label>
+                  <select
+                    id="project-type"
+                    required
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                  >
+                    <option value="">Sélectionnez un domaine</option>
+                    <option value="mines">Mines & Services Industriels</option>
+                    <option value="construction">Construction & Génie Civil</option>
+                    <option value="commerce">Commerce & Supply Chain</option>
+                    <option value="logistique">Transport & Logistique</option>
+                    <option value="formation">Formation & Conseil</option>
+                    <option value="technique">Services Techniques</option>
+                    <option value="autre">Autre</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="mb-2 block text-sm font-semibold text-slate-700">
+                    Description du projet / besoin *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
+                    placeholder="Expliquez brièvement votre contexte, vos objectifs, vos contraintes de délais, etc."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="group w-full rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    Envoyer ma demande
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </button>
+
+                <p className="text-center text-xs text-slate-500">
+                  Vos informations sont utilisées uniquement pour vous recontacter dans le cadre de votre demande.
+                </p>
+              </form>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* BLOC PRINCIPAL : FORMULAIRE + INFOS */}
-      <section className="py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1.1fr,1.1fr] md:px-8 lg:px-0">
-          {/* Colonne gauche – texte & infos */}
-          <motion.div
-            variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="space-y-6"
-          >
-            <div>
-              <h2 className="text-2xl font-semibold text-rad-blue-900 md:text-3xl">
-                Entrer en relation avec RAD
-              </h2>
-              <div className="mt-2 flex h-1 w-20 overflow-hidden rounded-full">
-                <span className="flex-1 bg-rad-green" />
-                <span className="flex-1 bg-rad-yellow" />
-                <span className="flex-1 bg-rad-red" />
-              </div>
-            </div>
-
-            <p className="text-sm leading-relaxed text-slate-700 md:text-base">
-              Expliquez-nous votre besoin : fourniture d’équipements,
-              partenariat industriel, projet d’infrastructure, services
-              logistiques ou accompagnement stratégique. Nous vous
-              recontacterons rapidement avec une première analyse et des pistes
-              de collaboration.
-            </p>
-
-            <ul className="space-y-3 text-sm text-slate-700 md:text-base">
-              <li className="flex gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-rad-green" />
-                <span>
-                  <strong>Réponse ciblée</strong> en fonction de votre secteur
-                  (mines, construction, commerce, etc.).
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-rad-yellow" />
-                <span>
-                  Possibilité de <strong>réunions en ligne</strong> avec nos
-                  équipes techniques et opérationnelles.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-rad-red" />
-                <span>
-                  Accompagnement du <strong>diagnostic</strong> jusqu’à la{" "}
-                  <strong>mise en œuvre</strong> sur le terrain.
-                </span>
-              </li>
-            </ul>
-
-            <div className="rounded-2xl bg-white p-4 text-xs text-slate-600 shadow-sm shadow-slate-200">
-              <p className="font-semibold text-rad-blue-900">
-                Horaires (heure locale – Guinée)
-              </p>
-              <p className="mt-1">
-                Lundi – Vendredi : 8h00 – 18h00
-                <br />
-                Samedi : sur rendez-vous
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Colonne droite – formulaire */}
-          <motion.div
-            variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="rounded-3xl bg-white p-6 shadow-sm shadow-slate-200 md:p-8"
-          >
-            <h3 className="text-lg font-semibold text-rad-blue-900 md:text-xl">
-              Envoyer un message
-            </h3>
-            <p className="mt-2 text-xs text-slate-600 md:text-sm">
-              Remplissez ce formulaire avec un maximum d’informations pour nous
-              permettre de bien comprendre votre demande.
-            </p>
-
-            <form className="mt-6 space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="nom"
-                    className="text-xs font-medium text-slate-700"
-                  >
-                    Nom complet
-                  </label>
-                  <input
-                    id="nom"
-                    name="nom"
-                    type="text"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                    placeholder="Ex : Mamadou Diallo"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="societe"
-                    className="text-xs font-medium text-slate-700"
-                  >
-                    Société / Organisation
-                  </label>
-                  <input
-                    id="societe"
-                    name="societe"
-                    type="text"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                    placeholder="Nom de votre structure"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="email"
-                    className="text-xs font-medium text-slate-700"
-                  >
-                    Courriel
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                    placeholder="vous@exemple.com"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="telephone"
-                    className="text-xs font-medium text-slate-700"
-                  >
-                    Téléphone / WhatsApp
-                  </label>
-                  <input
-                    id="telephone"
-                    name="telephone"
-                    type="tel"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                    placeholder="+224 ..."
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="sujet"
-                  className="text-xs font-medium text-slate-700"
-                >
-                  Sujet de la demande
-                </label>
-                <input
-                  id="sujet"
-                  name="sujet"
-                  type="text"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                  placeholder="Ex : Fourniture de pièces pour engins miniers"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="message"
-                  className="text-xs font-medium text-slate-700"
-                >
-                  Description du projet / besoin
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none ring-0 transition focus:border-rad-blue-900/60 focus:bg-white focus:ring-2 focus:ring-rad-blue-900/20"
-                  placeholder="Expliquez brièvement votre contexte, vos objectifs, vos contraintes de délais, etc."
-                />
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-                <button
-                  type="submit"
-                  className="rounded-full bg-rad-blue-900 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-rad-blue-900/40 transition hover:-translate-y-0.5 hover:bg-rad-blue-800"
-                >
-                  Envoyer le message
-                </button>
-                <p className="text-[11px] text-slate-500">
-                  Vos informations sont utilisées uniquement pour vous
-                  recontacter dans le cadre de votre demande.
-                </p>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* BLOC LOCALISATION / INFO SUPPLÉMENTAIRE */}
-      <section className="pb-20">
+      {/* ZONES D'INTERVENTION */}
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="grid gap-6 md:grid-cols-[1.2fr,1fr]"
+            className="grid gap-6 md:grid-cols-2"
           >
-            <div className="rounded-3xl bg-white p-6 shadow-sm shadow-slate-200">
-              <h3 className="text-sm font-semibold text-rad-blue-900 md:text-base">
-                Zones d’intervention prioritaires
+            <div className="rounded-3xl bg-slate-50 p-8 shadow-sm shadow-slate-200">
+              <h3 className="text-xl font-bold text-rad-blue-900">
+                Zones d'intervention prioritaires
               </h3>
-              <p className="mt-2 text-xs text-slate-600 md:text-sm">
-                RAD intervient en priorité en Guinée et en Afrique de l’Ouest,
-                tout en développant des partenariats avec des fournisseurs et
-                industriels basés en Europe, en Amérique du Nord et au Moyen-
-                Orient.
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                RAD intervient en priorité en Guinée et en Afrique de l'Ouest, tout en développant des partenariats avec des fournisseurs et industriels basés en Europe, en Amérique du Nord et au Moyen-Orient.
               </p>
-              <ul className="mt-4 grid gap-2 text-xs text-slate-700 md:text-sm md:grid-cols-2">
-                <li>• Sites miniers & zones industrielles</li>
-                <li>• Projets d’infrastructures routières</li>
-                <li>• Plateformes logistiques & entrepôts</li>
-                <li>• Projets immobiliers et équipements publics</li>
+              <ul className="mt-6 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
+                {[
+                  "Sites miniers & zones industrielles",
+                  "Projets d'infrastructures routières",
+                  "Plateformes logistiques & entrepôts",
+                  "Projets immobiliers et équipements publics"
+                ].map((zone, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rad-orange" />
+                    <span>{zone}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="rounded-3xl bg-rad-blue-900/95 p-6 text-xs text-slate-100 shadow-sm shadow-rad-blue-900/40 md:text-sm">
-              <p className="font-semibold">Vous préférez un contact direct ?</p>
-              <p className="mt-2">
-                Vous pouvez également nous joindre via WhatsApp ou planifier un
-                appel avec nos équipes opérationnelles.
+            <div className="rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-white shadow-xl shadow-rad-blue-900/30">
+              <h3 className="text-xl font-bold">Vous préférez un contact direct ?</h3>
+              <p className="mt-3 text-sm text-slate-100">
+                Vous pouvez également nous joindre via WhatsApp ou planifier un appel avec nos équipes opérationnelles.
               </p>
-              <div className="mt-4 space-y-2">
-                <p>
-                  WhatsApp :{" "}
-                  <span className="font-semibold">+224 620 00 00 00</span>
-                </p>
-                <p>
-                  Téléphone :{" "}
-                  <span className="font-semibold">+224 655 00 00 00</span>
-                </p>
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-200">WhatsApp</p>
+                    <p className="font-semibold">+224 XXX XXX XXX</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-200">Téléphone</p>
+                    <p className="font-semibold">+224 XXX XXX XXX</p>
+                  </div>
+                </div>
               </div>
-              <p className="mt-4 text-[11px] text-slate-200/90">
-                Pour les appels internationaux, pensez à préciser votre fuseau
-                horaire et vos disponibilités dans le message.
+              <p className="mt-6 text-xs text-slate-200/90">
+                Pour les appels internationaux, pensez à préciser votre fuseau horaire et vos disponibilités dans le message.
               </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA AUTRES PAGES */}
+      <section className="bg-slate-100 py-16">
+        <div className="mx-auto max-w-5xl px-6 text-center md:px-8">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="space-y-6"
+          >
+            <h3 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
+              Découvrez notre expertise
+            </h3>
+            <p className="mx-auto max-w-2xl text-lg text-slate-600">
+              Explorez nos services et nos projets pour mieux comprendre comment RAD peut vous accompagner dans vos ambitions.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+              <Link
+                href="/services"
+                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+              >
+                Nos services
+              </Link>
+              <Link
+                href="/projects"
+                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+              >
+                Nos projets
+              </Link>
+              <Link
+                href="/about"
+                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+              >
+                À propos
+              </Link>
             </div>
           </motion.div>
         </div>
