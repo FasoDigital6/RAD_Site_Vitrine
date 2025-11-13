@@ -46,10 +46,14 @@
   --color-rad-blue-900: #0A2A43;  /* bleu très foncé (header, hero, gros titres) */
   --color-rad-blue-800: #0F4D8A;  /* bleu action (boutons, liens, hover) */
 
+  /* Couleurs d'accent principales (CTAs et actions) */
+  --color-rad-orange: #F7931E;      /* orange vif - CTAs primaires */
+  --color-rad-orange-hover: #E67E00; /* orange foncé - hover sur CTAs */
+
+  /* Couleurs d'accent secondaires (badges tricolores) */
   --color-rad-green: #0E7E43;
   --color-rad-yellow: #F2CF1D;
   --color-rad-red: #C3261A;
-  --color-rad-orange: #E38A46;
 }
 
 :root {
