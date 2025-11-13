@@ -31,7 +31,7 @@ const fadeRight: Variants = {
   },
 }
 
-// Tes services principaux
+// Services principaux RAD
 const services = [
   {
     id: 1,
@@ -43,7 +43,7 @@ const services = [
       "Coordination avec les concessionnaires, ateliers et fournisseurs spécialisés.",
       "Optimisation des stocks, des délais et de la disponibilité opérationnelle.",
     ],
-    image: "/images/services/mines.jpg",
+    image: "/mines.png",
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ const services = [
       "Suivi de chantier, contrôle qualité et gestion des équipes sur le terrain.",
       "Respect des normes, des délais et des budgets impartis.",
     ],
-    image: "/images/services/construction.jpg",
+    image: "/constructionn.jpg",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const services = [
       "Gestion de commandes de grande envergure pour entreprises et institutions.",
       "Support sur la documentation, les incoterms et les contraintes douanières.",
     ],
-    image: "/images/services/commerce.jpg",
+    image: "/import.jpg",
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const services = [
       "Gestion des stocks, des entrepôts et des points de livraison.",
       "Partenariats avec des transporteurs et transitaires spécialisés.",
     ],
-    image: "/images/services/logistique.jpg",
+    image: "/appro.jpg",
   },
   {
     id: 5,
@@ -91,27 +91,16 @@ const services = [
       "Coordination des acteurs techniques, administratifs et financiers.",
       "Suivi de chantier jusqu’à la mise en service opérationnelle.",
     ],
-    image: "/images/services/immobilier.jpg",
-  },
-  {
-    id: 6,
-    title: "Conseil & services sur mesure",
-    short:
-      "Accompagnement stratégique et opérationnel pour les décideurs publics et privés.",
-    bullets: [
-      "Études de faisabilité, structuration et modélisation de projets.",
-      "Mise en relation avec partenaires techniques, industriels et financiers.",
-      "Suivi personnalisé, reporting et amélioration continue.",
-    ],
-    image: "/images/services/conseil.jpg",
+    image: "/imobilier.png",
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pt-24 text-slate-900">
+    <main className="min-h-screen bg-slate-50 pt-24 text-slate-900 antialiased">
       {/* HERO SERVICES */}
-      <section className="relative overflow-hidden bg-slate-950">
+      <section className="relative overflow-hidden bg-rad-blue-900">
+        {/* Image de fond */}
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/images/services/services-hero-bg.jpg"
@@ -120,18 +109,23 @@ export default function ServicesPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-sky-950/80 to-sky-900/70" />
+        {/* Overlay bleu RAD */}
+        <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-900/95 to-rad-blue-900/80" />
 
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-20 md:px-6 lg:px-0">
-          <motion.p
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-20 sm:px-6 lg:px-0">
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-100 shadow-sm shadow-black/30 backdrop-blur"
+            className="inline-flex w-fit items-center gap-3 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-50 shadow-sm shadow-black/30 backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span className="flex h-1 w-10 overflow-hidden rounded-full">
+              <span className="flex-1 bg-rad-green" />
+              <span className="flex-1 bg-rad-yellow" />
+              <span className="flex-1 bg-rad-red" />
+            </span>
             Nos domaines d&apos;intervention
-          </motion.p>
+          </motion.div>
 
           <motion.div
             variants={fadeLeft}
@@ -139,20 +133,20 @@ export default function ServicesPage() {
             animate="visible"
             className="max-w-3xl space-y-4"
           >
-            <h1 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
               Des services intégrés, pensés pour le terrain et les décideurs.
             </h1>
-            <p className="text-sm text-slate-100/90 md:text-base">
-              RAD propose une offre globale pour accompagner les projets de bout en bout, de la
-              réflexion stratégique à la mise en œuvre opérationnelle : mines, construction,
-              commerce, logistique, immobilier et conseil.
+            <p className="text-sm leading-relaxed text-slate-100/90 md:text-base">
+              RAD propose une offre globale pour accompagner les projets de bout en bout,
+              de la réflexion stratégique à la mise en œuvre opérationnelle : mines,
+              construction, commerce, logistique, immobilier et conseil.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* LISTE DES SERVICES – BLOCS ALTERNÉS */}
-      <section className="mx-auto max-w-6xl px  -4 py-16 md:px-6 lg:px-0">
+      <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-0">
         <div className="space-y-14">
           {services.map((service, index) => {
             const isEven = index % 2 === 0
@@ -169,21 +163,27 @@ export default function ServicesPage() {
                 }`}
               >
                 {/* TEXTE */}
-                <div className={isEven ? "order-1" : "order-2 md:order-1 md:pl-8"}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-700">
+                <div
+                  className={
+                    isEven
+                      ? "order-1"
+                      : "order-2 md:order-1 md:pl-8"
+                  }
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rad-blue-700">
                     Service {String(service.id).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-1 text-xl font-semibold text-sky-900 md:text-2xl">
+                  <h2 className="mt-1 text-xl font-semibold text-rad-blue-900 md:text-2xl">
                     {service.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700 md:text-base">
                     {service.short}
                   </p>
 
-                  <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
                     {service.bullets.map((bullet, i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-sky-700" />
+                        <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-rad-blue-800" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -191,8 +191,14 @@ export default function ServicesPage() {
                 </div>
 
                 {/* IMAGE */}
-                <div className={isEven ? "order-2 md:order-2 md:pl-8" : "order-1"}>
-                  <div className="relative h-60 w-full overflow-hidden rounded-3xl bg-slate-200 shadow-lg shadow-slate-300/80">
+                <div
+                  className={
+                    isEven
+                      ? "order-2 md:order-2 md:pl-8"
+                      : "order-1"
+                  }
+                >
+                  <div className="relative h-60 w-full overflow-hidden rounded-3xl bg-slate-200 shadow-lg shadow-slate-300/80 sm:h-72">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -208,14 +214,14 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION — COMMENT ON TRAVAILLE */}
-      <section className="bg-sky-900/95 py-16 text-white">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-0">
+      <section className="bg-rad-blue-900/95 py-16 text-white">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-center text-2xl font-semibold md:text-3xl"
+            className="text-center text-2xl font-semibold tracking-tight md:text-3xl"
           >
             Une méthodologie claire, orientée résultats.
           </motion.h2>
@@ -248,11 +254,15 @@ export default function ServicesPage() {
                 transition={{ delay: idx * 0.1 }}
                 className="rounded-3xl bg-white/5 p-5 text-sm text-slate-100 shadow-sm shadow-black/30 backdrop-blur-sm"
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-200">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rad-blue-100">
                   Étape {idx + 1}
                 </p>
-                <h3 className="mt-2 text-base font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate-100/90">{step.text}</p>
+                <h3 className="mt-2 text-base font-semibold text-white">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-100/90">
+                  {step.text}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -261,13 +271,13 @@ export default function ServicesPage() {
 
       {/* CTA FINAL */}
       <section className="bg-slate-100 py-16">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center md:px-6">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-4 px-4 text-center sm:px-6">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-2xl font-semibold text-sky-900 md:text-3xl"
+            className="text-2xl font-semibold tracking-tight text-rad-blue-900 md:text-3xl"
           >
             Besoin d’un partenaire fiable pour votre prochain projet ?
           </motion.h2>
@@ -276,11 +286,11 @@ export default function ServicesPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="max-w-2xl text-sm text-slate-700 md:text-base"
+            className="max-w-2xl text-sm leading-relaxed text-slate-700 md:text-base"
           >
-            Mines, construction, logistique, commerce ou projets structurants : RAD peut vous
-            accompagner à chaque étape. Discutons de votre situation et trouvons ensemble la meilleure
-            façon d’avancer.
+            Mines, construction, logistique, commerce ou projets structurants :
+            RAD peut vous accompagner à chaque étape. Discutons de votre
+            situation et trouvons ensemble la meilleure façon d’avancer.
           </motion.p>
 
           <motion.div
@@ -292,13 +302,13 @@ export default function ServicesPage() {
           >
             <a
               href="mailto:contact@rad-guinee.com"
-              className="rounded-full bg-sky-900 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-sky-900/40 transition hover:-translate-y-0.5 hover:bg-sky-800"
+              className="rounded-full bg-rad-blue-900 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-rad-blue-900/40 transition hover:-translate-y-0.5 hover:bg-rad-blue-800"
             >
               Contacter RAD
             </a>
             <a
               href="/#contact"
-              className="rounded-full border border-sky-900 px-6 py-3 text-sm font-semibold text-sky-900 transition hover:-translate-y-0.5 hover:bg-sky-900/5"
+              className="rounded-full border border-rad-blue-900 px-6 py-3 text-sm font-semibold text-rad-blue-900 transition hover:-translate-y-0.5 hover:bg-rad-blue-900/5"
             >
               Voir nos coordonnées
             </a>

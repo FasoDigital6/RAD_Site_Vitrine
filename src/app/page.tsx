@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, type Variants } from "framer-motion"
 
-
 // ---------------- ANIMATIONS ----------------
 
 const fadeUp: Variants = {
@@ -112,19 +111,19 @@ const realisations = [
   {
     title: "Chantier d’infrastructures routières",
     description: "Exécution de travaux d’ingénierie dans une zone minière.",
-    image: "/images/realisation-route.jpg",
+    image: "/travaux.jpg",
   },
   {
     title: "Logistique pour équipements lourds",
     description:
       "Organisation de l’acheminement et du stockage d’engins et de pièces.",
-    image: "/images/realisation-logistique.jpg",
+    image: "/logi-mine.jpg",
   },
   {
     title: "Projet immobilier fonctionnel",
     description:
       "Construction de bâtiments adaptés aux besoins des communautés.",
-    image: "/images/realisation-immo.jpg",
+    image: "/immo.png",
   },
 ]
 
@@ -134,7 +133,7 @@ const equipe = [
   {
     name: "Équipe RAD – Terrain",
     role: "Opérations & Services",
-    image: "/images/equipe-1.jpg",
+    image: "/dg.png",
   },
   {
     name: "Staff RAD – Siège",
@@ -142,19 +141,15 @@ const equipe = [
     image: "/images/equipe-2.jpg",
   },
 ]
+
 // ---------------- PARTENAIRES ----------------
-
-
 
 const partenaires: Partenaire[] = [
   { name: "Caterpillar", logo: "/cat-logo.png" },
   { name: "Toyota", logo: "toyota-logo.svg" },
   { name: "rio-tinto", logo: "rio-tinto-logo.png" },
-  {name:"sag", logo:"sag-logo.jpg"},
+  { name: "sag", logo: "sag-logo.jpg" },
 ]
-
-
-
 
 // ---------------- COMPONENT ----------------
 
@@ -171,40 +166,38 @@ export default function HomePage() {
   const slide = heroSlides[currentSlide]
 
   return (
-        
-
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-slate-50 text-slate-900 antialiased">
       {/* ---------------- HERO ---------------- */}
       <section
         id="hero"
-        className="relative h-[90vh] w-full overflow-hidden bg-rad-blue-900"
+        className="relative flex min-h-[80vh] w-full items-center overflow-hidden bg-rad-blue-900"
       >
         {/* Background image */}
         <div
-  className="absolute inset-0"
-  style={{
-    backgroundImage: `url(${slide.image})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    opacity: 1,
-    transition: "opacity 0.8s ease-out", // transition propre
-  }}
-/>
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: `url(${slide.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: 0.28,
+            transition: "opacity 0.8s ease-out",
+          }}
+        />
 
         {/* Overlay bleu RAD */}
-        <div className="absolute inset-0 bg-gradient-to-r from-rad-blue-900/95 via-rad-blue-900/85 to-rad-blue-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-rad-blue-900 via-rad-blue-900/95 to-rad-blue-900/80" />
 
-        {/* Contenu */}
-        <div className="relative z-10 flex h-full items-center px-6 py-10 md:px-16 lg:px-24">
+        {/* Contenu centré comme djelicard */}
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-0">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl space-y-6 text-white"
+            className="max-w-xl space-y-6 text-center text-white md:text-left"
           >
-            {/* Badge + petit rappel couleurs logo */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
                 <span className="flex-1 bg-rad-green" />
@@ -215,16 +208,17 @@ export default function HomePage() {
             </div>
 
             {/* Titre principal */}
-            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
               {slide.title}
             </h1>
+
             {/* Sous-titre */}
-            <p className="text-base text-slate-100/90 md:text-lg lg:text-xl">
+            <p className="text-sm leading-relaxed text-slate-100/90 sm:text-base md:text-lg">
               {slide.subtitle}
             </p>
 
             {/* CTA */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
               <Link
                 href="/services"
                 className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-rad-blue-900 shadow-md shadow-rad-blue-900/30 transition hover:-translate-y-0.5 hover:bg-slate-100"
@@ -240,8 +234,8 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Petites puces */}
-            <div className="mt-4 flex flex-wrap gap-3 text-xs text-slate-100/80 md:text-sm">
+            {/* Puces */}
+            <div className="mt-4 flex flex-wrap justify-center gap-3 text-[11px] text-slate-100/80 sm:text-xs md:justify-start">
               <span className="rounded-full border border-slate-100/30 px-3 py-1">
                 Mines & industrie
               </span>
@@ -251,6 +245,22 @@ export default function HomePage() {
               <span className="rounded-full border border-slate-100/30 px-3 py-1">
                 Commerce & logistique
               </span>
+            </div>
+          </motion.div>
+
+          {/* Image “produit” façon djelicard sur la droite (optionnel si tu veux l’activer) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="mt-10 w-full max-w-md md:mt-0 md:w-1/2"
+          >
+            <div className="mx-auto overflow-hidden rounded-3xl bg-slate-900/30 shadow-2xl shadow-black/40 ring-1 ring-white/10">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="h-full w-full object-cover"
+              />
             </div>
           </motion.div>
         </div>
@@ -274,7 +284,7 @@ export default function HomePage() {
       {/* ---------------- QUI SOMMES-NOUS ---------------- */}
       <section
         id="about"
-        className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:items-center md:px-8 lg:px-0"
+        className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-16 sm:px-6 md:flex-row md:items-center lg:px-0"
       >
         <motion.div
           variants={fadeInLeft}
@@ -284,7 +294,7 @@ export default function HomePage() {
           className="space-y-5 md:w-1/2"
         >
           <div>
-            <h2 className="text-3xl font-semibold text-rad-blue-900 md:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl">
               Qui sommes-nous ?
             </h2>
             <div className="mt-2 flex h-1 w-24 overflow-hidden rounded-full">
@@ -343,13 +353,13 @@ export default function HomePage() {
 
       {/* ---------------- MISSION / VISION / VALEURS ---------------- */}
       <section className="bg-rad-blue-900/5 py-16">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 md:px-8 lg:px-0">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-center text-3xl font-semibold text-rad-blue-900 md:text-4xl"
+            className="text-center text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
           >
             Mission, Vision & Valeurs
           </motion.h2>
@@ -416,14 +426,14 @@ export default function HomePage() {
       {/* ---------------- DOMAINES D’INTERVENTION ---------------- */}
       <section
         id="services"
-        className="mx-auto max-w-6xl px-6 py-16 md:px-8 lg:px-0"
+        className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
       >
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="text-center text-3xl font-semibold text-rad-blue-900 md:text-4xl"
+          className="text-center text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
         >
           Nos domaines d’intervention
         </motion.h2>
@@ -433,7 +443,7 @@ export default function HomePage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-700 md:text-base"
+          className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-700 md:text-base"
         >
           Une offre intégrée couvrant la chaîne de valeur : de la stratégie aux
           opérations, pour accompagner vos projets à chaque étape.
@@ -469,13 +479,13 @@ export default function HomePage() {
 
       {/* ---------------- RÉALISATIONS ---------------- */}
       <section className="bg-slate-100 py-16">
-        <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-center text-3xl font-semibold text-rad-blue-900 md:text-4xl"
+            className="text-center text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
           >
             Nos réalisations
           </motion.h2>
@@ -491,7 +501,7 @@ export default function HomePage() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="overflow-hidden rounded-3xl bg-white shadow-sm shadow-rad-blue-900/10"
               >
-                <div className="h-40 w-full overflow-hidden">
+                <div className="h-40 w-full overflow-hidden sm:h-48">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -502,7 +512,9 @@ export default function HomePage() {
                   <h3 className="text-base font-semibold text-rad-blue-900">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-700">{item.description}</p>
+                  <p className="text-sm leading-relaxed text-slate-700">
+                    {item.description}
+                  </p>
                 </div>
               </motion.article>
             ))}
@@ -522,14 +534,14 @@ export default function HomePage() {
       {/* ---------------- ÉQUIPE ---------------- */}
       <section
         id="equipe"
-        className="mx-auto max-w-6xl px-6 py-16 md:px-8 lg:px-0"
+        className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-0"
       >
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="text-center text-3xl font-semibold text-rad-blue-900 md:text-4xl"
+          className="text-center text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
         >
           Une équipe engagée pour votre réussite
         </motion.h2>
@@ -539,7 +551,7 @@ export default function HomePage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-700 md:text-base"
+          className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-700 md:text-base"
         >
           Des femmes et des hommes présents sur le terrain, au service de vos
           projets et de vos objectifs.
@@ -559,7 +571,7 @@ export default function HomePage() {
               <img
                 src={member.image}
                 alt={member.name}
-                className="h-56 w-full object-cover"
+                className="h-56 w-full object-cover sm:h-64"
               />
               <div className="p-5">
                 <h3 className="text-base font-semibold text-rad-blue-900">
@@ -572,62 +584,58 @@ export default function HomePage() {
         </div>
       </section>
 
-     {/* ---------------- PARTENAIRES (défilement automatique) ---------------- */}
-<section className="bg-slate-100 py-16">
-  <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-    <motion.h2
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-      className="text-center text-3xl font-semibold text-rad-blue-900 md:text-4xl"
-    >
-      Nos partenaires & fournisseurs
-    </motion.h2>
-
-    <motion.p
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-      className="mt-2 text-center text-sm text-slate-600"
-    >
-      Des collaborations avec des leaders mondiaux du secteur
-    </motion.p>
-
-    {/* Carrousel infini */}
-    <div className="relative mt-10 overflow-hidden">
-      <div className="animate-slide flex w-max gap-10">
-        {[...partenaires, ...partenaires].map((p, i) => (
-          <div
-            key={`${p.name}-${i}`}
-            className="flex h-20 w-52 items-center justify-center rounded-2xl
-                       bg-white/95 px-6 shadow-md shadow-slate-300/60 ring-1 ring-slate-200"
-          >
-            <img
-              src={p.logo}
-              alt={p.name}
-              className="max-h-12 max-w-[150px] object-contain
-                         opacity-90 grayscale
-                         transition hover:opacity-100 hover:grayscale-0"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      {/* ---------------- POURQUOI NOUS CHOISIR ---------------- */}
-      <section className="bg-rad-blue-900/95 py-16">
-        <div className="mx-auto max-w-6xl px-6 text-white md:px-8 lg:px-0">
+      {/* ---------------- PARTENAIRES ---------------- */}
+      <section className="bg-slate-100 py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-center text-3xl font-semibold md:text-4xl"
+            className="text-center text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
+          >
+            Nos partenaires & fournisseurs
+          </motion.h2>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="mt-2 text-center text-sm text-slate-600"
+          >
+            Des collaborations avec des leaders mondiaux du secteur
+          </motion.p>
+
+          {/* Carrousel infini */}
+          <div className="relative mt-10 overflow-hidden">
+            <div className="flex w-max animate-slide gap-10">
+              {[...partenaires, ...partenaires].map((p, i) => (
+                <div
+                  key={`${p.name}-${i}`}
+                  className="flex h-20 w-52 items-center justify-center rounded-2xl bg-white/95 px-6 shadow-md shadow-slate-300/60 ring-1 ring-slate-200"
+                >
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-h-12 max-w-[150px] object-contain opacity-90 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- POURQUOI NOUS CHOISIR ---------------- */}
+      <section className="bg-rad-blue-900 py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 text-white sm:px-6 lg:px-0">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="text-center text-3xl font-semibold tracking-tight md:text-4xl"
           >
             Pourquoi choisir RAD ?
           </motion.h2>
@@ -663,7 +671,9 @@ export default function HomePage() {
                 <h3 className="text-base font-semibold md:text-lg">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-100">{item.text}</p>
+                <p className="mt-2 text-sm text-slate-100 leading-relaxed">
+                  {item.text}
+                </p>
               </motion.article>
             ))}
           </div>
@@ -672,13 +682,13 @@ export default function HomePage() {
 
       {/* ---------------- CTA CONTACT ---------------- */}
       <section id="contact" className="bg-slate-100 py-16">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center md:px-8">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-4 px-4 text-center sm:px-6">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="text-3xl font-semibold text-rad-blue-900 md:text-4xl"
+            className="text-3xl font-semibold tracking-tight text-rad-blue-900 md:text-4xl"
           >
             Parlons de votre projet
           </motion.h2>
@@ -687,7 +697,7 @@ export default function HomePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="max-w-2xl text-sm text-slate-700 md:text-base"
+            className="max-w-2xl text-sm leading-relaxed text-slate-700 md:text-base"
           >
             Vous avez un besoin en équipements, en services industriels, en
             construction ou en logistique ? Notre équipe est disponible pour
@@ -719,7 +729,7 @@ export default function HomePage() {
 
       {/* ---------------- FOOTER ---------------- */}
       <footer className="border-t border-slate-200 bg-white py-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-xs text-slate-500 md:flex-row md:px-8 lg:px-0">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-4 text-xs text-slate-500 sm:px-6 md:flex-row lg:px-0">
           <p>
             © {new Date().getFullYear()} Réseau Africain de Développement. Tous
             droits réservés.
@@ -728,7 +738,5 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
-        
-
   )
 }
