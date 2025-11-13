@@ -41,6 +41,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+   /* Palette RAD basée sur le logo */
+  --color-rad-blue-900: #0A2A43;  /* bleu très foncé (header, hero, gros titres) */
+  --color-rad-blue-800: #0F4D8A;  /* bleu action (boutons, liens, hover) */
+
+  --color-rad-green: #0E7E43;
+  --color-rad-yellow: #F2CF1D;
+  --color-rad-red: #C3261A;
+  --color-rad-orange: #E38A46;
 }
 
 :root {
@@ -51,7 +60,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+   --primary: #0A2A43;     
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -85,8 +94,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: #0F4D8A; 
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -112,6 +121,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -119,4 +129,18 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 18s linear infinite;
+}
+
 }
