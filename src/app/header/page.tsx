@@ -13,7 +13,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/rad-logo.jpeg"   // fichier dans /public
+            src="/rad-logo.jpeg"   
             alt="Logo RAD"
             width={140}
             height={60}
