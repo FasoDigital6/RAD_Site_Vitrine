@@ -166,118 +166,106 @@
   "services": {
     "badge": "Nos Services",
     "hero": {
-      "title": "Solutions industrielles & commerciales sur mesure",
-      "subtitle": "RAD intervient sur l'ensemble de la chaîne de valeur : mines, construction, logistique, commerce international, formation et services techniques. Une approche intégrée pour des résultats concrets."
+      "title": "Des services intégrés pour vos projets",
+      "subtitle": "RAD propose une offre globale pour accompagner les projets de bout en bout, de la réflexion stratégique à la mise en œuvre opérationnelle."
     },
-    "stats": {
-      "projects": {
-        "value": "100+",
-        "label": "Projets livrés",
-        "icon": "✅"
-      },
-      "sectors": {
-        "value": "6",
-        "label": "Secteurs d'activité",
-        "icon": "🏗️"
-      },
-      "equipment": {
-        "value": "200+",
-        "label": "Équipements gérés",
-        "icon": "🚜"
-      }
+    "intro": {
+      "title": "Nos domaines d'intervention",
+      "subtitle": "Une offre intégrée couvrant la chaîne de valeur : de la stratégie aux opérations, pour accompagner vos projets à chaque étape."
     },
-    "title": "Nos domaines d'expertise",
-    "subtitle": "Des solutions adaptées à chaque étape de votre projet",
+    "featuredBadge": "Service Principal",
+    "details": {
+      "title": "Découvrez nos services en détail",
+      "serviceLabel": "Service"
+    },
     "domains": {
       "mining": {
         "title": "Mines & Services Industriels",
         "description": "Transport de minerais, terrassements, location d'engins lourds et légers, maintenance d'équipements miniers.",
         "details": "15+ projets | Équipements CAT, Toyota",
-        "services": [
-          "Transport de minerais et matériaux",
-          "Terrassement et excavation",
-          "Location d'engins lourds (bulldozers, excavateurs, dumpers)",
-          "Location d'engins légers (chariots élévateurs, compacteurs)",
-          "Maintenance préventive et curative d'équipements miniers",
-          "Fourniture de pièces détachées et consommables",
-          "Gestion de parc d'équipements"
+        "bullets": [
+          "Approvisionnement en pièces et équipements (engins lourds, filtres, consommables)",
+          "Coordination avec les concessionnaires, ateliers et fournisseurs spécialisés",
+          "Optimisation des stocks, des délais et de la disponibilité opérationnelle"
         ]
       },
       "construction": {
         "title": "Construction & Génie Civil",
         "description": "Bâtiments, ponts, routes, infrastructures électriques, tirage de câbles fibre optique et réseau.",
         "details": "50+ km routes | Projets clés en main",
-        "services": [
-          "Construction de bâtiments industriels et commerciaux",
-          "Travaux de génie civil (ponts, routes, barrages)",
-          "Infrastructures électriques et réseaux",
-          "Tirage de câbles fibre optique",
-          "Aménagement de sites industriels",
-          "Réhabilitation et extension d'infrastructures",
-          "Gestion de projets clés en main"
+        "bullets": [
+          "Travaux de routes, ouvrages publics, bâtiments fonctionnels et infrastructures industrielles",
+          "Suivi de chantier, contrôle qualité et gestion des équipes sur le terrain",
+          "Respect des normes, des délais et des budgets impartis"
         ]
       },
       "commerce": {
         "title": "Commerce & Supply Chain",
         "description": "Commerce général, import-export, fourniture d'équipements industriels et informatiques aux entreprises.",
         "details": "100+ fournisseurs internationaux",
-        "services": [
-          "Import-export de marchandises diverses",
-          "Fourniture d'équipements industriels",
-          "Fourniture de matériel informatique et bureautique",
-          "Approvisionnement en consommables",
-          "Sourcing international",
-          "Gestion des douanes et formalités",
-          "Conseil en optimisation supply chain"
+        "bullets": [
+          "Recherche et sélection de fournisseurs fiables (Canada, Europe, Moyen-Orient)",
+          "Gestion de commandes de grande envergure pour entreprises et institutions",
+          "Support sur la documentation, les incoterms et les contraintes douanières"
         ]
       },
       "transport": {
         "title": "Transport & Logistique",
         "description": "Transport de marchandises, gestion de flotte, entreposage, solutions logistiques intégrées.",
         "details": "Flotte moderne | Tracking temps réel",
-        "services": [
-          "Transport routier de marchandises",
-          "Gestion de flotte de véhicules",
-          "Entreposage et stockage sécurisé",
-          "Solutions logistiques intégrées",
-          "Tracking GPS temps réel",
-          "Gestion des stocks",
-          "Distribution last-mile"
+        "bullets": [
+          "Solutions de transport et de groupage adaptées à la réalité du terrain",
+          "Gestion des stocks, des entrepôts et des points de livraison",
+          "Partenariats avec des transporteurs et transitaires spécialisés"
         ]
       },
       "training": {
         "title": "Formation & Conseil",
         "description": "Formation informatique et anglais professionnel, conseil stratégique, accompagnement de projets.",
         "details": "500+ professionnels formés",
-        "services": [
-          "Formation en informatique (bureautique, réseaux, développement)",
-          "Formation en anglais professionnel",
-          "Conseil stratégique aux entreprises",
-          "Accompagnement de projets industriels",
-          "Audit et diagnostic organisationnel",
-          "Formation sur mesure",
-          "Certification professionnelle"
+        "bullets": [
+          "Études de faisabilité, structuration et modélisation de projets",
+          "Mise en relation avec partenaires techniques, industriels et financiers",
+          "Suivi personnalisé, reporting et amélioration continue"
         ]
       },
       "technical": {
         "title": "Services Techniques",
         "description": "Installation d'équipements informatiques, maintenance technique, prestation de services divers.",
         "details": "Support 24/7 disponible",
-        "services": [
-          "Installation d'équipements informatiques",
-          "Maintenance informatique préventive et curative",
-          "Support technique 24/7",
-          "Dépannage sur site",
-          "Gestion de parc informatique",
-          "Infogérance",
-          "Services divers sur mesure"
+        "bullets": [
+          "Installation et configuration d'équipements informatiques et industriels",
+          "Maintenance préventive et corrective, support technique 24/7",
+          "Prestation de services sur mesure adaptés aux besoins spécifiques"
         ]
       }
     },
+    "methodology": {
+      "title": "Une méthodologie claire, orientée résultats",
+      "subtitle": "De l'analyse à la livraison, un processus éprouvé pour garantir le succès de vos projets",
+      "steps": {
+        "1": {
+          "title": "Analyse",
+          "description": "Compréhension du besoin, des contraintes, du contexte terrain et réglementaire."
+        },
+        "2": {
+          "title": "Structuration",
+          "description": "Définition des scénarios possibles, plan d'action et identification des partenaires."
+        },
+        "3": {
+          "title": "Déploiement",
+          "description": "Mise en œuvre opérationnelle, coordination des équipes et des ressources."
+        },
+        "4": {
+          "title": "Suivi",
+          "description": "Mesure des résultats, ajustements continus et accompagnement dans la durée."
+        }
+      }
+    },
     "cta": {
-      "title": "Besoin d'un service spécifique ?",
-      "subtitle": "Nos équipes sont disponibles pour discuter de vos besoins et vous proposer une solution adaptée.",
-      "primary": "Demander un devis",
+      "title": "Besoin d'un partenaire fiable pour votre prochain projet ?",
+      "subtitle": "Mines, construction, logistique, commerce ou projets structurants : RAD peut vous accompagner à chaque étape. Discutons de votre situation et trouvons ensemble la meilleure façon d'avancer.",
+      "primary": "Contacter RAD",
       "secondary": "Voir nos réalisations"
     }
   },

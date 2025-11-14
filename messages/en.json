@@ -166,118 +166,106 @@
   "services": {
     "badge": "Our Services",
     "hero": {
-      "title": "Tailored industrial & commercial solutions",
-      "subtitle": "RAD operates across the entire value chain: mining, construction, logistics, international trade, training and technical services. An integrated approach for concrete results."
+      "title": "Integrated services for your projects",
+      "subtitle": "RAD offers a comprehensive package to support projects from start to finish, from strategic thinking to operational implementation."
     },
-    "stats": {
-      "projects": {
-        "value": "100+",
-        "label": "Delivered projects",
-        "icon": "✅"
-      },
-      "sectors": {
-        "value": "6",
-        "label": "Business sectors",
-        "icon": "🏗️"
-      },
-      "equipment": {
-        "value": "200+",
-        "label": "Managed equipment",
-        "icon": "🚜"
-      }
+    "intro": {
+      "title": "Our areas of intervention",
+      "subtitle": "An integrated offering covering the value chain: from strategy to operations, to support your projects at every stage."
     },
-    "title": "Our areas of expertise",
-    "subtitle": "Solutions adapted to each stage of your project",
+    "featuredBadge": "Main Service",
+    "details": {
+      "title": "Discover our services in detail",
+      "serviceLabel": "Service"
+    },
     "domains": {
       "mining": {
         "title": "Mining & Industrial Services",
         "description": "Ore transport, earthworks, heavy and light equipment rental, mining equipment maintenance.",
         "details": "15+ projects | CAT, Toyota equipment",
-        "services": [
-          "Ore and material transport",
-          "Earthwork and excavation",
-          "Heavy equipment rental (bulldozers, excavators, dumpers)",
-          "Light equipment rental (forklifts, compactors)",
-          "Preventive and curative maintenance of mining equipment",
-          "Spare parts and consumables supply",
-          "Equipment fleet management"
+        "bullets": [
+          "Supply of parts and equipment (heavy machinery, filters, consumables)",
+          "Coordination with dealers, workshops and specialized suppliers",
+          "Optimization of inventory, lead times and operational availability"
         ]
       },
       "construction": {
         "title": "Construction & Civil Engineering",
         "description": "Buildings, bridges, roads, electrical infrastructure, fiber optic and network cable laying.",
         "details": "50+ km roads | Turnkey projects",
-        "services": [
-          "Industrial and commercial building construction",
-          "Civil engineering works (bridges, roads, dams)",
-          "Electrical infrastructure and networks",
-          "Fiber optic cable laying",
-          "Industrial site development",
-          "Infrastructure rehabilitation and extension",
-          "Turnkey project management"
+        "bullets": [
+          "Road works, public works, functional buildings and industrial infrastructure",
+          "Site monitoring, quality control and field team management",
+          "Compliance with standards, deadlines and budgets"
         ]
       },
       "commerce": {
         "title": "Trade & Supply Chain",
         "description": "General trade, import-export, supply of industrial and IT equipment to companies.",
         "details": "100+ international suppliers",
-        "services": [
-          "Import-export of various goods",
-          "Industrial equipment supply",
-          "IT and office equipment supply",
-          "Consumables procurement",
-          "International sourcing",
-          "Customs and formalities management",
-          "Supply chain optimization consulting"
+        "bullets": [
+          "Research and selection of reliable suppliers (Canada, Europe, Middle East)",
+          "Management of large-scale orders for companies and institutions",
+          "Support with documentation, incoterms and customs constraints"
         ]
       },
       "transport": {
         "title": "Transport & Logistics",
         "description": "Freight transport, fleet management, warehousing, integrated logistics solutions.",
         "details": "Modern fleet | Real-time tracking",
-        "services": [
-          "Road freight transport",
-          "Vehicle fleet management",
-          "Secure warehousing and storage",
-          "Integrated logistics solutions",
-          "Real-time GPS tracking",
-          "Inventory management",
-          "Last-mile distribution"
+        "bullets": [
+          "Transport and groupage solutions adapted to field realities",
+          "Management of inventories, warehouses and delivery points",
+          "Partnerships with specialized carriers and freight forwarders"
         ]
       },
       "training": {
         "title": "Training & Consulting",
         "description": "IT and professional English training, strategic consulting, project support.",
         "details": "500+ trained professionals",
-        "services": [
-          "IT training (office automation, networks, development)",
-          "Professional English training",
-          "Strategic business consulting",
-          "Industrial project support",
-          "Organizational audit and diagnosis",
-          "Custom training",
-          "Professional certification"
+        "bullets": [
+          "Feasibility studies, project structuring and modeling",
+          "Connection with technical, industrial and financial partners",
+          "Personalized monitoring, reporting and continuous improvement"
         ]
       },
       "technical": {
         "title": "Technical Services",
         "description": "IT equipment installation, technical maintenance, various service provision.",
         "details": "24/7 support available",
-        "services": [
-          "IT equipment installation",
-          "Preventive and curative IT maintenance",
-          "24/7 technical support",
-          "On-site troubleshooting",
-          "IT fleet management",
-          "IT outsourcing",
-          "Custom services"
+        "bullets": [
+          "Installation and configuration of IT and industrial equipment",
+          "Preventive and corrective maintenance, 24/7 technical support",
+          "Custom service provision adapted to specific needs"
         ]
       }
     },
+    "methodology": {
+      "title": "A clear, results-oriented methodology",
+      "subtitle": "From analysis to delivery, a proven process to ensure the success of your projects",
+      "steps": {
+        "1": {
+          "title": "Analysis",
+          "description": "Understanding needs, constraints, field context and regulatory framework."
+        },
+        "2": {
+          "title": "Structuring",
+          "description": "Definition of possible scenarios, action plan and partner identification."
+        },
+        "3": {
+          "title": "Deployment",
+          "description": "Operational implementation, team and resource coordination."
+        },
+        "4": {
+          "title": "Monitoring",
+          "description": "Measuring results, continuous adjustments and long-term support."
+        }
+      }
+    },
     "cta": {
-      "title": "Need a specific service?",
-      "subtitle": "Our teams are available to discuss your needs and offer you a suitable solution.",
-      "primary": "Request a quote",
+      "title": "Need a reliable partner for your next project?",
+      "subtitle": "Mining, construction, logistics, trade or structural projects: RAD can support you at every stage. Let's discuss your situation and find the best way forward together.",
+      "primary": "Contact RAD",
       "secondary": "View our achievements"
     }
   },
