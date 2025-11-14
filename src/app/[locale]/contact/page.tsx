@@ -1,9 +1,10 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
-import Link from "next/link"
 import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-react"
 import { Footer } from "@/components/Footer"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
 
 // Animations cohérentes
 const fadeUp: Variants = {
@@ -43,6 +44,9 @@ const fadeInRight: Variants = {
 }
 
 export default function ContactPage() {
+  const t = useTranslations('contact')
+  const tCommon = useTranslations('common')
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO CONTACT */}
@@ -63,14 +67,14 @@ export default function ContactPage() {
                 <span className="flex-1 bg-rad-yellow" />
                 <span className="flex-1 bg-rad-red" />
               </span>
-              Contact
+              {t('badge')}
             </div>
 
             <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Parlons de votre projet
+              {t('hero.title')}
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
-              Que ce soit pour un besoin en équipements, en services industriels, en construction ou en logistique, l'équipe du Réseau Africain de Développement est disponible pour vous accompagner.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -81,9 +85,9 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { icon: <Clock className="h-6 w-6" />, text: "Réponse sous 24h", emoji: "⚡" },
-              { icon: <CheckCircle className="h-6 w-6" />, text: "Consultation gratuite", emoji: "✓" },
-              { icon: <Phone className="h-6 w-6" />, text: "Devis personnalisé", emoji: "💼" },
+              { icon: <Clock className="h-6 w-6" />, text: t('reassurance.response') },
+              { icon: <CheckCircle className="h-6 w-6" />, text: t('reassurance.consultation') },
+              { icon: <Phone className="h-6 w-6" />, text: t('reassurance.quote') },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -119,7 +123,7 @@ export default function ContactPage() {
             >
               <div>
                 <h2 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
-                  Entrer en relation avec RAD
+                  {t('form.title')}
                 </h2>
                 <div className="mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
                   <span className="flex-1 bg-rad-green" />
@@ -129,45 +133,21 @@ export default function ContactPage() {
               </div>
 
               <p className="text-base leading-relaxed text-slate-700">
-                Expliquez-nous votre besoin : fourniture d'équipements, partenariat industriel, projet d'infrastructure, services logistiques ou accompagnement stratégique. Nous vous recontacterons rapidement avec une première analyse et des pistes de collaboration.
+                {t('form.subtitle')}
               </p>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: <CheckCircle className="h-5 w-5" />,
-                    text: "Réponse ciblée en fonction de votre secteur (mines, construction, commerce, etc.)"
-                  },
-                  {
-                    icon: <CheckCircle className="h-5 w-5" />,
-                    text: "Possibilité de réunions en ligne avec nos équipes techniques et opérationnelles"
-                  },
-                  {
-                    icon: <CheckCircle className="h-5 w-5" />,
-                    text: "Accompagnement du diagnostic jusqu'à la mise en œuvre sur le terrain"
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-rad-orange/10 text-rad-orange">
-                      {item.icon}
-                    </div>
-                    <p className="pt-1 text-sm leading-relaxed text-slate-700">{item.text}</p>
-                  </div>
-                ))}
-              </div>
 
               {/* Infos de contact direct */}
               <div className="mt-8 space-y-4 rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-6 text-white shadow-xl shadow-rad-blue-900/30">
-                <h3 className="text-lg font-bold">Nous contacter directement</h3>
+                <h3 className="text-lg font-bold">{t('info.title')}</h3>
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/20">
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-semibold">Adresse</p>
+                    <p className="font-semibold">{t('info.address.title')}</p>
                     <p className="mt-1 text-sm text-slate-200">
-                      Conakry, République de Guinée
+                      {t('info.address.value')}
                     </p>
                   </div>
                 </div>
@@ -177,9 +157,9 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-semibold">Téléphone / WhatsApp</p>
+                    <p className="font-semibold">{t('info.phone.title')}</p>
                     <p className="mt-1 text-sm text-slate-200">
-                      +224 XXX XXX XXX
+                      {t('info.phone.value')}
                     </p>
                   </div>
                 </div>
@@ -189,9 +169,9 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-semibold">Email</p>
-                    <a href="mailto:contact@rad-guinee.com" className="mt-1 block text-sm text-rad-yellow hover:underline">
-                      contact@rad-guinee.com
+                    <p className="font-semibold">{t('info.email.title')}</p>
+                    <a href={`mailto:${t('info.email.value')}`} className="mt-1 block text-sm text-rad-yellow hover:underline">
+                      {t('info.email.value')}
                     </a>
                   </div>
                 </div>
@@ -201,10 +181,11 @@ export default function ContactPage() {
                     <Clock className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-semibold">Horaires (heure locale)</p>
+                    <p className="font-semibold">{t('info.hours.title')}</p>
                     <p className="mt-1 text-sm text-slate-200">
-                      Lundi – Vendredi : 8h00 – 18h00<br />
-                      Samedi : sur rendez-vous
+                      {t('info.hours.weekdays')}<br />
+                      {t('info.hours.saturday')}<br />
+                      {t('info.hours.sunday')}
                     </p>
                   </div>
                 </div>
@@ -220,17 +201,17 @@ export default function ContactPage() {
               className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60"
             >
               <h3 className="text-2xl font-bold text-rad-blue-900">
-                Formulaire de contact rapide
+                {t('form.title')}
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Remplissez ce formulaire avec un maximum d'informations pour nous permettre de bien comprendre votre demande.
+                {t('form.subtitle')}
               </p>
 
               <form className="mt-6 space-y-5">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <label htmlFor="nom" className="mb-2 block text-sm font-semibold text-slate-700">
-                      Nom complet *
+                      {t('form.fields.name.label')} *
                     </label>
                     <input
                       id="nom"
@@ -238,19 +219,19 @@ export default function ContactPage() {
                       type="text"
                       required
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
-                      placeholder="Ex : Mamadou Diallo"
+                      placeholder={t('form.fields.name.placeholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="societe" className="mb-2 block text-sm font-semibold text-slate-700">
-                      Société / Organisation
+                      {t('form.fields.company.label')}
                     </label>
                     <input
                       id="societe"
                       name="societe"
                       type="text"
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
-                      placeholder="Nom de votre structure"
+                      placeholder={t('form.fields.company.placeholder')}
                     />
                   </div>
                 </div>
@@ -258,7 +239,7 @@ export default function ContactPage() {
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-700">
-                      Email *
+                      {t('form.fields.email.label')} *
                     </label>
                     <input
                       id="email"
@@ -266,46 +247,46 @@ export default function ContactPage() {
                       type="email"
                       required
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
-                      placeholder="vous@exemple.com"
+                      placeholder={t('form.fields.email.placeholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="telephone" className="mb-2 block text-sm font-semibold text-slate-700">
-                      Téléphone / WhatsApp
+                      {t('form.fields.phone.label')}
                     </label>
                     <input
                       id="telephone"
                       name="telephone"
                       type="tel"
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
-                      placeholder="+224 ..."
+                      placeholder={t('form.fields.phone.placeholder')}
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="project-type" className="mb-2 block text-sm font-semibold text-slate-700">
-                    Type de projet *
+                    {t('form.fields.service.label')} *
                   </label>
                   <select
                     id="project-type"
                     required
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
                   >
-                    <option value="">Sélectionnez un domaine</option>
-                    <option value="mines">Mines & Services Industriels</option>
-                    <option value="construction">Construction & Génie Civil</option>
-                    <option value="commerce">Commerce & Supply Chain</option>
-                    <option value="logistique">Transport & Logistique</option>
-                    <option value="formation">Formation & Conseil</option>
-                    <option value="technique">Services Techniques</option>
-                    <option value="autre">Autre</option>
+                    <option value="">{t('form.fields.service.placeholder')}</option>
+                    <option value="mines">{t('form.fields.service.options.mining')}</option>
+                    <option value="construction">{t('form.fields.service.options.construction')}</option>
+                    <option value="commerce">{t('form.fields.service.options.commerce')}</option>
+                    <option value="logistique">{t('form.fields.service.options.transport')}</option>
+                    <option value="formation">{t('form.fields.service.options.training')}</option>
+                    <option value="technique">{t('form.fields.service.options.technical')}</option>
+                    <option value="autre">{t('form.fields.service.options.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="mb-2 block text-sm font-semibold text-slate-700">
-                    Description du projet / besoin *
+                    {t('form.fields.message.label')} *
                   </label>
                   <textarea
                     id="message"
@@ -313,7 +294,7 @@ export default function ContactPage() {
                     rows={5}
                     required
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
-                    placeholder="Expliquez brièvement votre contexte, vos objectifs, vos contraintes de délais, etc."
+                    placeholder={t('form.fields.message.placeholder')}
                   ></textarea>
                 </div>
 
@@ -322,82 +303,13 @@ export default function ContactPage() {
                   className="group w-full rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    Envoyer ma demande
+                    {t('form.submit')}
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </button>
-
-                <p className="text-center text-xs text-slate-500">
-                  Vos informations sont utilisées uniquement pour vous recontacter dans le cadre de votre demande.
-                </p>
               </form>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* ZONES D'INTERVENTION */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="grid gap-6 md:grid-cols-2"
-          >
-            <div className="rounded-3xl bg-slate-50 p-8 shadow-sm shadow-slate-200">
-              <h3 className="text-xl font-bold text-rad-blue-900">
-                Zones d'intervention prioritaires
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                RAD intervient en priorité en Guinée et en Afrique de l'Ouest, tout en développant des partenariats avec des fournisseurs et industriels basés en Europe, en Amérique du Nord et au Moyen-Orient.
-              </p>
-              <ul className="mt-6 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
-                {[
-                  "Sites miniers & zones industrielles",
-                  "Projets d'infrastructures routières",
-                  "Plateformes logistiques & entrepôts",
-                  "Projets immobiliers et équipements publics"
-                ].map((zone, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rad-orange" />
-                    <span>{zone}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-white shadow-xl shadow-rad-blue-900/30">
-              <h3 className="text-xl font-bold">Vous préférez un contact direct ?</h3>
-              <p className="mt-3 text-sm text-slate-100">
-                Vous pouvez également nous joindre via WhatsApp ou planifier un appel avec nos équipes opérationnelles.
-              </p>
-              <div className="mt-6 space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-200">WhatsApp</p>
-                    <p className="font-semibold">+224 XXX XXX XXX</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-200">Téléphone</p>
-                    <p className="font-semibold">+224 XXX XXX XXX</p>
-                  </div>
-                </div>
-              </div>
-              <p className="mt-6 text-xs text-slate-200/90">
-                Pour les appels internationaux, pensez à préciser votre fuseau horaire et vos disponibilités dans le message.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -412,29 +324,29 @@ export default function ContactPage() {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
-              Découvrez notre expertise
+              {t('cta.title')}
             </h3>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Explorez nos services et nos projets pour mieux comprendre comment RAD peut vous accompagner dans vos ambitions.
+              {t('cta.subtitle')}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <Link
                 href="/services"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
-                Nos services
+                {tCommon('seeServices')}
               </Link>
               <Link
                 href="/projects"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
-                Nos projets
+                {tCommon('seeProjects')}
               </Link>
               <Link
                 href="/about"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
-                À propos
+                {t('cta.secondary')}
               </Link>
             </div>
           </motion.div>

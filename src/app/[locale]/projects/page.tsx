@@ -1,9 +1,10 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
-import Link from "next/link"
 import { MapPin, Calendar, CheckCircle, ArrowRight } from "lucide-react"
 import { Footer } from "@/components/Footer"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
 
 // Animations cohérentes
 const fadeUp: Variants = {
@@ -15,109 +16,57 @@ const fadeUp: Variants = {
   },
 }
 
-const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-// Projets RAD (mêmes que la homepage)
-const realisations = [
-  {
-    title: "Infrastructure Routière Mines de Boké",
-    description:
-      "Construction de 45 km de routes d'accès aux sites miniers avec génie civil avancé et drainage optimisé pour conditions tropicales.",
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
-    location: "Boké, Guinée",
-    sector: "Construction & Mines",
-    year: "2023",
-    status: "Terminé",
-    stats: [
-      { label: "Durée", value: "18 mois" },
-      { label: "Budget", value: "8.5M USD" },
-      { label: "Impact", value: "2000+ emplois" },
-    ],
-    impacts: [
-      "Amélioration de l'accessibilité des sites miniers",
-      "Réduction des temps de transport et des coûts logistiques",
-      "Sécurisation des flux de matériel et des équipes"
-    ]
-  },
-  {
-    title: "Logistique Multi-modale Conakry",
-    description:
-      "Mise en place d'un hub logistique intégré avec entreposage de 5000 m², gestion de flotte et système de tracking pour équipements miniers lourds.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    location: "Conakry, Guinée",
-    sector: "Logistique & Supply Chain",
-    year: "2022-2023",
-    status: "Terminé",
-    stats: [
-      { label: "Capacité", value: "5000 m²" },
-      { label: "Flotte", value: "45 véhicules" },
-      { label: "Tonnage/an", value: "50K tonnes" },
-    ],
-    impacts: [
-      "Centralisation des activités sur un site optimisé",
-      "Meilleure coordination entre les équipes opérationnelles",
-      "Création d'un hub pour de futures expansions"
-    ]
-  },
-  {
-    title: "Fourniture Engins CAT – Projet Simandou",
-    description:
-      "Approvisionnement et maintenance de 120 équipements Caterpillar (bulldozers, excavateurs, dumpers) pour exploitation minière de classe mondiale.",
-    image: "https://images.unsplash.com/photo-1625218057599-ae80b8b63a93?w=800&q=80",
-    location: "Simandou, Guinée",
-    sector: "Équipements & Services Miniers",
-    year: "2021-2024",
-    status: "En cours",
-    stats: [
-      { label: "Équipements", value: "120 unités" },
-      { label: "Partenaire", value: "Caterpillar" },
-      { label: "Maintenance", value: "24/7" },
-    ],
-    impacts: [
-      "Amélioration du taux de disponibilité des équipements",
-      "Réduction des arrêts non planifiés",
-      "Meilleure visibilité sur les stocks stratégiques"
-    ]
-  },
-  {
-    title: "Cité Résidentielle Ouvriers – Kindia",
-    description:
-      "Développement immobilier de 85 logements fonctionnels avec infrastructures (eau, électricité, routes) pour personnel d'exploitation minière.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-    location: "Kindia, Guinée",
-    sector: "Immobilier & Infrastructures",
-    year: "2023-2024",
-    status: "En cours",
-    stats: [
-      { label: "Logements", value: "85 unités" },
-      { label: "Surface", value: "12 hectares" },
-      { label: "Bénéficiaires", value: "400+ personnes" },
-    ],
-    impacts: [
-      "Amélioration des conditions de vie des travailleurs",
-      "Infrastructure complète avec équipements modernes",
-      "Création d'emplois locaux pendant la construction"
-    ]
-  },
-]
-
 export default function ProjectsPage() {
+  const t = useTranslations('projects')
+  const tCommon = useTranslations('common')
+
+  const realisations = [
+    {
+      image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
+      location: t('list.1.location'),
+      year: t('list.1.year'),
+      status: t('list.1.status'),
+      stats: [
+        { label: t('stats.duration'), value: t('list.1.stats.duration') },
+        { label: t('stats.budget'), value: t('list.1.stats.budget') },
+        { label: t('stats.impact'), value: t('list.1.stats.impact') },
+      ],
+    },
+    {
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+      location: t('list.2.location'),
+      year: t('list.2.year'),
+      status: t('list.2.status'),
+      stats: [
+        { label: t('stats.capacity'), value: t('list.2.stats.capacity') },
+        { label: t('stats.fleet'), value: t('list.2.stats.fleet') },
+        { label: t('stats.tonnage'), value: t('list.2.stats.tonnage') },
+      ],
+    },
+    {
+      image: "https://images.unsplash.com/photo-1625218057599-ae80b8b63a93?w=800&q=80",
+      location: t('list.3.location'),
+      year: t('list.3.year'),
+      status: t('list.3.status'),
+      stats: [
+        { label: t('stats.equipment'), value: t('list.3.stats.equipment') },
+        { label: t('stats.partner'), value: t('list.3.stats.partner') },
+        { label: t('stats.maintenance'), value: t('list.3.stats.maintenance') },
+      ],
+    },
+    {
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+      location: t('list.4.location'),
+      year: t('list.4.year'),
+      status: t('list.4.status'),
+      stats: [
+        { label: t('stats.housing'), value: t('list.4.stats.housing') },
+        { label: t('stats.surface'), value: t('list.4.stats.surface') },
+        { label: t('stats.beneficiaries'), value: t('list.4.stats.beneficiaries') },
+      ],
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO PROJETS */}
@@ -138,14 +87,14 @@ export default function ProjectsPage() {
                 <span className="flex-1 bg-rad-yellow" />
                 <span className="flex-1 bg-rad-red" />
               </span>
-              Projets & Réalisations
+              {t('badge')}
             </div>
 
             <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Nos projets concrets sur le terrain
+              {t('hero.title')}
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
-              RAD intervient sur des projets industriels, miniers, logistiques, commerciaux et immobiliers. Chaque projet est conçu pour répondre à des besoins réels, avec une approche pragmatique et orientée impact.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -156,9 +105,9 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { value: "100+", label: "Projets réalisés", icon: "🚀" },
-              { value: "8.5M USD", label: "Budget moyen par projet", icon: "💰" },
-              { value: "5000+", label: "Emplois créés", icon: "👷" },
+              { value: t('stats.completed.value'), label: t('stats.completed.label'), icon: t('stats.completed.icon') },
+              { value: t('stats.budget.value'), label: t('stats.budget.label'), icon: t('stats.budget.icon') },
+              { value: t('stats.jobs.value'), label: t('stats.jobs.label'), icon: t('stats.jobs.icon') },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -189,104 +138,100 @@ export default function ProjectsPage() {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl">
-            Nos réalisations majeures
+            {t('title')}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg">
-            Des projets d'envergure qui illustrent notre expertise multisectorielle et notre engagement pour l'excellence opérationnelle.
+            {t('subtitle')}
           </p>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {realisations.map((projet, index) => (
-            <motion.article
-              key={projet.title}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-400/40"
-            >
-              {/* Image avec overlay au hover */}
-              <div className="relative h-64 w-full overflow-hidden md:h-72">
-                <img
-                  src={projet.image}
-                  alt={projet.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Overlay gradient au hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          {['1', '2', '3', '4'].map((index, idx) => {
+            const projet = realisations[idx]
+            return (
+              <motion.article
+                key={index}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative overflow-hidden rounded-3xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-400/40"
+              >
+                {/* Image avec overlay au hover */}
+                <div className="relative h-64 w-full overflow-hidden md:h-72">
+                  <img
+                    src={projet.image}
+                    alt={t(`list.${index}.title`)}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                {/* Badge secteur en haut à droite */}
-                <div className="absolute right-4 top-4">
-                  <span className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-rad-blue-900 shadow-lg backdrop-blur-sm">
-                    {projet.sector}
-                  </span>
-                </div>
-
-                {/* Badge statut en haut à gauche */}
-                <div className="absolute left-4 top-4">
-                  <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg backdrop-blur-sm ${
-                    projet.status === "Terminé"
-                      ? "bg-green-500/90 text-white"
-                      : "bg-rad-orange/90 text-white"
-                  }`}>
-                    <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                    {projet.status}
-                  </span>
-                </div>
-
-                {/* Texte overlay visible au hover */}
-                <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0">
-                  <div className="flex flex-wrap gap-3">
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-white">
-                      <MapPin className="h-4 w-4" />
-                      {projet.location}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-white">
-                      <Calendar className="h-4 w-4" />
-                      {projet.year}
+                  <div className="absolute right-4 top-4">
+                    <span className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-rad-blue-900 shadow-lg backdrop-blur-sm">
+                      {t(`list.${index}.sector`)}
                     </span>
                   </div>
-                </div>
-              </div>
 
-              {/* Contenu de la carte */}
-              <div className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-rad-blue-900 md:text-2xl">
-                  {projet.title}
-                </h3>
+                  <div className="absolute left-4 top-4">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold shadow-lg backdrop-blur-sm ${
+                      projet.status === "Terminé" || projet.status === "Completed"
+                        ? "bg-green-500/90 text-white"
+                        : "bg-rad-orange/90 text-white"
+                    }`}>
+                      <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                      {projet.status}
+                    </span>
+                  </div>
 
-                <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  {projet.description}
-                </p>
-
-                {/* Stats clés */}
-                <div className="mt-6 grid grid-cols-3 gap-4 border-t border-slate-200 pt-6">
-                  {projet.stats.map((stat, idx) => (
-                    <div key={idx} className="text-center">
-                      <p className="text-lg font-bold text-rad-blue-900 md:text-xl">
-                        {stat.value}
-                      </p>
-                      <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">
-                        {stat.label}
-                      </p>
+                  <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0">
+                    <div className="flex flex-wrap gap-3">
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-white">
+                        <MapPin className="h-4 w-4" />
+                        {projet.location}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-white">
+                        <Calendar className="h-4 w-4" />
+                        {projet.year}
+                      </span>
                     </div>
-                  ))}
+                  </div>
                 </div>
 
-                {/* Impacts */}
-                <div className="mt-6 space-y-2">
-                  {projet.impacts.map((impact, i) => (
-                    <div key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                      <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rad-orange" />
-                      <span>{impact}</span>
-                    </div>
-                  ))}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-rad-blue-900 md:text-2xl">
+                    {t(`list.${index}.title`)}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                    {t(`list.${index}.description`)}
+                  </p>
+
+                  <div className="mt-6 grid grid-cols-3 gap-4 border-t border-slate-200 pt-6">
+                    {projet.stats.map((stat, statIdx) => (
+                      <div key={statIdx} className="text-center">
+                        <p className="text-lg font-bold text-rad-blue-900 md:text-xl">
+                          {stat.value}
+                        </p>
+                        <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">
+                          {stat.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 space-y-2">
+                    {t.raw(`list.${index}.impacts`).map((impact: string, i: number) => (
+                      <div key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                        <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rad-orange" />
+                        <span>{impact}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            )
+          })}
         </div>
       </section>
 
@@ -301,10 +246,10 @@ export default function ProjectsPage() {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
-              Vous souhaitez lancer un projet similaire ?
+              {t('cta.title')}
             </h3>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              RAD peut vous accompagner dans l'analyse, la structuration et le déploiement de vos projets. Mines, construction, logistique, import-export ou immobilier : notre équipe est disponible pour en parler.
+              {t('cta.subtitle')}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <Link
@@ -312,7 +257,7 @@ export default function ProjectsPage() {
                 className="group rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
               >
                 <span className="flex items-center gap-2">
-                  Parler à RAD
+                  {t('cta.primary')}
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
@@ -320,7 +265,7 @@ export default function ProjectsPage() {
                 href="/services"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
-                Voir nos services
+                {t('cta.secondary')}
               </Link>
             </div>
           </motion.div>
