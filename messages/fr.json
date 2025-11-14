@@ -1,0 +1,602 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "readMore": "Lire la suite",
+    "contactUs": "Nous contacter",
+    "seeProjects": "Voir nos projets",
+    "seeServices": "Voir nos services",
+    "seeRealizations": "Voir nos réalisations",
+    "discoverServices": "Découvrir nos services",
+    "scroll": "Défiler",
+    "send": "Envoyer",
+    "subscribe": "S'abonner",
+    "aboutRAD": "À propos"
+  },
+  "hero": {
+    "badge": "RAD · Réseau Africain de Développement",
+    "slides": {
+      "1": {
+        "title": "Réseau Africain de Développement",
+        "subtitle": "Solutions industrielles, commerciales et logistiques pour bâtir l'avenir du continent."
+      },
+      "2": {
+        "title": "Construire des infrastructures durables",
+        "subtitle": "Travaux d'ingénierie, construction et aménagement pour soutenir la croissance."
+      },
+      "3": {
+        "title": "Commerce, import–export et logistique",
+        "subtitle": "Un réseau solide pour connecter les marchés africains et internationaux."
+      }
+    },
+    "cta": {
+      "primary": "Découvrir nos services",
+      "secondary": "Voir nos projets"
+    },
+    "expertise": {
+      "title": "Nos secteurs d'expertise",
+      "mining": "Mines & industrie",
+      "construction": "Construction & infrastructures",
+      "commerce": "Commerce & logistique"
+    }
+  },
+  "home": {
+    "about": {
+      "title": "RAD : Votre partenaire de confiance pour bâtir l'Afrique",
+      "intro": "<strong>Réseau Africain de Développement</strong> est une entreprise multisectorielle qui accompagne la transformation économique et industrielle du continent africain depuis plus de 15 ans.",
+      "stats": {
+        "experience": {
+          "value": "15+",
+          "label": "Années d'expérience",
+          "icon": "🏆"
+        },
+        "projects": {
+          "value": "100+",
+          "label": "Projets réalisés",
+          "icon": "🚀"
+        },
+        "countries": {
+          "value": "5",
+          "label": "Pays d'opération",
+          "icon": "🌍"
+        },
+        "partners": {
+          "value": "20+",
+          "label": "Partenaires stratégiques",
+          "icon": "🤝"
+        }
+      },
+      "points": {
+        "1": {
+          "title": "Expertise multisectorielle reconnue",
+          "description": "Mines, construction, logistique, commerce international : une offre intégrée couvrant toute la chaîne de valeur."
+        },
+        "2": {
+          "title": "Partenaires locaux et internationaux de premier plan",
+          "description": "Collaborations stratégiques avec Caterpillar, Rio Tinto, et les acteurs majeurs de l'industrie africaine."
+        },
+        "3": {
+          "title": "Solutions clés en main et impact mesurable",
+          "description": "De la conception à la livraison, nous garantissons l'excellence opérationnelle et des résultats tangibles."
+        }
+      },
+      "cta": "Découvrir notre histoire",
+      "badge": "Ans d'expertise"
+    },
+    "mission": {
+      "title": "Mission, Vision & Valeurs",
+      "mission": {
+        "title": "Mission",
+        "content": "Apporter des solutions concrètes et durables pour le développement économique et industriel de l'Afrique."
+      },
+      "vision": {
+        "title": "Vision",
+        "content": "Devenir l'acteur de référence connectant talents, technologies et opportunités pour un avenir prospère."
+      },
+      "values": {
+        "title": "Valeurs",
+        "content": "Intégrité, excellence, respect des communautés, innovation et engagement à long terme."
+      }
+    },
+    "services": {
+      "title": "Nos domaines d'intervention",
+      "subtitle": "Une expertise multisectorielle pour accompagner vos projets d'envergure",
+      "cta": "Découvrir tous nos services"
+    },
+    "projects": {
+      "title": "Nos réalisations phares",
+      "subtitle": "Des projets concrets qui transforment le continent",
+      "stats": {
+        "duration": "Durée",
+        "budget": "Budget",
+        "impact": "Impact",
+        "capacity": "Capacité",
+        "fleet": "Flotte",
+        "tonnage": "Tonnage/an",
+        "equipment": "Équipements",
+        "partner": "Partenaire",
+        "maintenance": "Maintenance",
+        "housing": "Logements",
+        "surface": "Surface",
+        "beneficiaries": "Bénéficiaires"
+      },
+      "cta": "Voir tous nos projets"
+    },
+    "team": {
+      "title": "Une équipe d'experts passionnés",
+      "subtitle": "Des professionnels engagés au service de votre réussite"
+    },
+    "partners": {
+      "title": "Ils nous font confiance",
+      "subtitle": "Des partenariats solides avec les leaders mondiaux de l'industrie"
+    },
+    "why": {
+      "title": "Pourquoi choisir RAD ?",
+      "reasons": {
+        "1": {
+          "title": "Équipe qualifiée & terrain",
+          "description": "Ingénieurs, techniciens et gestionnaires avec 15+ ans d'expérience projets industriels en Afrique."
+        },
+        "2": {
+          "title": "Réseau de partenaires internationaux",
+          "description": "Accès direct aux meilleurs équipements et technologies via nos alliances mondiales (CAT, Toyota, etc.)."
+        },
+        "3": {
+          "title": "Solutions sur mesure",
+          "description": "Chaque projet est unique : nous adaptons nos services à vos besoins spécifiques et contraintes locales."
+        },
+        "4": {
+          "title": "Engagement RSE",
+          "description": "Respect des normes environnementales, formation locale et impact positif pour les communautés."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à lancer votre projet ?",
+      "subtitle": "Discutons de vos besoins et construisons ensemble des solutions durables pour l'Afrique.",
+      "button": "Contactez-nous dès aujourd'hui"
+    }
+  },
+  "services": {
+    "badge": "Nos Services",
+    "hero": {
+      "title": "Solutions industrielles & commerciales sur mesure",
+      "subtitle": "RAD intervient sur l'ensemble de la chaîne de valeur : mines, construction, logistique, commerce international, formation et services techniques. Une approche intégrée pour des résultats concrets."
+    },
+    "stats": {
+      "projects": {
+        "value": "100+",
+        "label": "Projets livrés",
+        "icon": "✅"
+      },
+      "sectors": {
+        "value": "6",
+        "label": "Secteurs d'activité",
+        "icon": "🏗️"
+      },
+      "equipment": {
+        "value": "200+",
+        "label": "Équipements gérés",
+        "icon": "🚜"
+      }
+    },
+    "title": "Nos domaines d'expertise",
+    "subtitle": "Des solutions adaptées à chaque étape de votre projet",
+    "domains": {
+      "mining": {
+        "title": "Mines & Services Industriels",
+        "description": "Transport de minerais, terrassements, location d'engins lourds et légers, maintenance d'équipements miniers.",
+        "details": "15+ projets | Équipements CAT, Toyota",
+        "services": [
+          "Transport de minerais et matériaux",
+          "Terrassement et excavation",
+          "Location d'engins lourds (bulldozers, excavateurs, dumpers)",
+          "Location d'engins légers (chariots élévateurs, compacteurs)",
+          "Maintenance préventive et curative d'équipements miniers",
+          "Fourniture de pièces détachées et consommables",
+          "Gestion de parc d'équipements"
+        ]
+      },
+      "construction": {
+        "title": "Construction & Génie Civil",
+        "description": "Bâtiments, ponts, routes, infrastructures électriques, tirage de câbles fibre optique et réseau.",
+        "details": "50+ km routes | Projets clés en main",
+        "services": [
+          "Construction de bâtiments industriels et commerciaux",
+          "Travaux de génie civil (ponts, routes, barrages)",
+          "Infrastructures électriques et réseaux",
+          "Tirage de câbles fibre optique",
+          "Aménagement de sites industriels",
+          "Réhabilitation et extension d'infrastructures",
+          "Gestion de projets clés en main"
+        ]
+      },
+      "commerce": {
+        "title": "Commerce & Supply Chain",
+        "description": "Commerce général, import-export, fourniture d'équipements industriels et informatiques aux entreprises.",
+        "details": "100+ fournisseurs internationaux",
+        "services": [
+          "Import-export de marchandises diverses",
+          "Fourniture d'équipements industriels",
+          "Fourniture de matériel informatique et bureautique",
+          "Approvisionnement en consommables",
+          "Sourcing international",
+          "Gestion des douanes et formalités",
+          "Conseil en optimisation supply chain"
+        ]
+      },
+      "transport": {
+        "title": "Transport & Logistique",
+        "description": "Transport de marchandises, gestion de flotte, entreposage, solutions logistiques intégrées.",
+        "details": "Flotte moderne | Tracking temps réel",
+        "services": [
+          "Transport routier de marchandises",
+          "Gestion de flotte de véhicules",
+          "Entreposage et stockage sécurisé",
+          "Solutions logistiques intégrées",
+          "Tracking GPS temps réel",
+          "Gestion des stocks",
+          "Distribution last-mile"
+        ]
+      },
+      "training": {
+        "title": "Formation & Conseil",
+        "description": "Formation informatique et anglais professionnel, conseil stratégique, accompagnement de projets.",
+        "details": "500+ professionnels formés",
+        "services": [
+          "Formation en informatique (bureautique, réseaux, développement)",
+          "Formation en anglais professionnel",
+          "Conseil stratégique aux entreprises",
+          "Accompagnement de projets industriels",
+          "Audit et diagnostic organisationnel",
+          "Formation sur mesure",
+          "Certification professionnelle"
+        ]
+      },
+      "technical": {
+        "title": "Services Techniques",
+        "description": "Installation d'équipements informatiques, maintenance technique, prestation de services divers.",
+        "details": "Support 24/7 disponible",
+        "services": [
+          "Installation d'équipements informatiques",
+          "Maintenance informatique préventive et curative",
+          "Support technique 24/7",
+          "Dépannage sur site",
+          "Gestion de parc informatique",
+          "Infogérance",
+          "Services divers sur mesure"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Besoin d'un service spécifique ?",
+      "subtitle": "Nos équipes sont disponibles pour discuter de vos besoins et vous proposer une solution adaptée.",
+      "primary": "Demander un devis",
+      "secondary": "Voir nos réalisations"
+    }
+  },
+  "projects": {
+    "badge": "Projets & Réalisations",
+    "hero": {
+      "title": "Nos projets concrets sur le terrain",
+      "subtitle": "RAD intervient sur des projets industriels, miniers, logistiques, commerciaux et immobiliers. Chaque projet est conçu pour répondre à des besoins réels, avec une approche pragmatique et orientée impact."
+    },
+    "stats": {
+      "completed": {
+        "value": "100+",
+        "label": "Projets réalisés",
+        "icon": "🚀"
+      },
+      "budget": {
+        "value": "8.5M USD",
+        "label": "Budget moyen par projet",
+        "icon": "💰"
+      },
+      "jobs": {
+        "value": "5000+",
+        "label": "Emplois créés",
+        "icon": "👷"
+      }
+    },
+    "title": "Nos réalisations majeures",
+    "subtitle": "Des projets d'envergure qui illustrent notre expertise multisectorielle et notre engagement pour l'excellence opérationnelle.",
+    "list": {
+      "1": {
+        "title": "Infrastructure Routière Mines de Boké",
+        "description": "Construction de 45 km de routes d'accès aux sites miniers avec génie civil avancé et drainage optimisé pour conditions tropicales.",
+        "location": "Boké, Guinée",
+        "sector": "Construction & Mines",
+        "year": "2023",
+        "status": "Terminé",
+        "stats": {
+          "duration": "18 mois",
+          "budget": "8.5M USD",
+          "impact": "2000+ emplois"
+        },
+        "impacts": [
+          "Amélioration de l'accessibilité des sites miniers",
+          "Réduction des temps de transport et des coûts logistiques",
+          "Sécurisation des flux de matériel et des équipes"
+        ]
+      },
+      "2": {
+        "title": "Logistique Multi-modale Conakry",
+        "description": "Mise en place d'un hub logistique intégré avec entreposage de 5000 m², gestion de flotte et système de tracking pour équipements miniers lourds.",
+        "location": "Conakry, Guinée",
+        "sector": "Logistique & Supply Chain",
+        "year": "2022-2023",
+        "status": "Terminé",
+        "stats": {
+          "capacity": "5000 m²",
+          "fleet": "45 véhicules",
+          "tonnage": "50K tonnes"
+        },
+        "impacts": [
+          "Centralisation des activités sur un site optimisé",
+          "Meilleure coordination entre les équipes opérationnelles",
+          "Création d'un hub pour de futures expansions"
+        ]
+      },
+      "3": {
+        "title": "Fourniture Engins CAT – Projet Simandou",
+        "description": "Approvisionnement et maintenance de 120 équipements Caterpillar (bulldozers, excavateurs, dumpers) pour exploitation minière de classe mondiale.",
+        "location": "Simandou, Guinée",
+        "sector": "Équipements & Services Miniers",
+        "year": "2021-2024",
+        "status": "En cours",
+        "stats": {
+          "equipment": "120 unités",
+          "partner": "Caterpillar",
+          "maintenance": "24/7"
+        },
+        "impacts": [
+          "Amélioration du taux de disponibilité des équipements",
+          "Réduction des arrêts non planifiés",
+          "Meilleure visibilité sur les stocks stratégiques"
+        ]
+      },
+      "4": {
+        "title": "Cité Résidentielle Ouvriers – Kindia",
+        "description": "Développement immobilier de 85 logements fonctionnels avec infrastructures (eau, électricité, routes) pour personnel d'exploitation minière.",
+        "location": "Kindia, Guinée",
+        "sector": "Immobilier & Infrastructures",
+        "year": "2023-2024",
+        "status": "En cours",
+        "stats": {
+          "housing": "85 unités",
+          "surface": "12 hectares",
+          "beneficiaries": "400+ personnes"
+        },
+        "impacts": [
+          "Amélioration des conditions de vie des travailleurs",
+          "Infrastructure complète avec équipements modernes",
+          "Création d'emplois locaux pendant la construction"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Vous souhaitez lancer un projet similaire ?",
+      "subtitle": "RAD peut vous accompagner dans l'analyse, la structuration et le déploiement de vos projets. Mines, construction, logistique, import-export ou immobilier : notre équipe est disponible pour en parler.",
+      "primary": "Parler à RAD",
+      "secondary": "Voir nos services"
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "hero": {
+      "title": "Parlons de votre projet",
+      "subtitle": "Notre équipe est à votre écoute pour comprendre vos besoins et vous proposer des solutions adaptées. Remplissez le formulaire ci-dessous ou contactez-nous directement."
+    },
+    "reassurance": {
+      "response": "Réponse sous 24h",
+      "consultation": "Consultation gratuite",
+      "quote": "Devis personnalisé"
+    },
+    "form": {
+      "title": "Formulaire de contact",
+      "subtitle": "Décrivez-nous votre projet en quelques mots",
+      "fields": {
+        "name": {
+          "label": "Nom complet",
+          "placeholder": "Votre nom et prénom"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "votre@email.com"
+        },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "+224 XXX XXX XXX"
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Nom de votre entreprise"
+        },
+        "service": {
+          "label": "Service concerné",
+          "placeholder": "Sélectionnez un service",
+          "options": {
+            "mining": "Mines & Services Industriels",
+            "construction": "Construction & Génie Civil",
+            "commerce": "Commerce & Supply Chain",
+            "transport": "Transport & Logistique",
+            "training": "Formation & Conseil",
+            "technical": "Services Techniques",
+            "other": "Autre"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Décrivez votre projet, vos besoins ou vos questions..."
+        }
+      },
+      "submit": "Envoyer ma demande"
+    },
+    "info": {
+      "title": "Coordonnées",
+      "address": {
+        "title": "Adresse",
+        "value": "Conakry, République de Guinée"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "value": "+224 XXX XXX XXX"
+      },
+      "email": {
+        "title": "Email",
+        "value": "contact@rad-guinee.com"
+      },
+      "hours": {
+        "title": "Horaires",
+        "weekdays": "Lun - Ven: 8h - 18h",
+        "saturday": "Sam: 8h - 13h",
+        "sunday": "Dim: Fermé"
+      }
+    },
+    "cta": {
+      "title": "Vous préférez nous appeler ?",
+      "subtitle": "Notre équipe commerciale est disponible pour répondre à toutes vos questions et vous orienter vers la bonne solution.",
+      "primary": "Appeler maintenant",
+      "secondary": "À propos"
+    }
+  },
+  "about": {
+    "badge": "À propos de RAD",
+    "hero": {
+      "title": "Bâtir l'Afrique de demain, ensemble",
+      "subtitle": "Depuis 2008, RAD accompagne le développement industriel et économique du continent africain avec expertise, intégrité et engagement."
+    },
+    "stats": {
+      "experience": {
+        "value": "15+",
+        "label": "Années d'expérience",
+        "icon": "🏆"
+      },
+      "projects": {
+        "value": "100+",
+        "label": "Projets réalisés",
+        "icon": "🚀"
+      },
+      "countries": {
+        "value": "5",
+        "label": "Pays d'opération",
+        "icon": "🌍"
+      },
+      "partners": {
+        "value": "20+",
+        "label": "Partenaires internationaux",
+        "icon": "🤝"
+      }
+    },
+    "story": {
+      "title": "Notre histoire",
+      "content": "Fondée en 2008, <strong>Réseau Africain de Développement (RAD)</strong> est née de la vision de créer un acteur local capable de répondre aux besoins croissants de l'industrie minière et du développement infrastructurel en Afrique de l'Ouest.\n\nDepuis nos débuts, nous avons évolué d'une entreprise de services miniers vers un groupe multisectoriel couvrant la construction, la logistique, le commerce international, la formation et les services techniques.\n\nAujourd'hui, RAD est reconnue comme un partenaire de confiance par les plus grandes entreprises opérant sur le continent, grâce à notre expertise technique, notre réseau international et notre engagement envers l'excellence."
+    },
+    "mission": {
+      "title": "Mission",
+      "content": "Apporter des solutions concrètes et durables pour le développement économique et industriel de l'Afrique."
+    },
+    "vision": {
+      "title": "Vision",
+      "content": "Devenir l'acteur de référence connectant talents, technologies et opportunités pour un avenir prospère."
+    },
+    "values": {
+      "title": "Nos valeurs fondamentales",
+      "list": {
+        "1": {
+          "title": "Intégrité",
+          "description": "Transparence et éthique dans toutes nos relations d'affaires"
+        },
+        "2": {
+          "title": "Excellence",
+          "description": "Engagement envers la qualité et l'amélioration continue"
+        },
+        "3": {
+          "title": "Respect",
+          "description": "Des communautés, de l'environnement et de nos partenaires"
+        },
+        "4": {
+          "title": "Innovation",
+          "description": "Adoption des meilleures technologies et pratiques"
+        },
+        "5": {
+          "title": "Engagement",
+          "description": "Vision à long terme pour un impact durable"
+        }
+      }
+    },
+    "team": {
+      "title": "Notre équipe",
+      "subtitle": "Des professionnels passionnés et expérimentés",
+      "groups": {
+        "operations": {
+          "name": "Équipe Opérations",
+          "role": "Terrain & Projets",
+          "expertise": "15+ ans d'expérience terrain"
+        },
+        "technical": {
+          "name": "Direction Technique",
+          "role": "Ingénierie & Innovation",
+          "expertise": "Projets miniers & infrastructures"
+        },
+        "logistics": {
+          "name": "Équipe Logistique",
+          "role": "Supply Chain & Transport",
+          "expertise": "Gestion de flotte 24/7"
+        },
+        "admin": {
+          "name": "Staff Administratif",
+          "role": "Gestion & Coordination",
+          "expertise": "Support opérationnel intégré"
+        }
+      }
+    },
+    "cta": {
+      "title": "Rejoignez l'aventure RAD",
+      "subtitle": "Que vous soyez un client potentiel, un partenaire ou un talent à la recherche d'opportunités, nous serions ravis d'échanger avec vous.",
+      "primary": "Nous contacter",
+      "secondary": "Voir nos réalisations"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Restez informé",
+      "subtitle": "Recevez nos actualités et opportunités en avant-première",
+      "placeholder": "votre@email.com",
+      "button": "S'abonner"
+    },
+    "tagline": "Partenaire de confiance pour le développement industriel et économique en Afrique depuis 2008.",
+    "navigation": {
+      "title": "Navigation"
+    },
+    "domains": {
+      "title": "Nos Domaines",
+      "list": {
+        "mining": "Mines & Industrie",
+        "construction": "Construction & Génie Civil",
+        "commerce": "Commerce & Supply Chain",
+        "transport": "Transport & Logistique",
+        "training": "Formation & Conseil",
+        "technical": "Services Techniques"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Conakry, République de Guinée",
+      "phone": "+224 XXX XXX XXX",
+      "email": "contact@rad-guinee.com"
+    },
+    "legal": {
+      "copyright": "© {year} Réseau Africain de Développement. Tous droits réservés.",
+      "terms": "Mentions légales",
+      "privacy": "Politique de confidentialité",
+      "cgv": "CGV"
+    }
+  }
+}
