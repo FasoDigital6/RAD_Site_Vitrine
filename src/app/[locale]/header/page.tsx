@@ -1,11 +1,18 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
 import Image from "next/image"
+import { useLocale, useTranslations } from "next-intl"
+import { Link, useRouter, usePathname } from "@/i18n/routing"
 
 export function Header() {
-  const [lang, setLang] = useState<"fr" | "en">("fr")
+  const t = useTranslations('navigation')
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleLanguageChange = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale })
+  }
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -13,7 +20,11 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
+<<<<<<< HEAD:src/app/header/page.tsx
             src="/rad-logo.jpeg"   
+=======
+            src="/rad-logo.jpeg"
+>>>>>>> origin/claude-ui:src/app/[locale]/header/page.tsx
             alt="Logo RAD"
             width={140}
             height={60}
@@ -25,19 +36,19 @@ export function Header() {
         {/* Menu principal */}
         <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
           <Link href="/" className="hover:text-rad-blue-900">
-            Accueil
+            {t('home')}
           </Link>
           <Link href="/about" className="hover:text-rad-blue-900">
-            À propos
+            {t('about')}
           </Link>
           <Link href="/services" className="hover:text-rad-blue-900">
-            Services
+            {t('services')}
           </Link>
           <Link href="/projects" className="hover:text-rad-blue-900">
-            Projets
+            {t('projects')}
           </Link>
           <Link href="/contact" className="hover:text-rad-blue-900">
-            Contact
+            {t('contact')}
           </Link>
         </nav>
 
@@ -47,10 +58,10 @@ export function Header() {
             <button
               key={code}
               type="button"
-              onClick={() => setLang(code)}
+              onClick={() => handleLanguageChange(code)}
               className={
                 "rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide transition " +
-                (lang === code
+                (locale === code
                   ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
                   : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
               }
