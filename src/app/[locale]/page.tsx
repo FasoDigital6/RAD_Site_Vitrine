@@ -93,9 +93,13 @@ const projectStats: Record<string, readonly string[]> = {
 
 const partenaires: Partenaire[] = [
   { name: "Caterpillar", logo: "/cat-logo.png" },
-  { name: "Toyota", logo: "toyota-logo.svg" },
-  { name: "rio-tinto", logo: "rio-tinto-logo.png" },
-  {name:"sag", logo:"sag-logo.jpg"},
+  { name: "Toyota", logo: "/toyota-logo.svg" },
+  { name: "Rio Tinto", logo: "/rio-tinto-logo.png" },
+  { name: "SAG", logo: "/sag-logo.jpg" },
+  { name: "GPC", logo: "/GPC-Colour.svg" },
+  { name: "Simandou 2040", logo: "/simandou.png" },
+  { name: "Moto-Engil", logo: "/moto-engil.png" },
+  { name: "Kououssa Gold Mine", logo: "/kourrousaGold.jpeg" },
 ]
 
 
@@ -769,124 +773,50 @@ export default function HomePage() {
         </div>
       </section>
 
-     {/* ---------------- PARTENAIRES & FOURNISSEURS ---------------- */}
-<section className="bg-slate-100 py-20">
-  <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
+     {/* ---------------- NOS PARTENAIRES ---------------- */}
+<section className="overflow-hidden bg-slate-100 py-20">
+  <div className="mx-auto max-w-7xl px-6 md:px-8">
     <motion.div
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}
-      className="mb-12 text-center"
+      className="mb-16 text-center"
     >
       <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl">
         {tHome("partners.title")}
       </h2>
-      <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg">
-        {tHome("partners.subtitle")}
-      </p>
     </motion.div>
 
-    {/* Catégories de partenaires */}
-    <div className="space-y-12">
-      {/* Équipementiers */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        <h3 className="mb-6 text-center text-lg font-bold text-rad-blue-900 md:text-xl">
-          {tFooter("domains.title")}
-        </h3>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-          {[
-            { name: "Caterpillar", logo: "/cat-logo.png", type: "Engins lourds" },
-            { name: "Toyota", logo: "/toyota-logo.svg", type: "Véhicules" },
-            { name: "Komatsu", logo: "https://via.placeholder.com/150x60/0A2A43/FFFFFF?text=Komatsu", type: "Engins miniers" },
-            { name: "Volvo", logo: "https://via.placeholder.com/150x60/0A2A43/FFFFFF?text=Volvo", type: "Équipements" },
-          ].map((partner, idx) => (
+    {/* Conteneur de défilement infini */}
+    <div className="relative">
+      {/* Gradient gauche */}
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-slate-100 to-transparent" />
+
+      {/* Gradient droit */}
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-slate-100 to-transparent" />
+
+      {/* Bande défilante */}
+      <div className="flex overflow-hidden">
+        <div className="flex animate-slide gap-12">
+          {partenaires.concat(partenaires).map((partner, index) => (
             <div
-              key={partner.name}
-              className="group relative flex h-28 flex-col items-center justify-center rounded-2xl bg-white p-6 shadow-md shadow-slate-300/50 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rad-orange/20 hover:ring-rad-orange"
+              key={`${partner.name}-${index}`}
+              className="group flex h-40 w-72 flex-shrink-0 items-center justify-center rounded-2xl bg-white p-10 shadow-md shadow-slate-300/50 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rad-orange/20 hover:ring-rad-orange"
             >
-              <div className="relative h-10 w-[120px]">
+              <div className="relative h-24 w-full">
                 <Image
                   src={partner.logo}
                   alt={partner.name}
                   fill
-                  className="object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  className="object-contain opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                 />
-              </div>
-              {/* Tooltip type au hover */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-rad-blue-900 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
-                {partner.type}
               </div>
             </div>
           ))}
-        </div>
-      </motion.div>
-
-      {/* Partenaires stratégiques */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        <h3 className="mb-6 text-center text-lg font-bold text-rad-blue-900 md:text-xl">
-          {tHome("partners.title")}
-        </h3>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
-          {[
-            { name: "Rio Tinto", logo: "/rio-tinto-logo.png", type: "Minier global" },
-            { name: "SAG", logo: "/sag-logo.jpg", type: "Services guinéens" },
-            { name: "AngloGold", logo: "https://via.placeholder.com/150x60/0A2A43/FFFFFF?text=AngloGold", type: "Or & Métaux" },
-          ].map((partner, idx) => (
-            <div
-              key={partner.name}
-              className="group relative flex h-28 flex-col items-center justify-center rounded-2xl bg-white p-6 shadow-md shadow-slate-300/50 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rad-orange/20 hover:ring-rad-orange"
-            >
-              <div className="relative h-10 w-[120px]">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  fill
-                  className="object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
-                />
-              </div>
-              {/* Tooltip type au hover */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-rad-blue-900 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
-                {partner.type}
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-
-    {/* Témoignage partenaire */}
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-      className="mt-16 rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-white shadow-2xl shadow-rad-blue-900/30 md:p-12"
-    >
-      <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">
-        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white/20 text-4xl">
-          "
-        </div>
-        <div className="flex-1 text-center md:text-left">
-          <p className="text-lg italic leading-relaxed md:text-xl">
-            RAD a été un partenaire essentiel dans le déploiement de nos opérations en Guinée. Leur expertise logistique et leur réactivité ont permis de maintenir nos délais de livraison même dans des conditions difficiles.
-          </p>
-          <p className="mt-4 font-semibold text-rad-yellow">
-            — Directeur Régional, Partenaire International
-          </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   </div>
 </section>
 
