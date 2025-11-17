@@ -20,11 +20,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-<<<<<<< HEAD:src/app/header/page.tsx
-            src="/rad-logo.jpeg"   
-=======
             src="/rad-logo.jpeg"
->>>>>>> origin/claude-ui:src/app/[locale]/header/page.tsx
             alt="Logo RAD"
             width={140}
             height={60}

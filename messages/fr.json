@@ -31,7 +31,7 @@
         "subtitle": "Travaux d'ingénierie, construction et aménagement pour soutenir la croissance."
       },
       "3": {
-        "title": "Commerce, import–export et logistique",
+        "title": "Commerce, import‑export et logistique",
         "subtitle": "Un réseau solide pour connecter les marchés africains et internationaux."
       }
     },
@@ -41,18 +41,20 @@
     },
     "expertise": {
       "title": "Nos secteurs d'expertise",
-      "mining": "Mines & industrie",
-      "construction": "Construction & infrastructures",
-      "commerce": "Commerce & logistique"
+      "commerce": "Commerce & Approvisionnement",
+      "mining": "Mines & Services Miniers",
+      "transport": "Transport & Logistique",
+      "construction": "Infrastructures & Construction",
+      "services": "Services & Formation"
     }
   },
   "home": {
     "about": {
       "title": "RAD : Votre partenaire de confiance pour bâtir l'Afrique",
-      "intro": "<strong>Réseau Africain de Développement</strong> est une entreprise multisectorielle qui accompagne la transformation économique et industrielle du continent africain depuis plus de 15 ans.",
+      "intro": "Réseau Africain de Développement est une entreprise multisectorielle qui accompagne la transformation économique et industrielle du continent africain depuis 2018.",
       "stats": {
         "experience": {
-          "value": "15+",
+          "value": "7+",
           "label": "Années d'expérience",
           "icon": "🏆"
         },
@@ -62,7 +64,7 @@
           "icon": "🚀"
         },
         "countries": {
-          "value": "5",
+          "value": "2",
           "label": "Pays d'opération",
           "icon": "🌍"
         },
@@ -75,7 +77,7 @@
       "points": {
         "1": {
           "title": "Expertise multisectorielle reconnue",
-          "description": "Mines, construction, logistique, commerce international : une offre intégrée couvrant toute la chaîne de valeur."
+          "description": "Commerce, construction, transport, informatique et formation : une offre intégrée couvrant toute la chaîne de valeur."
         },
         "2": {
           "title": "Partenaires locaux et internationaux de premier plan",
@@ -90,7 +92,7 @@
       "badge": "Ans d'expertise"
     },
     "mission": {
-      "title": "Mission, Vision & Valeurs",
+      "title": "Mission, Vision et Valeurs",
       "mission": {
         "title": "Mission",
         "content": "Apporter des solutions concrètes et durables pour le développement économique et industriel de l'Afrique."
@@ -179,64 +181,59 @@
       "serviceLabel": "Service"
     },
     "domains": {
-      "mining": {
-        "title": "Mines & Services Industriels",
-        "description": "Transport de minerais, terrassements, location d'engins lourds et légers, maintenance d'équipements miniers.",
-        "details": "15+ projets | Équipements CAT, Toyota",
-        "bullets": [
-          "Approvisionnement en pièces et équipements (engins lourds, filtres, consommables)",
-          "Coordination avec les concessionnaires, ateliers et fournisseurs spécialisés",
-          "Optimisation des stocks, des délais et de la disponibilité opérationnelle"
-        ]
-      },
-      "construction": {
-        "title": "Construction & Génie Civil",
-        "description": "Bâtiments, ponts, routes, infrastructures électriques, tirage de câbles fibre optique et réseau.",
-        "details": "50+ km routes | Projets clés en main",
-        "bullets": [
-          "Travaux de routes, ouvrages publics, bâtiments fonctionnels et infrastructures industrielles",
-          "Suivi de chantier, contrôle qualité et gestion des équipes sur le terrain",
-          "Respect des normes, des délais et des budgets impartis"
-        ]
-      },
       "commerce": {
-        "title": "Commerce & Supply Chain",
-        "description": "Commerce général, import-export, fourniture d'équipements industriels et informatiques aux entreprises.",
-        "details": "100+ fournisseurs internationaux",
+        "title": "Commerce & Approvisionnement",
+        "description": "Commerce général, fourniture d'articles et matériaux pour entreprises, équipements informatiques et miniers.",
+        "details": "Réseau international | Solutions sur mesure",
         "bullets": [
-          "Recherche et sélection de fournisseurs fiables (Canada, Europe, Moyen-Orient)",
-          "Gestion de commandes de grande envergure pour entreprises et institutions",
-          "Support sur la documentation, les incoterms et les contraintes douanières"
+          "Commerce général",
+          "Fourniture d'articles et matériaux pour entreprises",
+          "Fourniture d'équipements informatiques",
+          "Approvisionnement en équipements et consommables miniers"
+        ]
+      },
+      "mining": {
+        "title": "Mines & Services Miniers",
+        "description": "Services complets aux sociétés minières, location d'engins et travaux de soutien aux opérations.",
+        "details": "Partenaire des grandes sociétés minières",
+        "bullets": [
+          "Services aux sociétés minières",
+          "Approvisionnement et logistique minière",
+          "Location d'engins et équipements",
+          "Travaux de soutien aux opérations minières"
         ]
       },
       "transport": {
         "title": "Transport & Logistique",
-        "description": "Transport de marchandises, gestion de flotte, entreposage, solutions logistiques intégrées.",
-        "details": "Flotte moderne | Tracking temps réel",
+        "description": "Transport de marchandises et équipements, logistique industrielle et minière.",
+        "details": "Flotte moderne | Couverture nationale",
         "bullets": [
-          "Solutions de transport et de groupage adaptées à la réalité du terrain",
-          "Gestion des stocks, des entrepôts et des points de livraison",
-          "Partenariats avec des transporteurs et transitaires spécialisés"
+          "Transport de marchandises",
+          "Transport d'équipements",
+          "Logistique industrielle et minière",
+          "Livraison et gestion des flux"
         ]
       },
-      "training": {
-        "title": "Formation & Conseil",
-        "description": "Formation informatique et anglais professionnel, conseil stratégique, accompagnement de projets.",
-        "details": "500+ professionnels formés",
+      "construction": {
+        "title": "Infrastructures & Construction",
+        "description": "Construction de bâtiments, routes et ponts, travaux publics et aménagements en milieu minier.",
+        "details": "50+ projets | Clés en main",
         "bullets": [
-          "Études de faisabilité, structuration et modélisation de projets",
-          "Mise en relation avec partenaires techniques, industriels et financiers",
-          "Suivi personnalisé, reporting et amélioration continue"
+          "Construction de bâtiments",
+          "Construction de routes et ponts",
+          "Travaux publics",
+          "Travaux en milieu minier (plateformes, aménagements, etc.)"
         ]
       },
-      "technical": {
-        "title": "Services Techniques",
-        "description": "Installation d'équipements informatiques, maintenance technique, prestation de services divers.",
-        "details": "Support 24/7 disponible",
+      "services": {
+        "title": "Services & Formation",
+        "description": "Maintenance informatique, formation en informatique et anglais, services aux entreprises.",
+        "details": "Support complet | Formations certifiantes",
         "bullets": [
-          "Installation et configuration d'équipements informatiques et industriels",
-          "Maintenance préventive et corrective, support technique 24/7",
-          "Prestation de services sur mesure adaptés aux besoins spécifiques"
+          "Maintenance informatique",
+          "Formation en informatique",
+          "Formation en anglais",
+          "Services et assistance aux entreprises"
         ]
       }
     },
@@ -264,7 +261,7 @@
     },
     "cta": {
       "title": "Besoin d'un partenaire fiable pour votre prochain projet ?",
-      "subtitle": "Mines, construction, logistique, commerce ou projets structurants : RAD peut vous accompagner à chaque étape. Discutons de votre situation et trouvons ensemble la meilleure façon d'avancer.",
+      "subtitle": "Commerce, transport, informatique, formation ou construction : RAD peut vous accompagner à chaque étape. Discutons de votre situation et trouvons ensemble la meilleure façon d'avancer.",
       "primary": "Contacter RAD",
       "secondary": "Voir nos réalisations"
     }
@@ -275,7 +272,7 @@
       "title": "Nos projets concrets sur le terrain",
       "subtitle": "RAD intervient sur des projets industriels, miniers, logistiques, commerciaux et immobiliers. Chaque projet est conçu pour répondre à des besoins réels, avec une approche pragmatique et orientée impact."
     },
-    "stats": {
+    "overview": {
       "completed": {
         "value": "100+",
         "label": "Projets réalisés",
@@ -291,6 +288,19 @@
         "label": "Emplois créés",
         "icon": "👷"
       }
+    },
+    "stats": {
+      "duration": "Durée",
+      "impact": "Impact",
+      "capacity": "Capacité",
+      "fleet": "Flotte",
+      "tonnage": "Tonnage/an",
+      "equipment": "Équipements",
+      "partner": "Partenaire",
+      "maintenance": "Maintenance",
+      "housing": "Logements",
+      "surface": "Surface",
+      "beneficiaries": "Bénéficiaires"
     },
     "title": "Nos réalisations majeures",
     "subtitle": "Des projets d'envergure qui illustrent notre expertise multisectorielle et notre engagement pour l'excellence opérationnelle.",
@@ -410,12 +420,11 @@
           "label": "Service concerné",
           "placeholder": "Sélectionnez un service",
           "options": {
-            "mining": "Mines & Services Industriels",
-            "construction": "Construction & Génie Civil",
-            "commerce": "Commerce & Supply Chain",
+            "commerce": "Commerce & Approvisionnement",
+            "mining": "Mines & Services Miniers",
             "transport": "Transport & Logistique",
-            "training": "Formation & Conseil",
-            "technical": "Services Techniques",
+            "construction": "Infrastructures & Construction",
+            "services": "Services & Formation",
             "other": "Autre"
           }
         },
@@ -430,11 +439,11 @@
       "title": "Coordonnées",
       "address": {
         "title": "Adresse",
-        "value": "Conakry, République de Guinée"
+        "value": "Siguiri, Koura 1, Guinée • Canada"
       },
       "phone": {
         "title": "Téléphone",
-        "value": "+224 XXX XXX XXX"
+        "value": "+224 620 44 33 33 • +1 438 402 2257"
       },
       "email": {
         "title": "Email",
@@ -458,11 +467,11 @@
     "badge": "À propos de RAD",
     "hero": {
       "title": "Bâtir l'Afrique de demain, ensemble",
-      "subtitle": "Depuis 2008, RAD accompagne le développement industriel et économique du continent africain avec expertise, intégrité et engagement."
+      "subtitle": "Depuis 2018, RAD accompagne le développement industriel et économique du continent africain avec expertise, intégrité et engagement."
     },
     "stats": {
       "experience": {
-        "value": "15+",
+        "value": "7+",
         "label": "Années d'expérience",
         "icon": "🏆"
       },
@@ -472,7 +481,7 @@
         "icon": "🚀"
       },
       "countries": {
-        "value": "5",
+        "value": "2",
         "label": "Pays d'opération",
         "icon": "🌍"
       },
@@ -484,7 +493,7 @@
     },
     "story": {
       "title": "Notre histoire",
-      "content": "Fondée en 2008, <strong>Réseau Africain de Développement (RAD)</strong> est née de la vision de créer un acteur local capable de répondre aux besoins croissants de l'industrie minière et du développement infrastructurel en Afrique de l'Ouest.\n\nDepuis nos débuts, nous avons évolué d'une entreprise de services miniers vers un groupe multisectoriel couvrant la construction, la logistique, le commerce international, la formation et les services techniques.\n\nAujourd'hui, RAD est reconnue comme un partenaire de confiance par les plus grandes entreprises opérant sur le continent, grâce à notre expertise technique, notre réseau international et notre engagement envers l'excellence."
+      "content": "Fondée en 2018, Réseau Africain de Développement (RAD) est née de la vision de créer un acteur local capable de répondre aux besoins croissants de l'industrie minière et du développement infrastructurel en Afrique de l'Ouest.\n\nDepuis nos débuts, nous avons évolué d'une entreprise de services miniers vers un groupe multisectoriel couvrant la construction, la logistique, le commerce international, la formation et les services techniques.\n\nAujourd'hui, RAD est reconnue comme un partenaire de confiance par les plus grandes entreprises opérant sur le continent, grâce à notre expertise technique, notre réseau international et notre engagement envers l'excellence."
     },
     "mission": {
       "title": "Mission",
@@ -559,25 +568,24 @@
       "placeholder": "votre@email.com",
       "button": "S'abonner"
     },
-    "tagline": "Partenaire de confiance pour le développement industriel et économique en Afrique depuis 2008.",
+    "tagline": "Partenaire de confiance pour le développement industriel et économique en Afrique depuis 2018.",
     "navigation": {
       "title": "Navigation"
     },
     "domains": {
       "title": "Nos Domaines",
       "list": {
-        "mining": "Mines & Industrie",
-        "construction": "Construction & Génie Civil",
-        "commerce": "Commerce & Supply Chain",
+        "commerce": "Commerce & Approvisionnement",
+        "mining": "Mines & Services Miniers",
         "transport": "Transport & Logistique",
-        "training": "Formation & Conseil",
-        "technical": "Services Techniques"
+        "construction": "Infrastructures & Construction",
+        "services": "Services & Formation"
       }
     },
     "contact": {
       "title": "Contact",
-      "address": "Conakry, République de Guinée",
-      "phone": "+224 XXX XXX XXX",
+      "address": "Siguiri, Koura 1, Guinée • Canada",
+      "phone": "+224 620 44 33 33 • +1 438 402 2257",
       "email": "contact@rad-guinee.com"
     },
     "legal": {

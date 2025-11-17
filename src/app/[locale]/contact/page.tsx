@@ -63,9 +63,9 @@ export default function ContactPage() {
             {/* Badge tricolore */}
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
-                <span className="flex-1 bg-rad-green" />
-                <span className="flex-1 bg-rad-yellow" />
                 <span className="flex-1 bg-rad-red" />
+                <span className="flex-1 bg-rad-yellow" />
+                <span className="flex-1 bg-rad-green" />
               </span>
               {t('badge')}
             </div>
@@ -126,9 +126,9 @@ export default function ContactPage() {
                   {t('form.title')}
                 </h2>
                 <div className="mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
-                  <span className="flex-1 bg-rad-green" />
-                  <span className="flex-1 bg-rad-yellow" />
                   <span className="flex-1 bg-rad-red" />
+                  <span className="flex-1 bg-rad-yellow" />
+                  <span className="flex-1 bg-rad-green" />
                 </div>
               </div>
 
@@ -274,12 +274,11 @@ export default function ContactPage() {
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
                   >
                     <option value="">{t('form.fields.service.placeholder')}</option>
-                    <option value="mines">{t('form.fields.service.options.mining')}</option>
-                    <option value="construction">{t('form.fields.service.options.construction')}</option>
                     <option value="commerce">{t('form.fields.service.options.commerce')}</option>
+                    <option value="mines">{t('form.fields.service.options.mining')}</option>
                     <option value="logistique">{t('form.fields.service.options.transport')}</option>
-                    <option value="formation">{t('form.fields.service.options.training')}</option>
-                    <option value="technique">{t('form.fields.service.options.technical')}</option>
+                    <option value="construction">{t('form.fields.service.options.construction')}</option>
+                    <option value="services">{t('form.fields.service.options.services')}</option>
                     <option value="autre">{t('form.fields.service.options.other')}</option>
                   </select>
                 </div>

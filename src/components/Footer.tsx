@@ -101,12 +101,11 @@ export function Footer() {
             <h4 className="mb-6 text-lg font-bold">{t('domains.title')}</h4>
             <ul className="space-y-3">
               {[
-                t('domains.list.mining'),
-                t('domains.list.construction'),
                 t('domains.list.commerce'),
+                t('domains.list.mining'),
                 t('domains.list.transport'),
-                t('domains.list.training'),
-                t('domains.list.technical'),
+                t('domains.list.construction'),
+                t('domains.list.services'),
               ].map((domain) => (
                 <li key={domain}>
                   <Link

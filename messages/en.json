@@ -31,7 +31,7 @@
         "subtitle": "Engineering, construction and development works to support growth."
       },
       "3": {
-        "title": "Trade, import-export and logistics",
+        "title": "Trade, import‑export and logistics",
         "subtitle": "A solid network to connect African and international markets."
       }
     },
@@ -41,18 +41,20 @@
     },
     "expertise": {
       "title": "Our areas of expertise",
-      "mining": "Mining & industry",
-      "construction": "Construction & infrastructure",
-      "commerce": "Trade & logistics"
+      "commerce": "Trade & Supply",
+      "mining": "Mining & Mining Services",
+      "transport": "Transport & Logistics",
+      "construction": "Infrastructure & Construction",
+      "services": "Services & Training"
     }
   },
   "home": {
     "about": {
       "title": "RAD: Your trusted partner to build Africa",
-      "intro": "<strong>African Development Network</strong> is a multisectoral company that has been supporting the economic and industrial transformation of the African continent for over 15 years.",
+      "intro": "African Development Network is a multisectoral company that has been supporting the economic and industrial transformation of the African continent since 2018.",
       "stats": {
         "experience": {
-          "value": "15+",
+          "value": "7+",
           "label": "Years of experience",
           "icon": "🏆"
         },
@@ -62,7 +64,7 @@
           "icon": "🚀"
         },
         "countries": {
-          "value": "5",
+          "value": "2",
           "label": "Operating countries",
           "icon": "🌍"
         },
@@ -75,7 +77,7 @@
       "points": {
         "1": {
           "title": "Recognized multisectoral expertise",
-          "description": "Mining, construction, logistics, international trade: an integrated offering covering the entire value chain."
+          "description": "Trade, construction, transport, IT and training: an integrated offering covering the entire value chain."
         },
         "2": {
           "title": "Leading local and international partners",
@@ -90,7 +92,7 @@
       "badge": "Years of expertise"
     },
     "mission": {
-      "title": "Mission, Vision & Values",
+      "title": "Mission, Vision and Values",
       "mission": {
         "title": "Mission",
         "content": "Provide concrete and sustainable solutions for the economic and industrial development of Africa."
@@ -179,64 +181,59 @@
       "serviceLabel": "Service"
     },
     "domains": {
-      "mining": {
-        "title": "Mining & Industrial Services",
-        "description": "Ore transport, earthworks, heavy and light equipment rental, mining equipment maintenance.",
-        "details": "15+ projects | CAT, Toyota equipment",
-        "bullets": [
-          "Supply of parts and equipment (heavy machinery, filters, consumables)",
-          "Coordination with dealers, workshops and specialized suppliers",
-          "Optimization of inventory, lead times and operational availability"
-        ]
-      },
-      "construction": {
-        "title": "Construction & Civil Engineering",
-        "description": "Buildings, bridges, roads, electrical infrastructure, fiber optic and network cable laying.",
-        "details": "50+ km roads | Turnkey projects",
-        "bullets": [
-          "Road works, public works, functional buildings and industrial infrastructure",
-          "Site monitoring, quality control and field team management",
-          "Compliance with standards, deadlines and budgets"
-        ]
-      },
       "commerce": {
-        "title": "Trade & Supply Chain",
-        "description": "General trade, import-export, supply of industrial and IT equipment to companies.",
-        "details": "100+ international suppliers",
+        "title": "Trade & Supply",
+        "description": "General trade, supply of articles and materials for companies, IT and mining equipment.",
+        "details": "International network | Custom solutions",
         "bullets": [
-          "Research and selection of reliable suppliers (Canada, Europe, Middle East)",
-          "Management of large-scale orders for companies and institutions",
-          "Support with documentation, incoterms and customs constraints"
+          "General trade",
+          "Supply of articles and materials for companies",
+          "IT equipment supply",
+          "Mining equipment and consumables supply"
+        ]
+      },
+      "mining": {
+        "title": "Mining & Mining Services",
+        "description": "Complete services to mining companies, equipment rental and operational support work.",
+        "details": "Partner of major mining companies",
+        "bullets": [
+          "Mining company services",
+          "Mining supply and logistics",
+          "Equipment and machinery rental",
+          "Mining operations support work"
         ]
       },
       "transport": {
         "title": "Transport & Logistics",
-        "description": "Freight transport, fleet management, warehousing, integrated logistics solutions.",
-        "details": "Modern fleet | Real-time tracking",
+        "description": "Freight and equipment transport, industrial and mining logistics.",
+        "details": "Modern fleet | National coverage",
         "bullets": [
-          "Transport and groupage solutions adapted to field realities",
-          "Management of inventories, warehouses and delivery points",
-          "Partnerships with specialized carriers and freight forwarders"
+          "Freight transport",
+          "Equipment transport",
+          "Industrial and mining logistics",
+          "Delivery and flow management"
         ]
       },
-      "training": {
-        "title": "Training & Consulting",
-        "description": "IT and professional English training, strategic consulting, project support.",
-        "details": "500+ trained professionals",
+      "construction": {
+        "title": "Infrastructure & Construction",
+        "description": "Building construction, roads and bridges, public works and mining site development.",
+        "details": "50+ projects | Turnkey",
         "bullets": [
-          "Feasibility studies, project structuring and modeling",
-          "Connection with technical, industrial and financial partners",
-          "Personalized monitoring, reporting and continuous improvement"
+          "Building construction",
+          "Road and bridge construction",
+          "Public works",
+          "Mining site work (platforms, developments, etc.)"
         ]
       },
-      "technical": {
-        "title": "Technical Services",
-        "description": "IT equipment installation, technical maintenance, various service provision.",
-        "details": "24/7 support available",
+      "services": {
+        "title": "Services & Training",
+        "description": "IT maintenance, IT and English training, business services.",
+        "details": "Complete support | Certified training",
         "bullets": [
-          "Installation and configuration of IT and industrial equipment",
-          "Preventive and corrective maintenance, 24/7 technical support",
-          "Custom service provision adapted to specific needs"
+          "IT maintenance",
+          "IT training",
+          "English training",
+          "Business services and assistance"
         ]
       }
     },
@@ -264,7 +261,7 @@
     },
     "cta": {
       "title": "Need a reliable partner for your next project?",
-      "subtitle": "Mining, construction, logistics, trade or structural projects: RAD can support you at every stage. Let's discuss your situation and find the best way forward together.",
+      "subtitle": "Trade, transport, IT, training or construction: RAD can support you at every stage. Let's discuss your situation and find the best way forward together.",
       "primary": "Contact RAD",
       "secondary": "View our achievements"
     }
@@ -275,7 +272,7 @@
       "title": "Our concrete projects in the field",
       "subtitle": "RAD operates on industrial, mining, logistics, commercial and real estate projects. Each project is designed to meet real needs, with a pragmatic and impact-oriented approach."
     },
-    "stats": {
+    "overview": {
       "completed": {
         "value": "100+",
         "label": "Completed projects",
@@ -291,6 +288,19 @@
         "label": "Jobs created",
         "icon": "👷"
       }
+    },
+    "stats": {
+      "duration": "Duration",
+      "impact": "Impact",
+      "capacity": "Capacity",
+      "fleet": "Fleet",
+      "tonnage": "Tonnage/year",
+      "equipment": "Equipment",
+      "partner": "Partner",
+      "maintenance": "Maintenance",
+      "housing": "Housing",
+      "surface": "Surface",
+      "beneficiaries": "Beneficiaries"
     },
     "title": "Our major achievements",
     "subtitle": "Large-scale projects illustrating our multisectoral expertise and commitment to operational excellence.",
@@ -410,12 +420,11 @@
           "label": "Service concerned",
           "placeholder": "Select a service",
           "options": {
-            "mining": "Mining & Industrial Services",
-            "construction": "Construction & Civil Engineering",
-            "commerce": "Trade & Supply Chain",
+            "commerce": "Trade & Supply",
+            "mining": "Mining & Mining Services",
             "transport": "Transport & Logistics",
-            "training": "Training & Consulting",
-            "technical": "Technical Services",
+            "construction": "Infrastructure & Construction",
+            "services": "Services & Training",
             "other": "Other"
           }
         },
@@ -430,11 +439,11 @@
       "title": "Contact details",
       "address": {
         "title": "Address",
-        "value": "Conakry, Republic of Guinea"
+        "value": "Siguiri, Koura 1, Guinea • Canada"
       },
       "phone": {
         "title": "Phone",
-        "value": "+224 XXX XXX XXX"
+        "value": "+224 620 44 33 33 • +1 438 402 2257"
       },
       "email": {
         "title": "Email",
@@ -458,11 +467,11 @@
     "badge": "About RAD",
     "hero": {
       "title": "Building Africa's tomorrow, together",
-      "subtitle": "Since 2008, RAD has been supporting the industrial and economic development of the African continent with expertise, integrity and commitment."
+      "subtitle": "Since 2018, RAD has been supporting the industrial and economic development of the African continent with expertise, integrity and commitment."
     },
     "stats": {
       "experience": {
-        "value": "15+",
+        "value": "7+",
         "label": "Years of experience",
         "icon": "🏆"
       },
@@ -472,7 +481,7 @@
         "icon": "🚀"
       },
       "countries": {
-        "value": "5",
+        "value": "2",
         "label": "Operating countries",
         "icon": "🌍"
       },
@@ -484,7 +493,7 @@
     },
     "story": {
       "title": "Our story",
-      "content": "Founded in 2008, <strong>African Development Network (RAD)</strong> was born from the vision of creating a local player capable of meeting the growing needs of the mining industry and infrastructure development in West Africa.\n\nSince our beginnings, we have evolved from a mining services company to a multisectoral group covering construction, logistics, international trade, training and technical services.\n\nToday, RAD is recognized as a trusted partner by the largest companies operating on the continent, thanks to our technical expertise, international network and commitment to excellence."
+      "content": "Founded in 2018, African Development Network (RAD) was born from the vision of creating a local player capable of meeting the growing needs of the mining industry and infrastructure development in West Africa.\n\nSince our beginnings, we have evolved from a mining services company to a multisectoral group covering construction, logistics, international trade, training and technical services.\n\nToday, RAD is recognized as a trusted partner by the largest companies operating on the continent, thanks to our technical expertise, international network and commitment to excellence."
     },
     "mission": {
       "title": "Mission",
@@ -559,25 +568,24 @@
       "placeholder": "your@email.com",
       "button": "Subscribe"
     },
-    "tagline": "Trusted partner for industrial and economic development in Africa since 2008.",
+    "tagline": "Trusted partner for industrial and economic development in Africa since 2018.",
     "navigation": {
       "title": "Navigation"
     },
     "domains": {
       "title": "Our Domains",
       "list": {
-        "mining": "Mining & Industry",
-        "construction": "Construction & Civil Engineering",
-        "commerce": "Trade & Supply Chain",
+        "commerce": "Trade & Supply",
+        "mining": "Mining & Mining Services",
         "transport": "Transport & Logistics",
-        "training": "Training & Consulting",
-        "technical": "Technical Services"
+        "construction": "Infrastructure & Construction",
+        "services": "Services & Training"
       }
     },
     "contact": {
       "title": "Contact",
-      "address": "Conakry, Republic of Guinea",
-      "phone": "+224 XXX XXX XXX",
+      "address": "Siguiri, Koura 1, Guinea • Canada",
+      "phone": "+224 620 44 33 33 • +1 438 402 2257",
       "email": "contact@rad-guinee.com"
     },
     "legal": {

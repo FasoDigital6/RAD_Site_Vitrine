@@ -5,6 +5,7 @@ import { MapPin, Calendar, CheckCircle, ArrowRight } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
+import Image from "next/image"
 
 // Animations cohérentes
 const fadeUp: Variants = {
@@ -83,9 +84,11 @@ export default function ProjectsPage() {
             {/* Badge tricolore */}
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
-                <span className="flex-1 bg-rad-green" />
+                 <span className="flex-1 bg-rad-red" />
+
                 <span className="flex-1 bg-rad-yellow" />
-                <span className="flex-1 bg-rad-red" />
+                <span className="flex-1 bg-rad-green" />
+
               </span>
               {t('badge')}
             </div>
@@ -105,9 +108,9 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { value: t('stats.completed.value'), label: t('stats.completed.label'), icon: t('stats.completed.icon') },
-              { value: t('stats.budget.value'), label: t('stats.budget.label'), icon: t('stats.budget.icon') },
-              { value: t('stats.jobs.value'), label: t('stats.jobs.label'), icon: t('stats.jobs.icon') },
+              { value: t('overview.completed.value'), label: t('overview.completed.label'), icon: t('overview.completed.icon') },
+              { value: t('overview.budget.value'), label: t('overview.budget.label'), icon: t('overview.budget.icon') },
+              { value: t('overview.jobs.value'), label: t('overview.jobs.label'), icon: t('overview.jobs.icon') },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -160,10 +163,11 @@ export default function ProjectsPage() {
               >
                 {/* Image avec overlay au hover */}
                 <div className="relative h-64 w-full overflow-hidden md:h-72">
-                  <img
+                  <Image
                     src={projet.image}
                     alt={t(`list.${index}.title`)}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 

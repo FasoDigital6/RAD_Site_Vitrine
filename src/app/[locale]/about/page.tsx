@@ -34,9 +34,9 @@ export default function About() {
           <motion.div variants={fadeUp} initial="hidden" animate="visible" className="text-center text-white">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
-                <span className="flex-1 bg-rad-green" />
-                <span className="flex-1 bg-rad-yellow" />
                 <span className="flex-1 bg-rad-red" />
+                <span className="flex-1 bg-rad-yellow" />
+                <span className="flex-1 bg-rad-green" />
               </span>
               {t('badge')}
             </div>
@@ -66,9 +66,9 @@ export default function About() {
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="text-center">
           <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl">{t('story.title')}</h2>
           <div className="mx-auto mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
-            <span className="flex-1 bg-rad-green" />
-            <span className="flex-1 bg-rad-yellow" />
             <span className="flex-1 bg-rad-red" />
+            <span className="flex-1 bg-rad-yellow" />
+            <span className="flex-1 bg-rad-green" />
           </div>
           <div className="mx-auto mt-8 max-w-4xl space-y-6 text-left text-base leading-relaxed text-slate-700 md:text-lg whitespace-pre-line">
             {t('story.content')}
@@ -101,7 +101,7 @@ export default function About() {
       {/* VALEURS */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="mb-12 text-center text-4xl font-bold text-rad-blue-900 md:text-5xl">{t('values.title')}</h2>
+          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="mb-12 text-center text-4xl font-bold text-rad-blue-900 md:text-5xl">{t('values.title')}</motion.h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {['1', '2', '3', '4', '5'].map((num, idx) => (
               <motion.div key={num} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ delay: idx * 0.1 }} className="rounded-3xl bg-white p-8 shadow-lg shadow-slate-300/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20">

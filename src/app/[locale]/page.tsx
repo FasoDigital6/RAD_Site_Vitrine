@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { Link } from "@/i18n/routing"
 import { useTranslations } from "next-intl"
 import { motion, type Variants } from "framer-motion"
-import { Pickaxe, Building2, ShoppingCart, Truck, GraduationCap, Wrench, ArrowRight, Award, Globe, Lightbulb, Leaf, CheckCircle, Clock, Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react"
+import { Computer, Building2, ShoppingCart, Truck, ArrowRight, Award, Globe, Lightbulb, Leaf, CheckCircle, Clock, Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Pickaxe, UserCog } from "lucide-react"
+import Image from "next/image"
 
 
 // ---------------- ANIMATIONS ----------------
@@ -52,15 +53,14 @@ type Partenaire = {
 
 const heroSlideImages = ["/mining.png", "/constructions.jpg", "/logistics.jpg"]
 
-const domaineKeys = ["mining", "construction", "commerce", "transport", "training", "technical"] as const
-const domaineFeatured = ["mining", "construction"]
+const domaineKeys = ["commerce", "mining", "transport", "construction", "services"] as const
+const domaineFeatured = ["commerce", "mining"]
 const domaineIcons: Record<string, string> = {
-  mining: "Pickaxe",
-  construction: "Building2",
   commerce: "ShoppingCart",
+  mining: "Pickaxe",
   transport: "Truck",
-  training: "GraduationCap",
-  technical: "Wrench",
+  construction: "Building2",
+  services: "UserCog",
 }
 
 const realisationImages = [
@@ -78,6 +78,14 @@ const equipeImages = [
 ]
 
 const equipeKeys = ["operations", "technical", "logistics", "admin"] as const
+
+// Mapping des statistiques pour chaque projet
+const projectStats: Record<string, readonly string[]> = {
+  "1": ["duration", "budget", "impact"],
+  "2": ["capacity", "fleet", "tonnage"],
+  "3": ["equipment", "partner", "maintenance"],
+  "4": ["housing", "surface", "beneficiaries"],
+}
 
 // ---------------- PARTENAIRES ----------------
 
@@ -101,6 +109,9 @@ export default function HomePage() {
   const tServices = useTranslations("services")
   const tFooter = useTranslations("footer")
   const tCommon = useTranslations("common")
+  const tNav = useTranslations("navigation")
+  const tAbout = useTranslations("about")
+  const tProjects = useTranslations("projects")
 
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -150,9 +161,9 @@ export default function HomePage() {
             {/* Badge avec glassmorphism amélioré */}
             <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
-                <span className="flex-1 bg-rad-green" />
-                <span className="flex-1 bg-rad-yellow" />
                 <span className="flex-1 bg-rad-red" />
+                <span className="flex-1 bg-rad-yellow" />
+                <span className="flex-1 bg-rad-green" />
               </span>
               {tHero("badge")}
             </div>
@@ -196,13 +207,19 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-medium">
                 <span className="rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-sm transition hover:bg-white/10">
+                  {tHero("expertise.commerce")}
+                </span>
+                <span className="rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-sm transition hover:bg-white/10">
                   {tHero("expertise.mining")}
+                </span>
+                <span className="rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-sm transition hover:bg-white/10">
+                  {tHero("expertise.transport")}
                 </span>
                 <span className="rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-sm transition hover:bg-white/10">
                   {tHero("expertise.construction")}
                 </span>
                 <span className="rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-sm transition hover:bg-white/10">
-                  {tHero("expertise.commerce")}
+                  {tHero("expertise.services")}
                 </span>
               </div>
             </div>
@@ -276,9 +293,9 @@ export default function HomePage() {
             {tHome("about.title")}
           </h2>
           <div className="mx-auto mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
-            <span className="flex-1 bg-rad-green" />
-            <span className="flex-1 bg-rad-yellow" />
             <span className="flex-1 bg-rad-red" />
+            <span className="flex-1 bg-rad-yellow" />
+            <span className="flex-1 bg-rad-green" />
           </div>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg" dangerouslySetInnerHTML={{ __html: tHome("about.intro") }} />
         </motion.div>
@@ -363,11 +380,13 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.3 }}
             className="relative md:w-1/2"
           >
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-slate-400/50">
-              <img
+            <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl shadow-slate-400/50">
+              <Image
                 src="/team.jpeg"
                 alt="Équipe RAD sur le terrain"
-                className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                fill
+                className="object-cover transition duration-700 hover:scale-105"
+                priority
               />
               {/* Badge 15+ ans d'expertise */}
               <div className="absolute left-6 top-6">
@@ -450,168 +469,108 @@ export default function HomePage() {
       {/* ---------------- DOMAINES D'INTERVENTION ---------------- */}
       <section
         id="services"
-        className="mx-auto max-w-7xl px-6 py-20 md:px-8 lg:px-4"
+        className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24"
       >
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          className="mb-12 text-center"
-        >
-          <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl">
-            {tServices("intro.title")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg">
-            {tServices("intro.subtitle")}
-          </p>
-        </motion.div>
+        {/* Effet de fond décoratif */}
+        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-rad-orange/5 blur-3xl" />
 
-        {/* Grid asymétrique : 2 featured en haut, 4 normaux en bas */}
-        <div className="space-y-6">
-          {/* Ligne 1 : 2 services principaux (featured) */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {domaineFeatured.map((key, index) => {
-                const IconComponent = {
-                  Pickaxe,
-                  Building2,
-                  ShoppingCart,
-                  Truck,
-                  GraduationCap,
-                  Wrench,
-                }[domaineIcons[key]]
+        <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+          {/* En-tête de section */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl lg:text-6xl">
+              {tServices("intro.title")}
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
+              {tServices("intro.subtitle")}
+            </p>
+          </motion.div>
 
-                return (
-                  <motion.article
-                    key={key}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-slate-50 p-8 shadow-lg shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20"
-                  >
-                    {/* Badge "Service Principal" */}
-                    <div className="absolute right-4 top-4">
-                      <span className="rounded-full bg-rad-orange/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rad-orange">
-                        {tServices("featuredBadge")}
-                      </span>
-                    </div>
+          {/* Grille des services - Design amélioré */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {domaineKeys.map((key, index) => {
+              const IconComponent = {
+                Computer,
+                Building2,
+                ShoppingCart,
+                Truck,
+                Pickaxe,
+                UserCog,
+              }[domaineIcons[key]]
 
-                    {/* Icône */}
-                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                      {IconComponent && <IconComponent className="h-10 w-10" strokeWidth={2} />}
-                    </div>
+              return (
+                <motion.article
+                  key={key}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.08 }}
+                  className="group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 shadow-sm shadow-slate-200 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/10 hover:ring-rad-orange/20"
+                >
+                  {/* Accent décoratif supérieur */}
+                  <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-rad-orange via-rad-orange-hover to-rad-orange transition-all duration-500 group-hover:h-1.5" />
 
-                    {/* Titre */}
-                    <h3 className="mb-3 text-2xl font-bold text-rad-blue-900 md:text-3xl">
+                  {/* Icône avec animation */}
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 text-white shadow-lg shadow-rad-blue-900/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:from-rad-orange group-hover:to-rad-orange-hover group-hover:shadow-rad-orange/30">
+                    {IconComponent && <IconComponent className="h-8 w-8" strokeWidth={2.5} />}
+                  </div>
+
+                  {/* Contenu */}
+                  <div className="flex flex-1 flex-col">
+                    <h3 className="mb-3 text-xl font-bold text-rad-blue-900 transition-colors group-hover:text-rad-orange md:text-2xl">
                       {tServices(`domains.${key}.title`)}
                     </h3>
 
-                    {/* Description */}
-                    <p className="mb-4 text-base leading-relaxed text-slate-600">
+                    <p className="mb-4 flex-1 text-base leading-relaxed text-slate-600">
                       {tServices(`domains.${key}.description`)}
                     </p>
 
-                    {/* Details badge */}
-                    <div className="mb-6 flex items-center gap-2 text-xs font-semibold text-rad-blue-800">
-                      <svg className="h-4 w-4 text-rad-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {tServices(`domains.${key}.details`)}
+                    {/* Badge de détails */}
+                    <div className="mb-6 inline-flex items-center gap-2 self-start rounded-full bg-rad-orange/10 px-4 py-2 text-sm font-semibold text-rad-orange">
+                      <CheckCircle className="h-4 w-4" />
+                      <span>{tServices(`domains.${key}.details`)}</span>
                     </div>
 
-                    {/* CTA */}
+                    {/* CTA avec flèche */}
                     <Link
                       href="/services"
-                      className="group/link inline-flex items-center gap-2 text-sm font-bold text-rad-orange transition-all hover:gap-3 hover:text-rad-orange-hover"
+                      className="group/link inline-flex items-center gap-2 text-sm font-bold text-rad-blue-900 transition-all hover:gap-3 hover:text-rad-orange"
                     >
-                      {tCommon("learnMore")}
+                      <span>{tCommon("learnMore")}</span>
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                     </Link>
+                  </div>
 
-                    {/* Effet brillance */}
-                    <div className="absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-rad-orange/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-                  </motion.article>
-                )
-              })}
+                  {/* Effet de brillance subtil */}
+                  <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-rad-orange/5 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
+                </motion.article>
+              )
+            })}
           </div>
 
-          {/* Ligne 2 : 4 services secondaires */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {domaineKeys.filter(k => !domaineFeatured.includes(k)).map((key, index) => {
-                const IconComponent = {
-                  Pickaxe,
-                  Building2,
-                  ShoppingCart,
-                  Truck,
-                  GraduationCap,
-                  Wrench,
-                }[domaineIcons[key]]
-
-                return (
-                  <motion.article
-                    key={key}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: (index + 2) * 0.1 }}
-                    className="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-md shadow-slate-300/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-rad-blue-900/20"
-                  >
-                    {/* Barre orange top */}
-                    <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-rad-orange to-rad-orange-hover transition-all duration-500 group-hover:h-2" />
-
-                    {/* Icône */}
-                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-rad-blue-900/5 text-rad-blue-900 transition-all duration-500 group-hover:bg-rad-orange group-hover:text-white group-hover:scale-110">
-                      {IconComponent && <IconComponent className="h-7 w-7" strokeWidth={2} />}
-                    </div>
-
-                    {/* Titre */}
-                    <h3 className="mb-2 text-lg font-bold text-rad-blue-900">
-                      {tServices(`domains.${key}.title`)}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="mb-3 text-sm leading-relaxed text-slate-600">
-                      {tServices(`domains.${key}.description`)}
-                    </p>
-
-                    {/* Details */}
-                    <p className="mb-4 text-xs font-semibold text-rad-orange">
-                      {tServices(`domains.${key}.details`)}
-                    </p>
-
-                    {/* CTA */}
-                    <Link
-                      href="/services"
-                      className="group/link inline-flex items-center gap-1.5 text-xs font-bold text-rad-blue-900 transition-all hover:text-rad-orange"
-                    >
-                      {tCommon("learnMore")}
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
-                    </Link>
-                  </motion.article>
-                )
-              })}
-          </div>
-        </div>
-
-        {/* CTA global */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="/services"
-            className="group inline-flex items-center gap-2 rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
+          {/* CTA principal */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="mt-16 text-center"
           >
-            {tCommon("seeServices")}
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-rad-orange to-rad-orange-hover px-10 py-5 text-lg font-bold text-white shadow-xl shadow-rad-orange/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-rad-orange/40"
+            >
+              <span>{tCommon("seeServices")}</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* ---------------- RÉALISATIONS ---------------- */}
@@ -645,10 +604,11 @@ export default function HomePage() {
               >
                 {/* Image avec overlay au hover */}
                 <div className="relative h-64 w-full overflow-hidden md:h-72">
-                  <img
+                  <Image
                     src={realisationImages[index]}
-                    alt={tHome(`projects.list.${key}.title`)}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    alt={tProjects(`list.${key}.title`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Overlay gradient au hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -656,7 +616,7 @@ export default function HomePage() {
                   {/* Badge secteur en haut à droite */}
                   <div className="absolute right-4 top-4">
                     <span className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-rad-blue-900 shadow-lg backdrop-blur-sm">
-                      {tHome(`projects.list.${key}.sector`)}
+                      {tProjects(`list.${key}.sector`)}
                     </span>
                   </div>
 
@@ -668,13 +628,13 @@ export default function HomePage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        {tHome(`projects.list.${key}.location`)}
+                        {tProjects(`list.${key}.location`)}
                       </span>
                       <span className="flex items-center gap-1.5 text-xs font-medium text-white">
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        {tHome(`projects.list.${key}.year`)}
+                        {tProjects(`list.${key}.year`)}
                       </span>
                     </div>
                   </div>
@@ -683,26 +643,19 @@ export default function HomePage() {
                 {/* Contenu de la carte */}
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl font-bold text-rad-blue-900 md:text-2xl">
-                    {tHome(`projects.list.${key}.title`)}
+                    {tProjects(`list.${key}.title`)}
                   </h3>
 
                   <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                    {tHome(`projects.list.${key}.description`)}
+                    {tProjects(`list.${key}.description`)}
                   </p>
 
                   {/* Stats clés */}
                   <div className="mt-6 grid grid-cols-3 gap-4 border-t border-slate-200 pt-6">
-                    {(["duration", "budget", "impact", "capacity", "fleet", "tonnage", "equipment", "partner", "maintenance", "housing", "surface", "beneficiaries"] as const).filter(stat => {
-                      try {
-                        tHome(`projects.list.${key}.stats.${stat}`)
-                        return true
-                      } catch {
-                        return false
-                      }
-                    }).slice(0, 3).map((stat, idx) => (
+                    {(projectStats[key] || []).map((stat, idx) => (
                       <div key={idx} className="text-center">
                         <p className="text-lg font-bold text-rad-blue-900 md:text-xl">
-                          {tHome(`projects.list.${key}.stats.${stat}`)}
+                          {tProjects(`list.${key}.stats.${stat}`)}
                         </p>
                         <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">
                           {tHome(`projects.stats.${stat}`)}
@@ -782,10 +735,11 @@ export default function HomePage() {
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <img
+                <Image
                   src={equipeImages[index]}
-                  alt={tHome(`about.team.groups.${key}.name`)}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={tAbout(`team.groups.${key}.name`)}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay gradient au hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -793,7 +747,7 @@ export default function HomePage() {
                 {/* Badge expertise révélé au hover */}
                 <div className="absolute inset-x-0 bottom-0 translate-y-full p-4 transition-transform duration-500 group-hover:translate-y-0">
                   <p className="text-xs font-semibold text-white">
-                    ✓ {tHome(`about.team.groups.${key}.expertise`)}
+                    ✓ {tAbout(`team.groups.${key}.expertise`)}
                   </p>
                 </div>
               </div>
@@ -801,10 +755,10 @@ export default function HomePage() {
               {/* Contenu */}
               <div className="p-6">
                 <h3 className="text-lg font-bold text-rad-blue-900">
-                  {tHome(`about.team.groups.${key}.name`)}
+                  {tAbout(`team.groups.${key}.name`)}
                 </h3>
                 <p className="mt-2 text-sm font-medium text-rad-orange">
-                  {tHome(`about.team.groups.${key}.role`)}
+                  {tAbout(`team.groups.${key}.role`)}
                 </p>
               </div>
 
@@ -856,11 +810,14 @@ export default function HomePage() {
               key={partner.name}
               className="group relative flex h-28 flex-col items-center justify-center rounded-2xl bg-white p-6 shadow-md shadow-slate-300/50 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rad-orange/20 hover:ring-rad-orange"
             >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-10 max-w-[120px] object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
-              />
+              <div className="relative h-10 w-[120px]">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  fill
+                  className="object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                />
+              </div>
               {/* Tooltip type au hover */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-rad-blue-900 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
                 {partner.type}
@@ -890,11 +847,14 @@ export default function HomePage() {
               key={partner.name}
               className="group relative flex h-28 flex-col items-center justify-center rounded-2xl bg-white p-6 shadow-md shadow-slate-300/50 ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rad-orange/20 hover:ring-rad-orange"
             >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-10 max-w-[120px] object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
-              />
+              <div className="relative h-10 w-[120px]">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  fill
+                  className="object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                />
+              </div>
               {/* Tooltip type au hover */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-rad-blue-900 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
                 {partner.type}
@@ -1212,11 +1172,14 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-0">
             {/* Colonne 1 : Logo + Tagline + Réseaux sociaux */}
             <div className="lg:col-span-1">
-              <img
-                src="/rad-logo.jpeg"
-                alt="RAD Logo"
-                className="mb-4 h-auto w-40 rounded-lg"
-              />
+              <div className="relative mb-4 h-16 w-40">
+                <Image
+                  src="/rad-logo.jpeg"
+                  alt="RAD Logo"
+                  fill
+                  className="rounded-lg object-contain object-left"
+                />
+              </div>
               <p className="mb-6 text-sm leading-relaxed text-slate-300">
                 {tFooter("tagline")}
               </p>
@@ -1258,10 +1221,10 @@ export default function HomePage() {
                 ].map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={link.href}
+                      href={link.href as any}
                       className="text-sm text-slate-300 transition hover:text-rad-orange hover:underline"
                     >
-                      {tHome(link.label)}
+                      {tNav(link.label)}
                     </Link>
                   </li>
                 ))}
@@ -1272,7 +1235,7 @@ export default function HomePage() {
             <div>
               <h4 className="mb-6 text-lg font-bold">{tFooter("domains.title")}</h4>
               <ul className="space-y-3">
-                {(["mining", "construction", "commerce", "transport", "training", "technical"] as const).map((domain) => (
+                {(["commerce", "mining", "transport", "construction", "services"] as const).map((domain) => (
                   <li key={domain}>
                     <Link
                       href="/services"
@@ -1319,7 +1282,7 @@ export default function HomePage() {
         <div className="border-t border-white/10 bg-rad-blue-900/50 py-6">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-xs text-slate-400 md:flex-row md:px-8 lg:px-0">
             <p>
-              {tFooter("legal.copyright").replace("{year}", new Date().getFullYear().toString())}
+              {tFooter("legal.copyright", { year: new Date().getFullYear().toString() })}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="#" className="hover:text-rad-orange hover:underline">
