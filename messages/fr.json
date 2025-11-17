@@ -31,7 +31,7 @@
         "subtitle": "Travaux d'ingénierie, construction et aménagement pour soutenir la croissance."
       },
       "3": {
-        "title": "Commerce, import‑export et logistique",
+        "title": "Commerce, import–export et logistique",
         "subtitle": "Un réseau solide pour connecter les marchés africains et internationaux."
       }
     },
@@ -41,11 +41,9 @@
     },
     "expertise": {
       "title": "Nos secteurs d'expertise",
-      "commerce": "Commerce & Approvisionnement",
-      "mining": "Mines & Services Miniers",
-      "transport": "Transport & Logistique",
-      "construction": "Infrastructures & Construction",
-      "services": "Services & Formation"
+      "informatique": "Informatique & technologie",
+      "construction": "Construction & infrastructures",
+      "commerce": "Commerce général"
     }
   },
   "home": {
@@ -175,7 +173,7 @@
       "title": "Nos domaines d'intervention",
       "subtitle": "Une offre intégrée couvrant la chaîne de valeur : de la stratégie aux opérations, pour accompagner vos projets à chaque étape."
     },
-    "featuredBadge": "Service Principal",
+   
     "details": {
       "title": "Découvrez nos services en détail",
       "serviceLabel": "Service"
@@ -184,7 +182,7 @@
       "commerce": {
         "title": "Commerce & Approvisionnement",
         "description": "Commerce général, fourniture d'articles et matériaux pour entreprises, équipements informatiques et miniers.",
-        "details": "Réseau international | Solutions sur mesure",
+        "details": "100+ fournisseurs internationaux",
         "bullets": [
           "Commerce général",
           "Fourniture d'articles et matériaux pour entreprises",
