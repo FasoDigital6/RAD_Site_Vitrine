@@ -31,7 +31,7 @@
         "subtitle": "Engineering, construction and development works to support growth."
       },
       "3": {
-        "title": "Trade, import‑export and logistics",
+        "title": "Trade\nImport–Export",
         "subtitle": "A solid network to connect African and international markets."
       }
     },
@@ -41,7 +41,7 @@
     },
     "expertise": {
       "title": "Our areas of expertise",
-      "commerce": "Trade & Supply",
+      "commerce": "Trade\nImport–Export",
       "mining": "Mining & Mining Services",
       "transport": "Transport & Logistics",
       "construction": "Infrastructure & Construction",
@@ -51,7 +51,7 @@
   "home": {
     "about": {
       "title": "RAD: Your trusted partner to build Africa",
-      "intro": "African Development Network is a multisectoral company that has been supporting the economic and industrial transformation of the African continent since 2018.",
+      "intro": "African Development Network is a multi-sector company that has been supporting the economic and industrial transformation of the African continent since 2018.",
       "stats": {
         "experience": {
           "value": "7+",
@@ -76,7 +76,7 @@
       },
       "points": {
         "1": {
-          "title": "Recognized multisectoral expertise",
+          "title": "Proven multi-sector expertise",
           "description": "Trade, construction, transport, IT and training: an integrated offering covering the entire value chain."
         },
         "2": {
@@ -108,7 +108,7 @@
     },
     "services": {
       "title": "Our areas of intervention",
-      "subtitle": "Multisectoral expertise to support your major projects",
+      "subtitle": "Multi-sector expertise to support your major projects",
       "cta": "Discover all our services"
     },
     "projects": {
@@ -140,6 +140,7 @@
     },
     "why": {
       "title": "Why choose RAD?",
+      "subtitle": "Four pillars that make the difference in each of our projects.",
       "reasons": {
         "1": {
           "title": "Qualified & field team",
@@ -162,7 +163,29 @@
     "cta": {
       "title": "Ready to launch your project?",
       "subtitle": "Let's discuss your needs and build sustainable solutions for Africa together.",
-      "button": "Contact us today"
+      "button": "Contact us today",
+      "formTitle": "Quick contact form",
+      "contactDirectly": "Contact us directly",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "preferCall": "Prefer to call us or meet in person?",
+      "reassurance": {
+        "response": "Response within 24h",
+        "consultation": "Free consultation",
+        "quote": "Personalized quote"
+      },
+      "form": {
+        "name": "Full name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "your@email.com",
+        "projectType": "Project type",
+        "projectTypePlaceholder": "Select a domain",
+        "message": "Message",
+        "messagePlaceholder": "Briefly describe your project...",
+        "other": "Other"
+      }
     }
   },
   "services": {
@@ -235,6 +258,17 @@
           "English training",
           "Business services and assistance"
         ]
+      },
+      "consulting": {
+        "title": "Consulting & Audit",
+        "description": "Strategic support, operational audits and project development consulting.",
+        "details": "Multi-sector expertise | Tailored solutions",
+        "bullets": [
+          "Strategic and operational consulting",
+          "Business audits and diagnostics",
+          "Project development support",
+          "Feasibility studies and optimization"
+        ]
       }
     },
     "methodology": {
@@ -279,8 +313,8 @@
         "icon": "🚀"
       },
       "budget": {
-        "value": "8.5M USD",
-        "label": "Average budget per project",
+        "value": "50M+ USD",
+        "label": "Total invested",
         "icon": "💰"
       },
       "jobs": {
@@ -291,6 +325,7 @@
     },
     "stats": {
       "duration": "Duration",
+      "budget": "Budget",
       "impact": "Impact",
       "capacity": "Capacity",
       "fleet": "Fleet",
@@ -303,7 +338,7 @@
       "beneficiaries": "Beneficiaries"
     },
     "title": "Our major achievements",
-    "subtitle": "Large-scale projects illustrating our multisectoral expertise and commitment to operational excellence.",
+    "subtitle": "Large-scale projects illustrating our multi-sector expertise and commitment to operational excellence.",
     "list": {
       "1": {
         "title": "Boké Mining Road Infrastructure",
@@ -439,7 +474,7 @@
       "title": "Contact details",
       "address": {
         "title": "Address",
-        "value": "Siguiri, Koura 1, Guinea • Canada"
+        "value": "Siguiri, Koura 1, Guinea • Montreal, Canada"
       },
       "phone": {
         "title": "Phone",
@@ -493,7 +528,7 @@
     },
     "story": {
       "title": "Our story",
-      "content": "Founded in 2018, African Development Network (RAD) was born from the vision of creating a local player capable of meeting the growing needs of the mining industry and infrastructure development in West Africa.\n\nSince our beginnings, we have evolved from a mining services company to a multisectoral group covering construction, logistics, international trade, training and technical services.\n\nToday, RAD is recognized as a trusted partner by the largest companies operating on the continent, thanks to our technical expertise, international network and commitment to excellence."
+      "content": "Founded in 2018, African Development Network (RAD) was born from the vision of creating a local player capable of meeting the growing needs of the mining industry and infrastructure development in West Africa.\n\nSince our beginnings, we have evolved from a mining services company to a multi-sector group covering construction, logistics, international trade, training and technical services.\n\nToday, RAD is recognized as a trusted partner by the largest companies operating on the continent, thanks to our technical expertise, international network and commitment to excellence."
     },
     "mission": {
       "title": "Mission",
@@ -525,6 +560,10 @@
         "5": {
           "title": "Commitment",
           "description": "Long-term vision for sustainable impact"
+        },
+        "6": {
+          "title": "Sustainability",
+          "description": "Responsible actions for Africa's sustainable development"
         }
       }
     },
@@ -564,7 +603,7 @@
   "footer": {
     "newsletter": {
       "title": "Stay informed",
-      "subtitle": "Receive our news and opportunities in preview",
+      "subtitle": "Receive our latest news and opportunities",
       "placeholder": "your@email.com",
       "button": "Subscribe"
     },
@@ -579,12 +618,13 @@
         "mining": "Mining & Mining Services",
         "transport": "Transport & Logistics",
         "construction": "Infrastructure & Construction",
-        "services": "Services & Training"
+        "services": "Services & Training",
+        "consulting": "Consulting & Audit"
       }
     },
     "contact": {
       "title": "Contact",
-      "address": "Siguiri, Koura 1, Guinea • Canada",
+      "address": "Siguiri, Koura 1, Guinea • Montreal, Canada",
       "phone": "+224 620 44 33 33 • +1 438 402 2257",
       "email": "contact@rad-guinee.com"
     },

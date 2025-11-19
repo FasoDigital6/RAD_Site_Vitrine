@@ -31,7 +31,7 @@
         "subtitle": "Travaux d'ingénierie, construction et aménagement pour soutenir la croissance."
       },
       "3": {
-        "title": "Commerce, import–export et logistique",
+        "title": "Commerce\nImport–Export",
         "subtitle": "Un réseau solide pour connecter les marchés africains et internationaux."
       }
     },
@@ -41,9 +41,11 @@
     },
     "expertise": {
       "title": "Nos secteurs d'expertise",
-      "informatique": "Informatique & technologie",
-      "construction": "Construction & infrastructures",
-      "commerce": "Commerce général"
+      "commerce": "Commerce\nImport–Export",
+      "mining": "Mines & Services Miniers",
+      "transport": "Transport & Logistique",
+      "construction": "Infrastructures & Construction",
+      "services": "Services & Formation"
     }
   },
   "home": {
@@ -138,6 +140,7 @@
     },
     "why": {
       "title": "Pourquoi choisir RAD ?",
+      "subtitle": "Quatre piliers qui font la différence dans chacun de nos projets.",
       "reasons": {
         "1": {
           "title": "Équipe qualifiée & terrain",
@@ -160,7 +163,29 @@
     "cta": {
       "title": "Prêt à lancer votre projet ?",
       "subtitle": "Discutons de vos besoins et construisons ensemble des solutions durables pour l'Afrique.",
-      "button": "Contactez-nous dès aujourd'hui"
+      "button": "Contactez-nous dès aujourd'hui",
+      "formTitle": "Formulaire de contact rapide",
+      "contactDirectly": "Nous contacter directement",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "preferCall": "Vous préférez nous appeler ou nous rencontrer ?",
+      "reassurance": {
+        "response": "Réponse sous 24h",
+        "consultation": "Consultation gratuite",
+        "quote": "Devis personnalisé"
+      },
+      "form": {
+        "name": "Nom complet",
+        "namePlaceholder": "Votre nom",
+        "email": "Email",
+        "emailPlaceholder": "votre@email.com",
+        "projectType": "Type de projet",
+        "projectTypePlaceholder": "Sélectionnez un domaine",
+        "message": "Message",
+        "messagePlaceholder": "Décrivez brièvement votre projet...",
+        "other": "Autre"
+      }
     }
   },
   "services": {
@@ -233,6 +258,17 @@
           "Formation en anglais",
           "Services et assistance aux entreprises"
         ]
+      },
+      "consulting": {
+        "title": "Conseil & Audit",
+        "description": "Accompagnement stratégique, audits opérationnels et conseil en développement de projets.",
+        "details": "Expertise multisectorielle | Solutions sur mesure",
+        "bullets": [
+          "Conseil stratégique et opérationnel",
+          "Audits et diagnostics d'entreprise",
+          "Accompagnement au développement de projets",
+          "Études de faisabilité et optimisation"
+        ]
       }
     },
     "methodology": {
@@ -277,8 +313,8 @@
         "icon": "🚀"
       },
       "budget": {
-        "value": "8.5M USD",
-        "label": "Budget moyen par projet",
+        "value": "50M+ USD",
+        "label": "Investissement total",
         "icon": "💰"
       },
       "jobs": {
@@ -289,6 +325,7 @@
     },
     "stats": {
       "duration": "Durée",
+      "budget": "Budget",
       "impact": "Impact",
       "capacity": "Capacité",
       "fleet": "Flotte",
@@ -437,7 +474,7 @@
       "title": "Coordonnées",
       "address": {
         "title": "Adresse",
-        "value": "Siguiri, Koura 1, Guinée • Canada"
+        "value": "Siguiri, Koura 1, Guinée • Montréal, Canada"
       },
       "phone": {
         "title": "Téléphone",
@@ -523,6 +560,10 @@
         "5": {
           "title": "Engagement",
           "description": "Vision à long terme pour un impact durable"
+        },
+        "6": {
+          "title": "Durabilité",
+          "description": "Actions responsables pour le développement durable de l'Afrique"
         }
       }
     },
@@ -577,12 +618,13 @@
         "mining": "Mines & Services Miniers",
         "transport": "Transport & Logistique",
         "construction": "Infrastructures & Construction",
-        "services": "Services & Formation"
+        "services": "Services & Formation",
+        "consulting": "Conseil & Audit"
       }
     },
     "contact": {
       "title": "Contact",
-      "address": "Siguiri, Koura 1, Guinée • Canada",
+      "address": "Siguiri, Koura 1, Guinée • Montréal, Canada",
       "phone": "+224 620 44 33 33 • +1 438 402 2257",
       "email": "contact@rad-guinee.com"
     },

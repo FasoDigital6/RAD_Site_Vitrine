@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
-import { Computer, Building2, ShoppingCart, Truck, ArrowRight, CheckCircle, Pickaxe, UserCog } from "lucide-react"
+import { Computer, Building2, ShoppingCart, Truck, ArrowRight, CheckCircle, Pickaxe, UserCog, Lightbulb } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
@@ -69,6 +69,12 @@ export default function ServicesPage() {
       icon: UserCog,
       featured: false,
       image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+    },
+    {
+      key: 'consulting',
+      icon: Lightbulb,
+      featured: false,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
     },
   ]
 
