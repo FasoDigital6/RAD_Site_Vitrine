@@ -1,17 +1,15 @@
 "use client"
 
-import { Target, TrendingUp, CheckCircle } from "lucide-react"
+import { Target, TrendingUp, Heart } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
 import {
   SectionHeader,
   StatsSection,
-  MissionVisionCards,
-  ValuesGrid,
+  MissionVisionValuesCards,
   TeamGrid,
   CTASection,
-  type Value,
   type TeamMember,
 } from "@/components/sections"
 
@@ -34,11 +32,6 @@ export default function About() {
     label: t(`stats.${key}.label`),
   }))
 
-  // Prepare values data
-  const values: Value[] = ["1", "2", "3", "4", "5", "6"].map((num) => ({
-    title: t(`values.list.${num}.title`),
-    description: t(`values.list.${num}.description`),
-  }))
 
   // Prepare team data
   const teamMembers: TeamMember[] = equipeKeys.map((key, idx) => ({
@@ -76,31 +69,24 @@ export default function About() {
         </div>
       </section>
 
-      {/* MISSION VISION */}
-      <section className="bg-gradient-to-b from-white to-slate-100 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
-          <MissionVisionCards
-            mission={{
-              title: t("mission.title"),
-              content: t("mission.content"),
-              icon: Target,
-            }}
-            vision={{
-              title: t("vision.title"),
-              content: t("vision.content"),
-              icon: TrendingUp,
-            }}
-          />
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
-          <SectionHeader title={t("values.title")} className="mb-8 sm:mb-12" />
-          <ValuesGrid values={values} iconComponent={CheckCircle} />
-        </div>
-      </section>
+      {/* MISSION, VISION & VALUES */}
+      <MissionVisionValuesCards
+        mission={{
+          title: t("mission.title"),
+          content: t("mission.content"),
+          icon: Target,
+        }}
+        vision={{
+          title: t("vision.title"),
+          content: t("vision.content"),
+          icon: TrendingUp,
+        }}
+        values={{
+          title: t("values.title"),
+          content: t("values.content"),
+          icon: Heart,
+        }}
+      />
 
       {/* TEAM */}
       <section className="bg-slate-100 py-16 sm:py-20">

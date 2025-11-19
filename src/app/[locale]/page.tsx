@@ -9,15 +9,12 @@ import {
   ShoppingCart,
   Truck,
   ArrowRight,
-  Award,
-  Globe,
   Lightbulb,
-  Leaf,
-  CheckCircle,
   Pickaxe,
   UserCog,
   Target,
   TrendingUp,
+  Heart,
 } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import {
@@ -27,17 +24,15 @@ import {
   ServicesGrid,
   ProjectsGrid,
   TeamGrid,
-  ValuesGrid,
-  MissionVisionCards,
+  MissionVisionValuesCards,
   CTASection,
   PartnersScroll,
   type Service,
   type Project,
   type TeamMember,
   type Partner,
-  type Value,
 } from "@/components/sections"
-import { fadeUp, fadeInLeft } from "@/lib/animations"
+import { fadeUp } from "@/lib/animations"
 
 // ---------------- DATA ----------------
 
@@ -143,11 +138,7 @@ export default function HomePage() {
     image: equipeImages[idx],
   }))
 
-  // Prepare values data
-  const values: Value[] = ["1", "2", "3", "4"].map((num) => ({
-    title: tHome(`whyChoose.reasons.${num}.title`),
-    description: tHome(`whyChoose.reasons.${num}.description`),
-  }))
+  // Values data is now just a single card, not needed anymore
 
   // Prepare stats data
   const stats = (["experience", "projects", "countries"] as const).map((key) => ({
@@ -206,35 +197,24 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* MISSION & VISION */}
-      <section className="bg-gradient-to-b from-white to-slate-100 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
-          <MissionVisionCards
-            mission={{
-              title: tHome("mission.title"),
-              content: tHome("mission.content"),
-              icon: Target,
-            }}
-            vision={{
-              title: tHome("vision.title"),
-              content: tHome("vision.content"),
-              icon: TrendingUp,
-            }}
-          />
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
-          <SectionHeader
-            title={tHome("values.title")}
-            subtitle={tHome("values.subtitle")}
-            className="mb-8 sm:mb-12"
-          />
-          <ValuesGrid values={values} />
-        </div>
-      </section>
+      {/* MISSION, VISION & VALUES */}
+      <MissionVisionValuesCards
+        mission={{
+          title: tHome("mission.title"),
+          content: tHome("mission.content"),
+          icon: Target,
+        }}
+        vision={{
+          title: tHome("vision.title"),
+          content: tHome("vision.content"),
+          icon: TrendingUp,
+        }}
+        values={{
+          title: tHome("values.title"),
+          content: tHome("values.content"),
+          icon: Heart,
+        }}
+      />
 
       {/* SERVICES */}
       <section className="bg-slate-100 py-16 sm:py-20">
@@ -295,46 +275,6 @@ export default function HomePage() {
             className="mb-8 sm:mb-12"
           />
           <PartnersScroll partners={partenaires} />
-        </div>
-      </section>
-
-      {/* WHY CHOOSE RAD */}
-      <section className="bg-gradient-to-b from-slate-100 to-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
-          <SectionHeader
-            title={tHome("whyChoose.title")}
-            subtitle={tHome("whyChoose.subtitle")}
-            className="mb-8 sm:mb-12"
-          />
-
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-            {["1", "2", "3", "4"].map((num, idx) => {
-              const icons = [Award, Globe, Leaf, CheckCircle]
-              const IconComponent = icons[idx]
-
-              return (
-                <motion.div
-                  key={num}
-                  variants={idx % 2 === 0 ? fadeInLeft : fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-8"
-                >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-14 sm:w-14">
-                    <IconComponent className="h-6 w-6 sm:h-7 sm:w-7" />
-                  </div>
-                  <h3 className="text-lg font-bold text-rad-blue-900 sm:text-xl md:text-2xl">
-                    {tHome(`whyChoose.reasons.${num}.title`)}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
-                    {tHome(`whyChoose.reasons.${num}.description`)}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
         </div>
       </section>
 

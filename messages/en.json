@@ -52,6 +52,8 @@
     "about": {
       "title": "RAD: Your trusted partner to build Africa",
       "intro": "African Development Network is a multi-sector company that has been supporting the economic and industrial transformation of the African continent since 2018.",
+      "description": "Founded in 2018, RAD is a multi-sector company supporting the economic and industrial development of Africa. Our expertise covers trade, construction, transportation, IT and training, with a constant commitment to operational excellence and sustainable impact.",
+      "badge": "Years of expertise",
       "stats": {
         "experience": {
           "value": "7+",
@@ -88,22 +90,40 @@
           "description": "From design to delivery, we guarantee operational excellence and tangible results."
         }
       },
-      "cta": "Discover our story",
-      "badge": "Years of expertise"
+      "cta": "Discover our story"
     },
     "mission": {
-      "title": "Mission, Vision and Values",
-      "mission": {
-        "title": "Mission",
-        "content": "Provide concrete and sustainable solutions for the economic and industrial development of Africa."
-      },
-      "vision": {
-        "title": "Vision",
-        "content": "Become the reference player connecting talents, technologies and opportunities for a prosperous future."
-      },
-      "values": {
-        "title": "Values",
-        "content": "Integrity, excellence, respect for communities, innovation and long-term commitment."
+      "title": "Mission",
+      "content": "Provide concrete and sustainable solutions for the economic and industrial development of Africa."
+    },
+    "vision": {
+      "title": "Vision",
+      "content": "Become the reference player connecting talents, technologies and opportunities for a prosperous future."
+    },
+    "values": {
+      "title": "Values",
+      "content": "Integrity, excellence, respect for communities, innovation and long-term commitment."
+    },
+    "whyChoose": {
+      "title": "Why choose RAD?",
+      "subtitle": "Four pillars that make the difference in each of our projects",
+      "reasons": {
+        "1": {
+          "title": "Qualified & field team",
+          "description": "Engineers, technicians and managers with 15+ years of experience in industrial projects in Africa."
+        },
+        "2": {
+          "title": "International partner network",
+          "description": "Direct access to the best equipment and technologies through our global alliances (CAT, Toyota, etc.)."
+        },
+        "3": {
+          "title": "Tailor-made solutions",
+          "description": "Each project is unique: we adapt our services to your specific needs and local constraints."
+        },
+        "4": {
+          "title": "CSR commitment",
+          "description": "Respect for environmental standards, local training and positive impact for communities."
+        }
       }
     },
     "services": {
@@ -132,37 +152,39 @@
     },
     "team": {
       "title": "A team of passionate experts",
-      "subtitle": "Dedicated professionals serving your success"
+      "subtitle": "Dedicated professionals serving your success",
+      "groups": {
+        "operations": {
+          "name": "Operations Team",
+          "role": "Field & Projects",
+          "expertise": "15+ years of field experience"
+        },
+        "technical": {
+          "name": "Technical Management",
+          "role": "Engineering & Innovation",
+          "expertise": "Mining & infrastructure projects"
+        },
+        "logistics": {
+          "name": "Logistics Team",
+          "role": "Supply Chain & Transport",
+          "expertise": "24/7 fleet management"
+        },
+        "admin": {
+          "name": "Administrative Staff",
+          "role": "Management & Coordination",
+          "expertise": "Integrated operational support"
+        }
+      }
     },
     "partners": {
       "title": "They trust us",
       "subtitle": "Strong partnerships with global industry leaders"
     },
-    "why": {
-      "title": "Why choose RAD?",
-      "subtitle": "Four pillars that make the difference in each of our projects.",
-      "reasons": {
-        "1": {
-          "title": "Qualified & field team",
-          "description": "Engineers, technicians and managers with 15+ years of experience in industrial projects in Africa."
-        },
-        "2": {
-          "title": "International partner network",
-          "description": "Direct access to the best equipment and technologies through our global alliances (CAT, Toyota, etc.)."
-        },
-        "3": {
-          "title": "Tailored solutions",
-          "description": "Each project is unique: we adapt our services to your specific needs and local constraints."
-        },
-        "4": {
-          "title": "CSR commitment",
-          "description": "Compliance with environmental standards, local training and positive impact for communities."
-        }
-      }
-    },
     "cta": {
       "title": "Ready to launch your project?",
       "subtitle": "Let's discuss your needs and build sustainable solutions for Africa together.",
+      "primary": "Contact us today",
+      "secondary": "View our services",
       "button": "Contact us today",
       "formTitle": "Quick contact form",
       "contactDirectly": "Contact us directly",
@@ -539,33 +561,8 @@
       "content": "Become the reference player connecting talents, technologies and opportunities for a prosperous future."
     },
     "values": {
-      "title": "Our core values",
-      "list": {
-        "1": {
-          "title": "Integrity",
-          "description": "Transparency and ethics in all our business relationships"
-        },
-        "2": {
-          "title": "Excellence",
-          "description": "Commitment to quality and continuous improvement"
-        },
-        "3": {
-          "title": "Respect",
-          "description": "For communities, the environment and our partners"
-        },
-        "4": {
-          "title": "Innovation",
-          "description": "Adoption of the best technologies and practices"
-        },
-        "5": {
-          "title": "Commitment",
-          "description": "Long-term vision for sustainable impact"
-        },
-        "6": {
-          "title": "Sustainability",
-          "description": "Responsible actions for Africa's sustainable development"
-        }
-      }
+      "title": "Values",
+      "content": "Integrity, excellence, respect for communities, innovation and long-term commitment."
     },
     "team": {
       "title": "Our team",

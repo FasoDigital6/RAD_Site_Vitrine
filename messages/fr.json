@@ -52,6 +52,8 @@
     "about": {
       "title": "RAD : Votre partenaire de confiance pour bâtir l'Afrique",
       "intro": "Réseau Africain de Développement est une entreprise multisectorielle qui accompagne la transformation économique et industrielle du continent africain depuis 2018.",
+      "description": "Fondée en 2018, RAD est une entreprise multisectorielle qui accompagne le développement économique et industriel de l'Afrique. Notre expertise couvre le commerce, la construction, le transport, l'informatique et la formation, avec un engagement constant envers l'excellence opérationnelle et l'impact durable.",
+      "badge": "Ans d'expertise",
       "stats": {
         "experience": {
           "value": "7+",
@@ -88,22 +90,40 @@
           "description": "De la conception à la livraison, nous garantissons l'excellence opérationnelle et des résultats tangibles."
         }
       },
-      "cta": "Découvrir notre histoire",
-      "badge": "Ans d'expertise"
+      "cta": "Découvrir notre histoire"
     },
     "mission": {
-      "title": "Mission, Vision et Valeurs",
-      "mission": {
-        "title": "Mission",
-        "content": "Apporter des solutions concrètes et durables pour le développement économique et industriel de l'Afrique."
-      },
-      "vision": {
-        "title": "Vision",
-        "content": "Devenir l'acteur de référence connectant talents, technologies et opportunités pour un avenir prospère."
-      },
-      "values": {
-        "title": "Valeurs",
-        "content": "Intégrité, excellence, respect des communautés, innovation et engagement à long terme."
+      "title": "Mission",
+      "content": "Apporter des solutions concrètes et durables pour le développement économique et industriel de l'Afrique."
+    },
+    "vision": {
+      "title": "Vision",
+      "content": "Devenir l'acteur de référence connectant talents, technologies et opportunités pour un avenir prospère."
+    },
+    "values": {
+      "title": "Valeurs",
+      "content": "Intégrité, excellence, respect des communautés, innovation et engagement à long terme."
+    },
+    "whyChoose": {
+      "title": "Pourquoi choisir RAD ?",
+      "subtitle": "Quatre piliers qui font la différence dans chacun de nos projets",
+      "reasons": {
+        "1": {
+          "title": "Équipe qualifiée & terrain",
+          "description": "Ingénieurs, techniciens et gestionnaires avec 15+ ans d'expérience projets industriels en Afrique."
+        },
+        "2": {
+          "title": "Réseau de partenaires internationaux",
+          "description": "Accès direct aux meilleurs équipements et technologies via nos alliances mondiales (CAT, Toyota, etc.)."
+        },
+        "3": {
+          "title": "Solutions sur mesure",
+          "description": "Chaque projet est unique : nous adaptons nos services à vos besoins spécifiques et contraintes locales."
+        },
+        "4": {
+          "title": "Engagement RSE",
+          "description": "Respect des normes environnementales, formation locale et impact positif pour les communautés."
+        }
       }
     },
     "services": {
@@ -132,37 +152,39 @@
     },
     "team": {
       "title": "Une équipe d'experts passionnés",
-      "subtitle": "Des professionnels engagés au service de votre réussite"
+      "subtitle": "Des professionnels engagés au service de votre réussite",
+      "groups": {
+        "operations": {
+          "name": "Équipe Opérations",
+          "role": "Terrain & Projets",
+          "expertise": "15+ ans d'expérience terrain"
+        },
+        "technical": {
+          "name": "Direction Technique",
+          "role": "Ingénierie & Innovation",
+          "expertise": "Projets miniers & infrastructures"
+        },
+        "logistics": {
+          "name": "Équipe Logistique",
+          "role": "Supply Chain & Transport",
+          "expertise": "Gestion de flotte 24/7"
+        },
+        "admin": {
+          "name": "Staff Administratif",
+          "role": "Gestion & Coordination",
+          "expertise": "Support opérationnel intégré"
+        }
+      }
     },
     "partners": {
       "title": "Nos Partenaires",
       "subtitle": ""
     },
-    "why": {
-      "title": "Pourquoi choisir RAD ?",
-      "subtitle": "Quatre piliers qui font la différence dans chacun de nos projets.",
-      "reasons": {
-        "1": {
-          "title": "Équipe qualifiée & terrain",
-          "description": "Ingénieurs, techniciens et gestionnaires avec 15+ ans d'expérience projets industriels en Afrique."
-        },
-        "2": {
-          "title": "Réseau de partenaires internationaux",
-          "description": "Accès direct aux meilleurs équipements et technologies via nos alliances mondiales (CAT, Toyota, etc.)."
-        },
-        "3": {
-          "title": "Solutions sur mesure",
-          "description": "Chaque projet est unique : nous adaptons nos services à vos besoins spécifiques et contraintes locales."
-        },
-        "4": {
-          "title": "Engagement RSE",
-          "description": "Respect des normes environnementales, formation locale et impact positif pour les communautés."
-        }
-      }
-    },
     "cta": {
       "title": "Prêt à lancer votre projet ?",
       "subtitle": "Discutons de vos besoins et construisons ensemble des solutions durables pour l'Afrique.",
+      "primary": "Contactez-nous dès aujourd'hui",
+      "secondary": "Voir nos services",
       "button": "Contactez-nous dès aujourd'hui",
       "formTitle": "Formulaire de contact rapide",
       "contactDirectly": "Nous contacter directement",
@@ -539,33 +561,8 @@
       "content": "Devenir l'acteur de référence connectant talents, technologies et opportunités pour un avenir prospère."
     },
     "values": {
-      "title": "Nos valeurs fondamentales",
-      "list": {
-        "1": {
-          "title": "Intégrité",
-          "description": "Transparence et éthique dans toutes nos relations d'affaires"
-        },
-        "2": {
-          "title": "Excellence",
-          "description": "Engagement envers la qualité et l'amélioration continue"
-        },
-        "3": {
-          "title": "Respect",
-          "description": "Des communautés, de l'environnement et de nos partenaires"
-        },
-        "4": {
-          "title": "Innovation",
-          "description": "Adoption des meilleures technologies et pratiques"
-        },
-        "5": {
-          "title": "Engagement",
-          "description": "Vision à long terme pour un impact durable"
-        },
-        "6": {
-          "title": "Durabilité",
-          "description": "Actions responsables pour le développement durable de l'Afrique"
-        }
-      }
+      "title": "Valeurs",
+      "content": "Intégrité, excellence, respect des communautés, innovation et engagement à long terme."
     },
     "team": {
       "title": "Notre équipe",
