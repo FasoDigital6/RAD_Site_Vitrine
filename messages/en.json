@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "projects": "Projects",
+    "projects": "Contracts",
     "contact": "Contact"
   },
   "common": {
@@ -132,7 +132,7 @@
       "cta": "Discover all our services"
     },
     "projects": {
-      "title": "Our flagship achievements",
+      "title": "Ongoing Contracts",
       "subtitle": "Concrete projects transforming the continent",
       "stats": {
         "duration": "Duration",
@@ -330,19 +330,14 @@
     },
     "overview": {
       "completed": {
-        "value": "100+",
+        "value": "200+",
         "label": "Completed projects",
         "icon": "🚀"
       },
-      "budget": {
-        "value": "50M+ USD",
-        "label": "Total invested",
-        "icon": "💰"
-      },
-      "jobs": {
-        "value": "5000+",
-        "label": "Jobs created",
-        "icon": "👷"
+      "equipment": {
+        "value": "10000+",
+        "label": "Mining parts & equipment delivered",
+        "icon": "⚙️"
       }
     },
     "stats": {
@@ -359,79 +354,87 @@
       "surface": "Surface",
       "beneficiaries": "Beneficiaries"
     },
-    "title": "Our major achievements",
+    "title": "Ongoing Contracts",
     "subtitle": "Large-scale projects illustrating our multi-sector expertise and commitment to operational excellence.",
     "list": {
       "1": {
-        "title": "Boké Mining Road Infrastructure",
-        "description": "Construction of 45 km of access roads to mining sites with advanced civil engineering and drainage optimized for tropical conditions.",
-        "location": "Boké, Guinea",
-        "sector": "Construction & Mining",
-        "year": "2023",
-        "status": "Completed",
+        "title": "Multi-year Industrial Equipment Supply Contract",
+        "description": "Comprehensive supply contract covering professional welding equipment, Toyota automotive parts and filters for heavy machinery. Import, storage, local logistics and continuous delivery ensuring permanent availability and operational continuity.",
+        "location": "Guinea",
+        "sector": "Trade & Industrial Services",
+        "year": "2025-2028",
+        "status": "Ongoing",
         "stats": {
-          "duration": "18 months",
-          "budget": "8.5M USD",
-          "impact": "2000+ jobs"
+          "duration": "3 years",
+          "partner": "AngloGold Ashanti",
+          "equipment": "Multi-category"
         },
         "impacts": [
-          "Improved accessibility to mining sites",
-          "Reduced transport times and logistics costs",
-          "Secured material and team flows"
+          "Multi-category inventory management (welding, Toyota parts, filters)",
+          "Planned and urgent delivery according to client needs",
+          "Optimization of international shipping times",
+          "Order tracking and traceability system",
+          "Reduction of machine downtime due to consumables shortage"
         ]
       },
       "2": {
-        "title": "Conakry Multi-modal Logistics",
-        "description": "Implementation of an integrated logistics hub with 5000 m² warehousing, fleet management and tracking system for heavy mining equipment.",
-        "location": "Conakry, Guinea",
-        "sector": "Logistics & Supply Chain",
-        "year": "2022-2023",
-        "status": "Completed",
+        "title": "Continuous IT Consumables Supply",
+        "description": "Three-year contract for regular supply of IT consumables for administrative and technical services. Stock management, international procurement, local distribution and logistics assistance ensuring constant availability.",
+        "location": "Siguiri, Guinea",
+        "sector": "IT & Business Services",
+        "year": "2025-2028",
+        "status": "Ongoing",
         "stats": {
-          "capacity": "5000 m²",
-          "fleet": "45 vehicles",
-          "tonnage": "50K tons"
+          "duration": "3 years",
+          "partner": "AngloGold Ashanti",
+          "equipment": "IT Consumables"
         },
         "impacts": [
-          "Centralization of activities on an optimized site",
-          "Better coordination between operational teams",
-          "Creation of a hub for future expansions"
+          "Continuous supply of various consumables",
+          "Proactive stock management to avoid shortages",
+          "Planned delivery according to client operational cycles",
+          "Basic technical support on supplied equipment",
+          "Reduced waiting times through optimized logistics"
         ]
       },
       "3": {
-        "title": "CAT Equipment Supply – Simandou Project",
-        "description": "Procurement and maintenance of 120 Caterpillar equipment (bulldozers, excavators, dumpers) for world-class mining operations.",
-        "location": "Simandou, Guinea",
-        "sector": "Equipment & Mining Services",
-        "year": "2021-2024",
+        "title": "Caterpillar & Donaldson Parts and Equipment Supply",
+        "description": "Ongoing supply of spare parts and Caterpillar and Donaldson equipment for major industrial partners. Continuous procurement ensuring permanent availability of critical parts for mining and construction operations.",
+        "location": "Guinea",
+        "sector": "Equipment & Industrial Parts",
+        "year": "Ongoing",
         "status": "Ongoing",
         "stats": {
-          "equipment": "120 units",
-          "partner": "Caterpillar",
-          "maintenance": "24/7"
+          "equipment": "CAT & Donaldson",
+          "partner": "GPC, Moto-Engil, AngloGold Ashanti",
+          "maintenance": "Continuous support"
         },
         "impacts": [
-          "Improved equipment availability rate",
-          "Reduced unplanned downtime",
-          "Better visibility on strategic stocks"
+          "Multi-client supply (GPC, Moto-Engil, AngloGold Ashanti)",
+          "Strategic stock management of critical parts",
+          "Reduced downtime through permanent availability",
+          "Direct partnership with Caterpillar and Donaldson",
+          "Optimized logistics for urgent deliveries"
         ]
       },
       "4": {
-        "title": "Workers Residential City – Kindia",
-        "description": "Real estate development of 85 functional housing units with infrastructure (water, electricity, roads) for mining operation personnel.",
-        "location": "Kindia, Guinea",
-        "sector": "Real Estate & Infrastructure",
-        "year": "2023-2024",
+        "title": "Road Maintenance – Bituminous Binder Application",
+        "description": "Maintenance work on paved roads consisting of applying bituminous binder (emulsion) to the asphalt surface to strengthen adhesion, protect the pavement and extend its lifespan. Operation includes road cleaning, binder spraying and finishing according to technical maintenance standards.",
+        "location": "Siguiri, Guinea",
+        "sector": "Infrastructure & Road Maintenance",
+        "year": "Ongoing",
         "status": "Ongoing",
         "stats": {
-          "housing": "85 units",
-          "surface": "12 hectares",
-          "beneficiaries": "400+ people"
+          "duration": "40 km",
+          "equipment": "Bituminous binder",
+          "maintenance": "Road maintenance"
         },
         "impacts": [
-          "Improved living conditions for workers",
-          "Complete infrastructure with modern facilities",
-          "Local job creation during construction"
+          "Cleaning and preparation of road surface",
+          "Bituminous binder (emulsion) spraying",
+          "Strengthening adhesion and pavement protection",
+          "Extended road lifespan",
+          "Finishing according to road maintenance technical standards"
         ]
       }
     },
@@ -504,7 +507,7 @@
       },
       "email": {
         "title": "Email",
-        "value": "contact@rad-guinee.com"
+        "value": "contact@radguinee.com"
       },
       "hours": {
         "title": "Hours",
@@ -623,7 +626,7 @@
       "title": "Contact",
       "address": "Siguiri, Koura 1, Guinea • Montreal, Canada",
       "phone": "+224 620 44 33 33 • +1 438 402 2257",
-      "email": "contact@rad-guinee.com"
+      "email": "contact@radguinee.com"
     },
     "legal": {
       "copyright": "© {year} African Development Network. All rights reserved.",

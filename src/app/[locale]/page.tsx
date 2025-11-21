@@ -50,8 +50,8 @@ const domaineIcons: Record<string, string> = {
 }
 
 const realisationImages = [
-  "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+  "/projet.jpg",
+  "/informatique.jpg",
   "/surface-equipment-miningtrucks.jpg",
   "/route.jpg",
 ]
@@ -245,7 +245,7 @@ export default function HomePage() {
           className="mt-8 text-center sm:mt-12"
         >
           <Link
-            href="/projects"
+            href="/contracts"
             className="group inline-flex items-center gap-2 rounded-full bg-rad-blue-900 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-800 sm:px-8 sm:py-4 sm:text-base"
           >
             <span>{tHome("projects.cta")}</span>

@@ -336,7 +336,7 @@ export default function ContactPage() {
                 {tCommon('seeServices')}
               </Link>
               <Link
-                href="/projects"
+                href="/contracts"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
                 {tCommon('seeProjects')}

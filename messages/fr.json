@@ -3,7 +3,7 @@
     "home": "Accueil",
     "about": "À propos",
     "services": "Services",
-    "projects": "Projets",
+    "projects": "Contrats",
     "contact": "Contact"
   },
   "common": {
@@ -132,7 +132,7 @@
       "cta": "Découvrir tous nos services"
     },
     "projects": {
-      "title": "Nos réalisations phares",
+      "title": "Contrats en cours",
       "subtitle": "Des projets concrets qui transforment le continent",
       "stats": {
         "duration": "Durée",
@@ -330,19 +330,14 @@
     },
     "overview": {
       "completed": {
-        "value": "100+",
+        "value": "200+",
         "label": "Projets réalisés",
         "icon": "🚀"
       },
-      "budget": {
-        "value": "50M+ USD",
-        "label": "Investissement total",
-        "icon": "💰"
-      },
-      "jobs": {
-        "value": "5000+",
-        "label": "Emplois créés",
-        "icon": "👷"
+      "equipment": {
+        "value": "10000+",
+        "label": "Pièces & équipements miniers livrés",
+        "icon": "⚙️"
       }
     },
     "stats": {
@@ -359,79 +354,87 @@
       "surface": "Surface",
       "beneficiaries": "Bénéficiaires"
     },
-    "title": "Nos réalisations majeures",
+    "title": "Contrats en cours",
     "subtitle": "Des projets d'envergure qui illustrent notre expertise multisectorielle et notre engagement pour l'excellence opérationnelle.",
     "list": {
       "1": {
-        "title": "Infrastructure Routière Mines de Boké",
-        "description": "Construction de 45 km de routes d'accès aux sites miniers avec génie civil avancé et drainage optimisé pour conditions tropicales.",
-        "location": "Boké, Guinée",
-        "sector": "Construction & Mines",
-        "year": "2023",
-        "status": "Terminé",
+        "title": "Approvisionnement pluriannuel en équipements industriels",
+        "description": "Contrat d'approvisionnement complet couvrant équipements de soudure professionnels, pièces automobiles Toyota et filtres pour engins lourds. Importation, stockage, logistique locale et livraison continue garantissant disponibilité permanente et continuité opérationnelle.",
+        "location": "Guinée",
+        "sector": "Commerce & Services industriels",
+        "year": "2025-2028",
+        "status": "En cours",
         "stats": {
-          "duration": "18 mois",
-          "budget": "8.5M USD",
-          "impact": "2000+ emplois"
+          "duration": "3 ans",
+          "partner": "AngloGold Ashanti",
+          "equipment": "Multi-catégories"
         },
         "impacts": [
-          "Amélioration de l'accessibilité des sites miniers",
-          "Réduction des temps de transport et des coûts logistiques",
-          "Sécurisation des flux de matériel et des équipes"
+          "Gestion d'inventaire multi-catégories (soudure, pièces Toyota, filtres)",
+          "Livraison planifiée et urgente selon besoins client",
+          "Optimisation des délais d'acheminement international",
+          "Système de suivi et traçabilité des commandes",
+          "Réduction des arrêts machines liés au manque de consommables"
         ]
       },
       "2": {
-        "title": "Logistique Multi-modale Conakry",
-        "description": "Mise en place d'un hub logistique intégré avec entreposage de 5000 m², gestion de flotte et système de tracking pour équipements miniers lourds.",
-        "location": "Conakry, Guinée",
-        "sector": "Logistique & Supply Chain",
-        "year": "2022-2023",
-        "status": "Terminé",
+        "title": "Fourniture continue de consommables informatiques",
+        "description": "Contrat de trois ans pour fourniture régulière de consommables informatiques destinés aux services administratifs et techniques. Gestion des stocks, approvisionnement international, distribution locale et assistance logistique garantissant disponibilité constante.",
+        "location": "Siguiri, Guinée",
+        "sector": "Informatique & Services aux entreprises",
+        "year": "2025-2028",
+        "status": "En cours",
         "stats": {
-          "capacity": "5000 m²",
-          "fleet": "45 véhicules",
-          "tonnage": "50K tonnes"
+          "duration": "3 ans",
+          "partner": "AngloGold Ashanti",
+          "equipment": "Consommables IT"
         },
         "impacts": [
-          "Centralisation des activités sur un site optimisé",
-          "Meilleure coordination entre les équipes opérationnelles",
-          "Création d'un hub pour de futures expansions"
+          "Approvisionnement continu en consommables variés",
+          "Gestion proactive du stock pour éviter les ruptures",
+          "Livraison planifiée selon cycles opérationnels du client",
+          "Support technique de base sur les équipements fournis",
+          "Réduction des délais d'attente grâce à logistique optimisée"
         ]
       },
       "3": {
-        "title": "Fourniture Engins CAT – Projet Simandou",
-        "description": "Approvisionnement et maintenance de 120 équipements Caterpillar (bulldozers, excavateurs, dumpers) pour exploitation minière de classe mondiale.",
-        "location": "Simandou, Guinée",
-        "sector": "Équipements & Services Miniers",
-        "year": "2021-2024",
+        "title": "Fourniture de pièces et engins Caterpillar & Donaldson",
+        "description": "Fourniture indéterminée de pièces détachées et équipements Caterpillar et Donaldson pour partenaires industriels majeurs. Approvisionnement continu garantissant disponibilité permanente des pièces critiques pour opérations minières et construction.",
+        "location": "Guinée",
+        "sector": "Équipements & Pièces industrielles",
+        "year": "En cours",
         "status": "En cours",
         "stats": {
-          "equipment": "120 unités",
-          "partner": "Caterpillar",
-          "maintenance": "24/7"
+          "equipment": "CAT & Donaldson",
+          "partner": "GPC, Moto-Engil, AngloGold Ashanti",
+          "maintenance": "Support continu"
         },
         "impacts": [
-          "Amélioration du taux de disponibilité des équipements",
-          "Réduction des arrêts non planifiés",
-          "Meilleure visibilité sur les stocks stratégiques"
+          "Approvisionnement multi-clients (GPC, Moto-Engil, AngloGold Ashanti)",
+          "Gestion de stock stratégique de pièces critiques",
+          "Réduction des temps d'arrêt grâce à disponibilité permanente",
+          "Partenariat direct avec Caterpillar et Donaldson",
+          "Logistique optimisée pour livraisons urgentes"
         ]
       },
       "4": {
-        "title": "Cité Résidentielle Ouvriers – Kindia",
-        "description": "Développement immobilier de 85 logements fonctionnels avec infrastructures (eau, électricité, routes) pour personnel d'exploitation minière.",
-        "location": "Kindia, Guinée",
-        "sector": "Immobilier & Infrastructures",
-        "year": "2023-2024",
+        "title": "Entretien routier – Application de liant bitumineux",
+        "description": "Travaux d'entretien sur routes bitumées consistant à appliquer un liant bitumineux (émulsion) sur la surface du goudron pour renforcer l'adhérence, protéger la chaussée et prolonger sa durée de vie. Opération incluant nettoyage, pulvérisation du liant et finition selon normes techniques.",
+        "location": "Siguiri, Guinée",
+        "sector": "Infrastructures & Entretien routier",
+        "year": "En cours",
         "status": "En cours",
         "stats": {
-          "housing": "85 unités",
-          "surface": "12 hectares",
-          "beneficiaries": "400+ personnes"
+          "duration": "40 km",
+          "equipment": "Liant bitumineux",
+          "maintenance": "Entretien routier"
         },
         "impacts": [
-          "Amélioration des conditions de vie des travailleurs",
-          "Infrastructure complète avec équipements modernes",
-          "Création d'emplois locaux pendant la construction"
+          "Nettoyage et préparation de la surface routière",
+          "Pulvérisation du liant bitumineux (émulsion)",
+          "Renforcement de l'adhérence et protection de la chaussée",
+          "Prolongation de la durée de vie de la route",
+          "Finition selon normes techniques d'entretien routier"
         ]
       }
     },
@@ -504,7 +507,7 @@
       },
       "email": {
         "title": "Email",
-        "value": "contact@rad-guinee.com"
+        "value": "contact@radguinee.com"
       },
       "hours": {
         "title": "Horaires",
@@ -623,7 +626,7 @@
       "title": "Contact",
       "address": "Siguiri, Koura 1, Guinée • Montréal, Canada",
       "phone": "+224 620 44 33 33 • +1 438 402 2257",
-      "email": "contact@rad-guinee.com"
+      "email": "contact@radguinee.com"
     },
     "legal": {
       "copyright": "© {year} Réseau Africain de Développement. Tous droits réservés.",

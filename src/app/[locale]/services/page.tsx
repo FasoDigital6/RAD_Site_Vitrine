@@ -167,9 +167,9 @@ export default function ServicesPage() {
                     </p>
 
                     {/* Badge de détails */}
-                    <div className="inline-flex items-center gap-2 self-start rounded-full bg-rad-orange/10 px-4 py-2 text-sm font-semibold text-rad-orange">
-                      <CheckCircle className="h-4 w-4" />
-                      <span>{t(`domains.${domaine.key}.details`)}</span>
+                    <div className="inline-flex items-center gap-2 self-start whitespace-nowrap rounded-full bg-rad-orange/10 px-4 py-2 text-sm font-semibold leading-tight text-rad-orange">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0" />
+                      <span className="leading-tight">{t(`domains.${domaine.key}.details`)}</span>
                     </div>
                   </div>
 
@@ -325,7 +325,7 @@ export default function ServicesPage() {
                 </span>
               </Link>
               <Link
-                href="/projects"
+                href="/contracts"
                 className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
               >
                 {t('cta.secondary')}

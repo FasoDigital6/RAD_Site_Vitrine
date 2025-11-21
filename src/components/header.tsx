@@ -47,7 +47,7 @@ export function Header() {
           <Link href="/services" className="hover:text-rad-blue-900">
             {t('services')}
           </Link>
-          <Link href="/projects" className="hover:text-rad-blue-900">
+          <Link href="/contracts" className="hover:text-rad-blue-900">
             {t('projects')}
           </Link>
           <Link href="/contact" className="hover:text-rad-blue-900">
@@ -111,7 +111,7 @@ export function Header() {
               {t('services')}
             </Link>
             <Link
-              href="/projects"
+              href="/contracts"
               onClick={closeMobileMenu}
               className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
             >

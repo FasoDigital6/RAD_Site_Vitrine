@@ -26,7 +26,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
   return (
     <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
       {projects.map((project, index) => (
-        <Link key={project.id} href={`/projects/${project.id}` as any}>
+        <Link key={project.id} href={`/contracts/${project.id}` as any}>
           <motion.article
             variants={fadeUp}
             initial="hidden"

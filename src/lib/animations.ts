@@ -1,7 +1,7 @@
 import { Variants } from "framer-motion"
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -10,7 +10,7 @@ export const fadeUp: Variants = {
 }
 
 export const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
+  hidden: { opacity: 0, x: 0 },
   visible: {
     opacity: 1,
     x: 0,
@@ -19,7 +19,7 @@ export const fadeInLeft: Variants = {
 }
 
 export const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
+  hidden: { opacity: 0, x: 0 },
   visible: {
     opacity: 1,
     x: 0,

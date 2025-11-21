@@ -23,15 +23,15 @@ export function StatsSection({ stats, variant = "banner", className = "" }: Stat
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
-        className={`grid grid-cols-2 gap-4 rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-6 shadow-2xl shadow-rad-blue-900/30 sm:gap-6 sm:rounded-3xl sm:p-8 md:grid-cols-3 md:p-10 ${className}`}
+        className={`flex flex-wrap items-center justify-center gap-8 rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-6 shadow-2xl shadow-rad-blue-900/30 sm:gap-12 sm:rounded-3xl sm:p-8 md:gap-16 md:p-10 lg:gap-20 ${className}`}
       >
         {stats.map((stat, idx) => (
           <div key={idx} className="text-center">
-            <div className="mb-1 text-2xl sm:mb-2 sm:text-3xl">{stat.icon}</div>
-            <p className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+            <div className="mb-2 text-3xl sm:mb-3 sm:text-4xl">{stat.icon}</div>
+            <p className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {stat.value}
             </p>
-            <p className="mt-1 text-[10px] font-medium uppercase tracking-wide text-slate-200 sm:mt-2 sm:text-xs md:text-sm">
+            <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-white sm:mt-3 sm:text-sm md:text-base">
               {stat.label}
             </p>
           </div>
@@ -49,16 +49,18 @@ export function StatsSection({ stats, variant = "banner", className = "" }: Stat
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:gap-10"
         >
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-6 text-center text-white shadow-xl shadow-rad-blue-900/30 sm:rounded-3xl sm:p-8"
+              className="rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-center text-white shadow-xl shadow-rad-blue-900/30 sm:rounded-3xl sm:p-10 md:p-12"
             >
-              <div className="mb-2 text-2xl sm:text-3xl">{stat.icon}</div>
-              <p className="text-3xl font-bold sm:text-4xl">{stat.value}</p>
-              <p className="mt-2 text-[10px] font-medium uppercase tracking-wide text-slate-200 sm:text-xs">
+              <div className="mb-3 text-3xl sm:mb-4 sm:text-4xl md:text-5xl">{stat.icon}</div>
+              <p className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
+                {stat.value}
+              </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-white sm:mt-4 sm:text-sm md:text-base">
                 {stat.label}
               </p>
             </div>
