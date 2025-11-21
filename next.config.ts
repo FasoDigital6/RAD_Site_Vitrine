@@ -22,8 +22,6 @@ const nextConfig: NextConfig = {
   },
   // Enable compression
   compress: true,
-  // Production optimizations
-  swcMinify: true,
   poweredByHeader: false,
 };
 
