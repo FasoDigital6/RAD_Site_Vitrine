@@ -34,20 +34,20 @@ export function ServicesGrid({ services, linkHref = "/services" }: ServicesGridP
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
-              className={`group relative overflow-hidden rounded-2xl bg-white p-6 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-400/40 sm:rounded-3xl sm:p-8 ${
+              className={`group relative flex min-h-[360px] flex-col overflow-hidden rounded-2xl bg-white p-6 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[380px] sm:rounded-3xl sm:p-8 md:min-h-[400px] ${
                 isFeatured ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
               {/* Badge "Phare" pour services mis en avant */}
               {isFeatured && (
-                <div className="absolute right-4 top-4 rounded-full bg-rad-orange px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg sm:text-xs">
+                <div className="absolute right-4 top-4 rounded-full bg-rad-orange/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:text-xs">
                   Phare
                 </div>
               )}
 
               {/* Icône */}
               <div
-                className={`mb-4 flex items-center justify-center rounded-xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 text-white shadow-lg shadow-rad-blue-900/30 transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-rad-orange/30 sm:mb-6 ${
+                className={`mb-4 flex items-center justify-center rounded-xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 text-white shadow-lg shadow-rad-blue-900/30 transition-all duration-500 group-hover:scale-110 group-hover:from-rad-orange group-hover:to-rad-orange-hover group-hover:shadow-xl group-hover:shadow-rad-orange/40 sm:mb-6 ${
                   isFeatured ? "h-16 w-16 sm:h-20 sm:w-20" : "h-14 w-14 sm:h-16 sm:w-16"
                 }`}
               >
@@ -60,7 +60,7 @@ export function ServicesGrid({ services, linkHref = "/services" }: ServicesGridP
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
+              <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
                 {service.description}
               </p>
 

@@ -1,0 +1,10 @@
+# robots.txt for radguinee.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://radguinee.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

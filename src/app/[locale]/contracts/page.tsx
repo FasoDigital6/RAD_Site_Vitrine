@@ -72,14 +72,16 @@ export default function ProjectsPage() {
       </section>
 
       {/* LISTE DES PROJETS */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-4">
-        <SectionHeader
-          title={t("title")}
-          subtitle={t("subtitle")}
-          className="mb-8 sm:mb-12"
-        />
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
+          <SectionHeader
+            title={t("title")}
+            subtitle={t("subtitle")}
+            className="mb-8 sm:mb-12"
+          />
 
-        <ProjectsGrid projects={projects} learnMoreText={tCommon("learnMore")} />
+          <ProjectsGrid projects={projects} learnMoreText={tCommon("learnMore")} />
+        </div>
       </section>
 
       {/* CTA FINAL */}

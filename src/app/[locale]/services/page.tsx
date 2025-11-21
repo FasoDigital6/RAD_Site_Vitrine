@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
-import { Computer, Building2, ShoppingCart, Truck, ArrowRight, CheckCircle, Pickaxe, UserCog, Lightbulb } from "lucide-react"
+import { Building2, ShoppingCart, Truck, ArrowRight, CheckCircle, Pickaxe, UserCog, Lightbulb } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
@@ -81,7 +81,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO SERVICES */}
-      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32">
+      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32 sm:pb-20 sm:pt-36">
         <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900" />
 
         <div className="relative mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
@@ -101,7 +101,7 @@ export default function ServicesPage() {
               {t('badge')}
             </div>
 
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
               {t('hero.title')}
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
@@ -112,7 +112,7 @@ export default function ServicesPage() {
       </section>
 
       {/* DOMAINES D'INTERVENTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-16 sm:py-20 md:py-24">
         {/* Effet de fond décoratif */}
         <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-rad-orange/5 blur-3xl" />
 
@@ -125,7 +125,7 @@ export default function ServicesPage() {
             viewport={{ once: true, amount: 0.4 }}
             className="mb-16 text-center"
           >
-            <h2 className="text-4xl font-bold text-rad-blue-900 md:text-5xl lg:text-6xl">
+            <h2 className="text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
               {t('intro.title')}
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
@@ -183,14 +183,14 @@ export default function ServicesPage() {
       </section>
 
       {/* DÉTAILS DES SERVICES - ALTERNANCE */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="mb-16 text-center text-4xl font-bold text-rad-blue-900 md:text-5xl"
+            className="mb-16 text-center text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl"
           >
             {t('details.title')}
           </motion.h2>
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                     <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rad-orange">
                       {t('details.serviceLabel')} {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="mt-1 text-2xl font-bold text-rad-blue-900 md:text-3xl">
+                    <h3 className="mt-1 text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
                       {t(`domains.${service.key}.title`)}
                     </h3>
                     <p className="mt-3 text-base leading-relaxed text-slate-700">
@@ -255,14 +255,14 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION MÉTHODOLOGIE */}
-      <section className="bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 py-16 text-white">
+      <section className="bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 py-16 sm:py-20 md:py-24 text-white">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="mb-4 text-center text-3xl font-bold md:text-4xl"
+            className="mb-4 text-center text-3xl font-bold sm:text-4xl md:text-5xl"
           >
             {t('methodology.title')}
           </motion.h2>
@@ -299,7 +299,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-slate-100 py-16">
+      <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-6 text-center md:px-8">
           <motion.div
             variants={fadeUp}
@@ -308,7 +308,7 @@ export default function ServicesPage() {
             viewport={{ once: true, amount: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
+            <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
               {t('cta.title')}
             </h3>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">

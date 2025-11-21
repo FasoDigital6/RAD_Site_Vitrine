@@ -45,7 +45,7 @@ export default function About() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-rad-blue-900 pb-12 pt-24 sm:pb-16 sm:pt-32">
+      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32 sm:pb-20 sm:pt-36">
         <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900 opacity-95" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
           <SectionHeader
@@ -62,7 +62,7 @@ export default function About() {
       <StatsSection stats={stats} variant="cards" />
 
       {/* WHO WE ARE */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-0">
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-0">
         <SectionHeader title={t("story.title")} showDivider className="mb-6 sm:mb-8" />
         <div className="mx-auto max-w-4xl space-y-4 whitespace-pre-line text-left text-sm leading-relaxed text-slate-700 sm:space-y-6 sm:text-base md:text-lg">
           {t("story.content")}
@@ -89,7 +89,7 @@ export default function About() {
       />
 
       {/* TEAM */}
-      <section className="bg-slate-100 py-16 sm:py-20">
+      <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
           <SectionHeader
             title={t("team.title")}

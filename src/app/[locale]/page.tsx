@@ -176,7 +176,7 @@ export default function HomePage() {
       />
 
       {/* ABOUT SECTION */}
-      <section id="about" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-0">
+      <section id="about" className="scroll-mt-20 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-0">
         <SectionHeader
           badge={tHome("about.badge")}
           title={tHome("about.title")}
@@ -184,14 +184,16 @@ export default function HomePage() {
           showDivider
         />
 
-        <StatsSection stats={stats} variant="banner" className="mb-10 sm:mb-16" />
+        <div className="mx-auto w-[95%] sm:w-full">
+          <StatsSection stats={stats} variant="banner" className="my-10 sm:my-12 md:my-16" />
+        </div>
 
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="space-y-4 text-sm leading-relaxed text-slate-700 sm:space-y-6 sm:text-base md:text-lg"
+          className="space-y-4 text-sm leading-relaxed text-slate-700 sm:space-y-6 sm:text-base sm:leading-loose md:text-lg md:leading-loose"
         >
           <p>{tHome("about.description")}</p>
         </motion.div>
@@ -217,7 +219,7 @@ export default function HomePage() {
       />
 
       {/* SERVICES */}
-      <section className="bg-slate-100 py-16 sm:py-20">
+      <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
           <SectionHeader
             title={tHome("services.title")}
@@ -229,7 +231,7 @@ export default function HomePage() {
       </section>
 
       {/* PROJECTS */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-4">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-4">
         <SectionHeader
           title={tHome("projects.title")}
           subtitle={tHome("projects.subtitle")}
@@ -246,7 +248,7 @@ export default function HomePage() {
         >
           <Link
             href="/contracts"
-            className="group inline-flex items-center gap-2 rounded-full bg-rad-blue-900 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-800 sm:px-8 sm:py-4 sm:text-base"
+            className="group inline-flex items-center gap-2 rounded-full bg-rad-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60 sm:px-8 sm:py-4 sm:text-base"
           >
             <span>{tHome("projects.cta")}</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
@@ -255,7 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-slate-100 py-16 sm:py-20">
+      <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
           <SectionHeader
             title={tHome("team.title")}
@@ -267,7 +269,7 @@ export default function HomePage() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
           <SectionHeader
             title={tHome("partners.title")}

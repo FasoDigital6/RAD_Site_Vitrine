@@ -50,7 +50,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO CONTACT */}
-      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32">
+      <section className="relative overflow-hidden bg-rad-blue-900 pb-16 pt-32 sm:pb-20 sm:pt-36">
         <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900" />
 
         <div className="relative mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
@@ -70,7 +70,7 @@ export default function ContactPage() {
               {t('badge')}
             </div>
 
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
               {t('hero.title')}
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
@@ -81,7 +81,7 @@ export default function ContactPage() {
       </section>
 
       {/* ÉLÉMENTS DE RÉASSURANCE */}
-      <section className="bg-white py-12">
+      <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -110,7 +110,7 @@ export default function ContactPage() {
       </section>
 
       {/* FORMULAIRE + INFO CONTACT */}
-      <section className="py-16">
+      <section className="py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-10 md:grid-cols-2">
             {/* Colonne gauche – texte & infos */}
@@ -122,7 +122,7 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <div>
-                <h2 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
+                <h2 className="text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
                   {t('form.title')}
                 </h2>
                 <div className="mt-4 flex h-1.5 w-32 overflow-hidden rounded-full">
@@ -200,7 +200,7 @@ export default function ContactPage() {
               viewport={{ once: true, amount: 0.3 }}
               className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60"
             >
-              <h3 className="text-2xl font-bold text-rad-blue-900">
+              <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
                 {t('form.title')}
               </h3>
               <p className="mt-2 text-sm text-slate-600">
@@ -313,7 +313,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA AUTRES PAGES */}
-      <section className="bg-slate-100 py-16">
+      <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-6 text-center md:px-8">
           <motion.div
             variants={fadeUp}
@@ -322,28 +322,28 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-rad-blue-900 md:text-4xl">
+            <h3 className="mx-auto max-w-md text-2xl font-bold text-rad-blue-900 sm:max-w-none sm:text-3xl md:text-4xl">
               {t('cta.title')}
             </h3>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600">
+            <p className="mx-auto max-w-2xl text-base text-slate-600 sm:text-lg">
               {t('cta.subtitle')}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col items-stretch justify-center gap-3 pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
                 href="/services"
-                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
               >
                 {tCommon('seeServices')}
               </Link>
               <Link
                 href="/contracts"
-                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
               >
                 {tCommon('seeProjects')}
               </Link>
               <Link
                 href="/about"
-                className="rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5"
+                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
               >
                 {t('cta.secondary')}
               </Link>

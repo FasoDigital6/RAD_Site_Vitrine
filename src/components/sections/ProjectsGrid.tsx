@@ -33,7 +33,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-400/40 sm:rounded-3xl"
+            className="group relative flex h-full min-h-[520px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[560px] sm:rounded-3xl md:min-h-[600px]"
           >
             {/* Image */}
             <div className="relative h-48 w-full overflow-hidden sm:h-56 md:h-64 lg:h-72">
@@ -48,16 +48,16 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* Sector badge */}
-              <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
-                <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-semibold text-rad-blue-900 shadow-lg backdrop-blur-sm sm:px-3 sm:py-1.5 sm:text-xs">
+              <div className="absolute right-4 top-4">
+                <span className="rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-rad-blue-900 shadow-lg backdrop-blur-sm sm:text-xs">
                   {project.sector}
                 </span>
               </div>
 
               {/* Status badge */}
-              <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
+              <div className="absolute left-4 top-4">
                 <span
-                  className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold shadow-lg backdrop-blur-sm sm:px-3 sm:py-1.5 sm:text-xs ${
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wide shadow-lg backdrop-blur-sm sm:text-xs ${
                     project.status === "Terminé" || project.status === "Completed"
                       ? "bg-green-500/90 text-white"
                       : "bg-rad-orange/90 text-white"
@@ -84,12 +84,12 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
             </div>
 
             {/* Content */}
-            <div className="p-5 sm:p-6 md:p-8">
+            <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-8">
               <h3 className="text-lg font-bold text-rad-blue-900 transition-colors group-hover:text-rad-orange sm:text-xl md:text-2xl">
                 {project.title}
               </h3>
 
-              <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
+              <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
                 {project.description}
               </p>
 

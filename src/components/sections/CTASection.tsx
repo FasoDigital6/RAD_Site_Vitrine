@@ -32,22 +32,22 @@ export function CTASection({
       : "bg-slate-100 text-rad-blue-900"
 
   return (
-    <section className={`py-12 sm:py-16 ${bgClass} ${className}`}>
-      <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 md:px-8">
+    <section className={`overflow-hidden py-16 sm:py-20 md:py-24 ${bgClass} ${className}`}>
+      <div className="mx-auto max-w-5xl px-6 text-center sm:px-8 md:px-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="space-y-4 sm:space-y-6"
+          className="space-y-5 sm:space-y-6 md:space-y-8"
         >
-          <h3 className="text-2xl font-bold sm:text-3xl md:text-4xl">
+          <h3 className="mx-auto max-w-lg text-2xl font-bold leading-tight sm:max-w-2xl sm:text-3xl md:text-4xl md:leading-tight">
             {title}
           </h3>
 
           {subtitle && (
             <p
-              className={`mx-auto max-w-2xl text-base sm:text-lg ${
+              className={`mx-auto max-w-md text-base leading-relaxed sm:max-w-xl sm:text-lg sm:leading-relaxed md:max-w-2xl ${
                 variant === "gradient" ? "text-slate-200" : "text-slate-600"
               }`}
             >
@@ -55,7 +55,7 @@ export function CTASection({
             </p>
           )}
 
-          <div className="flex flex-col flex-wrap items-center justify-center gap-3 pt-2 sm:flex-row sm:gap-4 sm:pt-4">
+          <div className="flex flex-col items-stretch justify-center gap-3 pt-3 sm:flex-row sm:items-center sm:gap-4 sm:pt-4">
             {buttons.map((button, index) => {
               const isPrimary = button.variant !== "secondary"
 

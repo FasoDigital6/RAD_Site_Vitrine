@@ -26,7 +26,7 @@ export function MissionVisionValuesCards({
   const ValuesIcon = values.icon
 
   return (
-    <section className="bg-gradient-to-b from-white to-slate-100 py-16 sm:py-20">
+    <section className="bg-gradient-to-b from-white to-slate-100 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
         <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
           {/* Mission */}

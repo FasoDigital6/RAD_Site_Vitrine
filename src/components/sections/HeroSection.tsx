@@ -33,7 +33,7 @@ export function HeroSection({
   return (
     <section
       id="hero"
-      className="relative h-[100vh] min-h-[600px] w-full overflow-hidden bg-rad-blue-900 sm:h-[90vh]"
+      className="relative h-[100vh] min-h-[600px] w-full overflow-hidden bg-rad-blue-900 pt-16 sm:h-[90vh] sm:pt-0"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -57,7 +57,7 @@ export function HeroSection({
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-4xl space-y-4 text-white sm:space-y-6 md:space-y-8"
+          className="w-full max-w-4xl space-y-5 text-white sm:space-y-6 md:space-y-8"
         >
           {/* Badge tricolore */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20 sm:gap-3 sm:px-4 sm:py-2 sm:text-[11px]">
@@ -71,7 +71,7 @@ export function HeroSection({
           </div>
 
           {/* Title */}
-          <h1 className="whitespace-pre-line text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="whitespace-pre-line text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {slide.title}
           </h1>
 
@@ -82,7 +82,7 @@ export function HeroSection({
 
           {/* CTA Button */}
           {onExploreClick && (
-            <div className="pt-2 sm:pt-4">
+            <div className="pt-3 sm:pt-4">
               <button
                 onClick={onExploreClick}
                 className="group inline-flex items-center gap-2 rounded-full bg-rad-orange px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60 sm:gap-3 sm:px-8 sm:py-4 sm:text-base"
@@ -94,15 +94,15 @@ export function HeroSection({
           )}
 
           {/* Expertise tags */}
-          <div className="space-y-2 pt-2 sm:space-y-3">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-200/80 sm:text-xs">
+          <div className="space-y-3 pt-3 sm:space-y-4 sm:pt-4">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-200/90 sm:text-xs">
               {expertiseTitle}
             </p>
-            <div className="flex flex-wrap gap-2 text-xs font-medium sm:gap-3 sm:text-sm">
+            <div className="flex flex-wrap items-stretch gap-3 sm:gap-4">
               {expertiseTags.map((tag, index) => (
                 <span
                   key={index}
-                  className="whitespace-pre-line rounded-full border border-white/30 bg-white/5 px-3 py-1.5 text-center leading-snug backdrop-blur-sm transition hover:bg-white/10 sm:px-4 sm:py-2"
+                  className="inline-flex min-h-[40px] max-w-[200px] items-center justify-center rounded-full border border-white/50 bg-white/15 px-5 py-2.5 text-center text-xs font-semibold leading-tight tracking-wide backdrop-blur-md shadow-lg shadow-black/10 transition-all duration-300 hover:scale-105 hover:border-white/70 hover:bg-white/25 hover:shadow-xl hover:shadow-white/20 sm:min-h-[44px] sm:max-w-[220px] sm:px-6 sm:py-3 sm:text-sm"
                 >
                   {tag}
                 </span>

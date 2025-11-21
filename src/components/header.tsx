@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useLocale, useTranslations } from "next-intl"
 import { Link, useRouter, usePathname } from "@/i18n/routing"
 import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function Header() {
   const t = useTranslations('navigation')
@@ -22,16 +23,16 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-0">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:h-14 sm:px-6 md:h-16 md:px-8 lg:px-0">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/rad-logo.jpeg"
             alt="Logo RAD"
-            width={140}
-            height={60}
-            className="object-contain"
+            width={110}
+            height={46}
+            className="h-auto w-[110px] object-contain sm:w-[120px]"
             priority
           />
         </Link>
@@ -63,7 +64,7 @@ export function Header() {
               type="button"
               onClick={() => handleLanguageChange(code)}
               className={
-                "rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide transition " +
+                "rounded-full border px-4 py-2.5 text-xs font-semibold uppercase tracking-wide transition min-h-[44px] min-w-[44px] " +
                 (locale === code
                   ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
                   : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
@@ -78,7 +79,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 md:hidden"
+          className="flex shrink-0 items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 md:hidden min-h-[44px] min-w-[44px]"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -86,69 +87,77 @@ export function Header() {
       </div>
 
       {/* Menu mobile */}
-      {mobileMenuOpen && (
-        <div className="border-t border-slate-200 bg-white md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-4 py-4 sm:px-6">
-            <Link
-              href="/"
-              onClick={closeMobileMenu}
-              className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
-            >
-              {t('home')}
-            </Link>
-            <Link
-              href="/about"
-              onClick={closeMobileMenu}
-              className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
-            >
-              {t('about')}
-            </Link>
-            <Link
-              href="/services"
-              onClick={closeMobileMenu}
-              className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
-            >
-              {t('services')}
-            </Link>
-            <Link
-              href="/contracts"
-              onClick={closeMobileMenu}
-              className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
-            >
-              {t('projects')}
-            </Link>
-            <Link
-              href="/contact"
-              onClick={closeMobileMenu}
-              className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
-            >
-              {t('contact')}
-            </Link>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="border-t border-slate-200 bg-white md:hidden overflow-hidden"
+          >
+            <nav className="mx-auto flex max-w-6xl flex-col px-4 pb-2 pt-1 sm:px-6">
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className="rounded-lg px-4 py-2 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
+              >
+                {t('home')}
+              </Link>
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className="rounded-lg px-4 py-2 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
+              >
+                {t('about')}
+              </Link>
+              <Link
+                href="/services"
+                onClick={closeMobileMenu}
+                className="rounded-lg px-4 py-2 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
+              >
+                {t('services')}
+              </Link>
+              <Link
+                href="/contracts"
+                onClick={closeMobileMenu}
+                className="rounded-lg px-4 py-2 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
+              >
+                {t('projects')}
+              </Link>
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="rounded-lg px-4 py-2 text-base font-medium text-slate-700 transition hover:bg-slate-100 hover:text-rad-blue-900"
+              >
+                {t('contact')}
+              </Link>
 
-            {/* Sélecteur de langue - Mobile */}
-            <div className="mt-4 flex items-center gap-2 border-t border-slate-200 px-4 pt-4">
-              {(["fr", "en"] as const).map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  onClick={() => {
-                    handleLanguageChange(code)
-                    closeMobileMenu()
-                  }}
-                  className={
-                    "flex-1 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-wide transition " +
-                    (locale === code
-                      ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
-                      : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
-                  }
-                >
-                  {code}
-                </button>
-              ))}
-            </div>
-          </nav>
-        </div>
-      )}
+              {/* Sélecteur de langue - Mobile */}
+              <div className="mt-4 flex items-center gap-2 border-t border-slate-200 px-4 pt-4">
+                {(["fr", "en"] as const).map((code) => (
+                  <button
+                    key={code}
+                    type="button"
+                    onClick={() => {
+                      handleLanguageChange(code)
+                      closeMobileMenu()
+                    }}
+                    className={
+                      "flex-1 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-wide transition " +
+                      (locale === code
+                        ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
+                        : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
+                    }
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
