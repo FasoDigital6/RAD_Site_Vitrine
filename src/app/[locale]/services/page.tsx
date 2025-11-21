@@ -92,7 +92,7 @@ export default function ServicesPage() {
             className="text-center text-white"
           >
             {/* Badge tricolore */}
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
                 <span className="flex-1 bg-rad-red" />
                 <span className="flex-1 bg-rad-yellow" />
@@ -216,7 +216,7 @@ export default function ServicesPage() {
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30">
                       <IconComponent className="h-7 w-7" strokeWidth={2} />
                     </div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rad-orange">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rad-orange">
                       {t('details.serviceLabel')} {String(index + 1).padStart(2, "0")}
                     </p>
                     <h3 className="mt-1 text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">

@@ -33,7 +33,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1 }}
-            className="group relative flex h-full min-h-[520px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[560px] sm:rounded-3xl md:min-h-[600px]"
+            className="group relative flex h-full min-h-[450px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[560px] sm:rounded-3xl md:min-h-[600px]"
           >
             {/* Image */}
             <div className="relative h-48 w-full overflow-hidden sm:h-56 md:h-64 lg:h-72">
@@ -49,7 +49,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
 
               {/* Sector badge */}
               <div className="absolute right-4 top-4">
-                <span className="rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-rad-blue-900 shadow-lg backdrop-blur-sm sm:text-xs">
+                <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-rad-blue-900 shadow-lg backdrop-blur-sm">
                   {project.sector}
                 </span>
               </div>
@@ -57,7 +57,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               {/* Status badge */}
               <div className="absolute left-4 top-4">
                 <span
-                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wide shadow-lg backdrop-blur-sm sm:text-xs ${
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-lg backdrop-blur-sm ${
                     project.status === "Terminé" || project.status === "Completed"
                       ? "bg-green-500/90 text-white"
                       : "bg-rad-orange/90 text-white"

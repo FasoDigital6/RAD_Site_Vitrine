@@ -61,7 +61,7 @@ export default function ContactPage() {
             className="text-center text-white"
           >
             {/* Badge tricolore */}
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
                 <span className="flex-1 bg-rad-red" />
                 <span className="flex-1 bg-rad-yellow" />

@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Header } from "@/components/header";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Geist, Geist_Mono } from "next/font/google";
+import { defaultMetadata, organizationSchema } from "@/lib/metadata";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -17,10 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "RAD - Réseau Africain de Développement",
-  description: "Partenaire de confiance pour le développement industriel et économique en Afrique depuis 2008.",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -45,11 +44,20 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        {/* Schema.org JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
+        <ErrorBoundary>
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            {children}
+          </NextIntlClientProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

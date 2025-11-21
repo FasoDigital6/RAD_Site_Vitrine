@@ -24,15 +24,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:h-14 sm:px-6 md:h-16 md:px-8 lg:px-0">
+      <div className="mx-auto flex min-h-[64px] max-w-6xl items-center justify-between px-4 py-3 sm:min-h-[72px] sm:px-6 md:min-h-[80px] md:px-8 lg:px-0">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/rad-logo.jpeg"
             alt="Logo RAD"
-            width={110}
-            height={46}
-            className="h-auto w-[110px] object-contain sm:w-[120px]"
+            width={160}
+            height={70}
+            className="h-12 w-auto object-contain sm:h-14 md:h-16"
             priority
           />
         </Link>

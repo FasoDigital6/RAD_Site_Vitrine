@@ -27,6 +27,7 @@ import {
   MissionVisionValuesCards,
   CTASection,
   PartnersScroll,
+  InternationalPresence,
   type Service,
   type Project,
   type TeamMember,
@@ -154,14 +155,6 @@ export default function HomePage() {
     image: heroSlideImages[currentSlide],
   }
 
-  const expertiseTags = [
-    tHero("expertise.commerce"),
-    tHero("expertise.mining"),
-    tHero("expertise.transport"),
-    tHero("expertise.construction"),
-    tHero("expertise.services"),
-  ]
-
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* HERO SECTION */}
@@ -169,10 +162,9 @@ export default function HomePage() {
         currentSlide={currentSlide}
         slide={currentSlideData}
         badge={tHero("badge")}
-        expertiseTitle={tHero("expertise.title")}
-        expertiseTags={expertiseTags}
         scrollText="Scroll"
         onExploreClick={scrollToNextSection}
+        totalSlides={3}
       />
 
       {/* ABOUT SECTION */}
@@ -277,6 +269,30 @@ export default function HomePage() {
           <PartnersScroll partners={partenaires} />
         </div>
       </section>
+
+      {/* PRÉSENCE INTERNATIONALE */}
+      <InternationalPresence
+        title="Une présence sur 2 continents"
+        subtitle="RAD opère en Afrique et en Amérique du Nord, combinant expertise locale et vision internationale pour servir ses clients."
+        countries={[
+          {
+            name: "Guinée",
+            flag: "🇬🇳",
+            city: "Siguiri",
+            offices: "Siège social",
+            employees: "300+",
+            description: "Notre siège social basé à Siguiri, Guinée pilote l'ensemble de nos opérations en Afrique de l'Ouest, avec une expertise reconnue dans le mining, la construction et la logistique.",
+          },
+          {
+            name: "Canada",
+            flag: "🇨🇦",
+            city: "Moncton",
+            offices: "Bureau",
+            employees: "50+",
+            description: "Notre bureau canadien assure la liaison avec nos partenaires internationaux et facilite l'accès aux technologies et équipements de pointe pour nos projets africains.",
+          },
+        ]}
+      />
 
       {/* CONTACT CTA */}
       <CTASection
