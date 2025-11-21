@@ -184,9 +184,7 @@ export default function HomePage() {
           showDivider
         />
 
-        <div className="mx-auto w-[95%] sm:w-full">
-          <StatsSection stats={stats} variant="banner" className="my-10 sm:my-12 md:my-16" />
-        </div>
+        <StatsSection stats={stats} variant="cards" />
 
         <motion.div
           variants={fadeUp}
