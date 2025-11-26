@@ -207,12 +207,11 @@ export default function ServicesPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  className={`grid gap-10 md:grid-cols-2 md:items-center ${
-                    !isEven ? "md:grid-flow-dense" : ""
-                  }`}
+                  className={`grid gap-10 md:grid-cols-2 md:items-center ${!isEven ? "md:grid-flow-dense" : ""
+                    }`}
                 >
                   {/* TEXTE */}
-                  <div className={isEven ? "order-1" : "order-2 md:order-1"}>
+                  <div className={`${isEven ? "order-1" : "order-2 md:order-1"} flex flex-col items-center text-center md:items-start md:text-left`}>
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30">
                       <IconComponent className="h-7 w-7" strokeWidth={2} />
                     </div>
@@ -226,11 +225,11 @@ export default function ServicesPage() {
                       {t(`domains.${service.key}.description`)}
                     </p>
 
-                    <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                    <ul className="mt-4 space-y-2 text-sm text-slate-700 w-full">
                       {t.raw(`domains.${service.key}.bullets`).map((bullet: string, i: number) => (
-                        <li key={i} className="flex gap-2">
+                        <li key={i} className="flex gap-2 items-start justify-center md:justify-start">
                           <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-rad-orange" />
-                          <span>{bullet}</span>
+                          <span className="text-left md:text-left">{bullet}</span>
                         </li>
                       ))}
                     </ul>

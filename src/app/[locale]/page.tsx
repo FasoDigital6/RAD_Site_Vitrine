@@ -37,45 +37,19 @@ import { fadeUp } from "@/lib/animations"
 
 // ---------------- DATA ----------------
 
-const heroSlideImages = ["/mining.png", "/constructions.jpg", "/logistics.jpg"]
+import {
+  heroSlideImages,
+  domaineKeys,
+  domaineFeatured,
+  domaineIconsMap,
+  realisationImages,
+  equipeImages,
+  equipeKeys,
+  partenaires,
+} from "@/config/site-data"
 
-const domaineKeys = ["commerce", "mining", "transport", "construction", "services", "consulting"] as const
-const domaineFeatured = ["commerce", "mining"]
-const domaineIcons: Record<string, string> = {
-  commerce: "ShoppingCart",
-  mining: "Pickaxe",
-  transport: "Truck",
-  construction: "Building2",
-  services: "UserCog",
-  consulting: "Lightbulb",
-}
-
-const realisationImages = [
-  "/projet.jpg",
-  "/informatique.jpg",
-  "/surface-equipment-miningtrucks.jpg",
-  "/route.jpg",
-]
-
-const equipeImages = [
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80",
-  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
-]
-
-const equipeKeys = ["operations", "technical", "logistics", "admin"] as const
-
-const partenaires: Partner[] = [
-  { name: "Caterpillar", logo: "/cat-logo.png" },
-  { name: "Toyota", logo: "/toyota-logo.svg" },
-  { name: "Rio Tinto", logo: "/rio-tinto-logo.png" },
-  { name: "SAG", logo: "/sag-logo.jpg" },
-  { name: "GPC", logo: "/GPC-Colour.svg" },
-  { name: "Simandou 2040", logo: "/simandou.png" },
-  { name: "Moto-Engil", logo: "/moto-engil.png" },
-  { name: "Kououssa Gold Mine", logo: "/kourrousaGold.jpeg" },
-]
+// ---------------- DATA ----------------
+// Data is now imported from @/config/site-data
 
 // ---------------- MAIN COMPONENT ----------------
 
@@ -114,7 +88,7 @@ export default function HomePage() {
       Building2,
       UserCog,
       Lightbulb,
-    }[domaineIcons[key]]!,
+    }[domaineIconsMap[key] as "ShoppingCart" | "Pickaxe" | "Truck" | "Building2" | "UserCog" | "Lightbulb"]!,
     featured: domaineFeatured.includes(key),
   }))
 
