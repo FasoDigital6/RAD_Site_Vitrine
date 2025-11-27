@@ -601,12 +601,6 @@
     }
   },
   "footer": {
-    "newsletter": {
-      "title": "Stay informed",
-      "subtitle": "Receive our latest news and opportunities",
-      "placeholder": "your@email.com",
-      "button": "Subscribe"
-    },
     "tagline": "Trusted partner for industrial and economic development in Africa since 2018.",
     "navigation": {
       "title": "Navigation"

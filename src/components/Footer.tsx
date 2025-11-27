@@ -11,30 +11,6 @@ export function Footer() {
 
   return (
     <footer className="bg-rad-blue-900 text-white">
-      {/* Newsletter */}
-      <div className="border-b border-white/10 bg-rad-blue-900/50 py-12">
-        <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
-            <div>
-              <h3 className="text-2xl font-bold">{t('newsletter.title')}</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                {t('newsletter.subtitle')}
-              </p>
-            </div>
-            <div className="flex w-full max-w-md gap-3">
-              <input
-                type="email"
-                placeholder={t('newsletter.placeholder')}
-                className="flex-1 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white placeholder-slate-400 backdrop-blur-sm transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/30"
-              />
-              <button className="rounded-full bg-rad-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-rad-orange-hover">
-                {t('newsletter.button')}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Footer principal */}
       <div className="py-16">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-0">
