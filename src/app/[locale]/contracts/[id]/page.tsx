@@ -1,53 +1,31 @@
-"use client"
-
-import { motion, type Variants } from "framer-motion"
 import { MapPin, Calendar, Users, Award, CheckCircle, ArrowLeft } from "lucide-react"
 import { Footer } from "@/components/Footer"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/routing"
 import Image from "next/image"
-import { useParams } from "next/navigation"
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
 
 // Images des projets
 const projectImages: Record<string, string> = {
-  "1": "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&q=80",
-  "2": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
-  "3": "/surface-equipment-miningtrucks.jpg",
-  "4": "/route.jpg",
+  "1": "/images/projects/project-1.jpg",
+  "2": "/images/projects/project-2.jpg",
+  "3": "/images/projects/project-3.jpg",
+  "4": "/images/projects/project-4.jpg",
 }
 
-export default function ProjectDetailPage() {
-  const params = useParams()
-  const id = params.id as string
-  const t = useTranslations('projects')
-  const tCommon = useTranslations('common')
+// Générer les paramètres statiques pour toutes les pages de projets
+export function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+    { id: "3" },
+    { id: "4" },
+  ]
+}
+
+export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+  const { id } = await params
+  const t = await getTranslations('projects')
+  const tCommon = await getTranslations('common')
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
@@ -74,12 +52,7 @@ export default function ProjectDetailPage() {
             <span>{t('badge')}</span>
           </Link>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-white"
-          >
+          <div className="text-white">
             {/* Status badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-green-500/20 px-4 py-2 text-sm font-semibold text-green-300 backdrop-blur-sm ring-1 ring-green-500/30">
               <span className="h-2 w-2 rounded-full bg-green-400" />
@@ -109,7 +82,7 @@ export default function ProjectDetailPage() {
                 <span className="font-medium">{t(`list.${id}.sector`)}</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -119,13 +92,7 @@ export default function ProjectDetailPage() {
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Colonne principale */}
             <div className="lg:col-span-2">
-              <motion.div
-                variants={fadeInLeft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
+              <div className="space-y-8">
                 {/* Image principale */}
                 <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl">
                   <Image
@@ -170,7 +137,7 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                {/* Galerie d'images (placeholder) */}
+                {/* Galerie d'images */}
                 <div className="rounded-3xl bg-white p-8 shadow-lg">
                   <h2 className="mb-6 text-3xl font-bold text-rad-blue-900">
                     Galerie
@@ -188,18 +155,12 @@ export default function ProjectDetailPage() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <motion.div
-                variants={fadeInRight}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="sticky top-24 space-y-6"
-              >
+              <div className="sticky top-24 space-y-6">
                 {/* Informations clés */}
                 <div className="rounded-3xl bg-white p-6 shadow-lg">
                   <h3 className="mb-4 text-xl font-bold text-rad-blue-900">
@@ -262,7 +223,7 @@ export default function ProjectDetailPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -271,20 +232,14 @@ export default function ProjectDetailPage() {
       {/* PROJETS SIMILAIRES */}
       <section className="bg-slate-100 py-20">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
+          <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-rad-blue-900">
               Autres projets
             </h2>
             <p className="mt-4 text-lg text-slate-600">
               Découvrez nos autres réalisations
             </p>
-          </motion.div>
+          </div>
 
           <div className="flex items-center justify-center">
             <Link

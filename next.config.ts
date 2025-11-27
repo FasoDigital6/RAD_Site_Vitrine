@@ -4,24 +4,20 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
+  // Configuration pour site statique
+  // Note: output: 'export' est activé uniquement pour le build de production
+  // Pour dev, on utilise le mode normal pour supporter le middleware next-intl
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+
+  // Trailing slash pour compatibilité hébergement statique
+  trailingSlash: true,
+
   images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 31536000, // 1 year cache
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-      },
-    ],
+    // Désactiver l'optimisation d'images (obligatoire pour export statique)
+    unoptimized: true,
   },
-  // Enable compression
-  compress: true,
+
+  // Désactiver le header X-Powered-By
   poweredByHeader: false,
 };
 

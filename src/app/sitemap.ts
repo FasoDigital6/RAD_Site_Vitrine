@@ -1,5 +1,8 @@
 import { MetadataRoute } from "next"
 
+// Configuration pour export statique
+export const dynamic = 'force-static'
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rad-guinee.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
