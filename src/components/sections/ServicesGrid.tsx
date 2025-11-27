@@ -19,7 +19,7 @@ interface ServicesGridProps {
   linkHref?: string
 }
 
-export function ServicesGrid({ services, linkHref = "/services" }: ServicesGridProps) {
+export function ServicesGrid({ services, linkHref = "/services#domaines" }: ServicesGridProps) {
   return (
     <div className="grid gap-4 sm:gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service, index) => {

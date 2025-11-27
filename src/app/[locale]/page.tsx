@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Link } from "@/i18n/routing"
+import { Link, useRouter } from "@/i18n/routing"
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import {
@@ -59,6 +59,7 @@ export default function HomePage() {
   const tServices = useTranslations("services")
   const tProjects = useTranslations("projects")
   const tCommon = useTranslations("common")
+  const router = useRouter()
 
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -70,9 +71,9 @@ export default function HomePage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Scroll to next section
-  const scrollToNextSection = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+  // Naviguer vers la page services
+  const navigateToServices = () => {
+    router.push("/services")
   }
 
   // Prepare services data
@@ -137,7 +138,7 @@ export default function HomePage() {
         slide={currentSlideData}
         badge={tHero("badge")}
         scrollText="Scroll"
-        onExploreClick={scrollToNextSection}
+        onExploreClick={navigateToServices}
         totalSlides={3}
       />
 
