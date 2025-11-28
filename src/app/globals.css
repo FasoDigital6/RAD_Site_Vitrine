@@ -148,11 +148,13 @@
     animation: slide 18s linear infinite;
   }
 
-  /* Fade-up animation (remplace Framer Motion) */
-  @keyframes fadeUp {
+  /* ✅ Animations CSS optimisées - Contenu visible immédiatement */
+
+  /* Fade-in rapide - Contenu visible dès 80% d'opacité */
+  @keyframes fade-in-fast {
     from {
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0.8;
+      transform: translateY(8px);
     }
     to {
       opacity: 1;
@@ -160,15 +162,48 @@
     }
   }
 
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out both;
+  .animate-fade-in {
+    animation: fade-in-fast 0.3s ease-out forwards;
   }
 
-  /* Stagger delays */
+  /* Slide-up léger pour les sections */
+  @keyframes slide-up-subtle {
+    from {
+      opacity: 0.9;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up-subtle 0.4s ease-out forwards;
+  }
+
+  /* Scale-in pour les cartes */
+  @keyframes scale-in {
+    from {
+      opacity: 0.85;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.35s ease-out forwards;
+  }
+
+  /* Stagger delays optimisés (plus courts) */
+  .delay-50 { animation-delay: 0.05s; }
   .delay-100 { animation-delay: 0.1s; }
+  .delay-150 { animation-delay: 0.15s; }
   .delay-200 { animation-delay: 0.2s; }
+  .delay-250 { animation-delay: 0.25s; }
   .delay-300 { animation-delay: 0.3s; }
-  .delay-400 { animation-delay: 0.4s; }
-  .delay-500 { animation-delay: 0.5s; }
 
 }

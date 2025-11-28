@@ -1,10 +1,11 @@
 "use client"
 
+// ✅ APRÈS : Framer Motion optimisé - Visible immédiatement avec animation subtile
+
 import { motion } from "framer-motion"
 import { MapPin, Calendar, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { Link } from "@/i18n/routing"
-import { fadeUp } from "@/lib/animations"
 
 export interface Project {
   id: string
@@ -28,11 +29,14 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
       {projects.map((project, index) => (
         <Link key={project.id} href={`/contracts/${project.id}` as any}>
           <motion.article
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: index * 0.1 }}
+            initial={{ opacity: 1, y: 0 }}  // ✅ Visible dès le départ
+            whileInView={{ y: -8 }}         // ✅ Léger lift au scroll
+            viewport={{ once: true, amount: 0.1 }}  // ✅ 10% au lieu de 20%
+            transition={{
+              duration: 0.3,                // ✅ 0.3s au lieu de 0.7s
+              delay: index * 0.05,          // ✅ 0.05s au lieu de 0.1s
+              ease: "easeOut"
+            }}
             className="group relative flex h-full min-h-[450px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[560px] sm:rounded-3xl md:min-h-[600px]"
           >
             {/* Image */}

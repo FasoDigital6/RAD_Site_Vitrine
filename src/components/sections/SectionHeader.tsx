@@ -1,7 +1,4 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { fadeUp } from "@/lib/animations"
+// ✅ APRÈS : Conversion CSS pur - Affichage immédiat, pas de "use client"
 
 interface SectionHeaderProps {
   badge?: string
@@ -21,12 +18,8 @@ export function SectionHeader({
   className = "",
 }: SectionHeaderProps) {
   return (
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-      className={`${centered ? "text-center" : ""} ${className}`}
+    <div
+      className={`animate-fade-in ${centered ? "text-center" : ""} ${className}`}
     >
       {badge && (
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rad-blue-900/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-rad-blue-900 sm:mb-6 sm:gap-3 sm:text-sm">
@@ -56,6 +49,6 @@ export function SectionHeader({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </div>
   )
 }

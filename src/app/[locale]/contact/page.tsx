@@ -1,47 +1,9 @@
 "use client"
 
-import { motion, type Variants } from "framer-motion"
 import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
-
-// Animations cohérentes
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-}
-
-const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-}
-
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-}
 
 export default function ContactPage() {
   const t = useTranslations('contact')
@@ -54,12 +16,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900" />
 
         <div className="relative mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-center text-white"
-          >
+          <div className="animate-fade-in text-center text-white">
             {/* Badge tricolore */}
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
@@ -76,7 +33,7 @@ export default function ContactPage() {
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
               {t('hero.subtitle')}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -89,13 +46,9 @@ export default function ContactPage() {
               { icon: <CheckCircle className="h-6 w-6" />, text: t('reassurance.consultation') },
               { icon: <Phone className="h-6 w-6" />, text: t('reassurance.quote') },
             ].map((item, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-                className="flex items-center justify-center gap-3 rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/50 ring-1 ring-slate-100"
+                className={`animate-scale-in flex items-center justify-center gap-3 rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/50 ring-1 ring-slate-100 delay-${idx * 100}`}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rad-orange/10 text-rad-orange">
                   {item.icon}
@@ -103,7 +56,7 @@ export default function ContactPage() {
                 <div className="text-left">
                   <span className="text-lg font-bold text-rad-blue-900">{item.text}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -114,13 +67,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="grid gap-10 md:grid-cols-2">
             {/* Colonne gauche – texte & infos */}
-            <motion.div
-              variants={fadeInLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="space-y-6"
-            >
+            <div className="animate-slide-up space-y-6">
               <div>
                 <h2 className="text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
                   {t('form.title')}
@@ -190,16 +137,10 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Colonne droite – formulaire */}
-            <motion.div
-              variants={fadeInRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60"
-            >
+            <div className="animate-slide-up delay-100 rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60">
               <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
                 {t('form.title')}
               </h3>
@@ -307,7 +248,7 @@ export default function ContactPage() {
                   </span>
                 </button>
               </form>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -315,13 +256,7 @@ export default function ContactPage() {
       {/* CTA AUTRES PAGES */}
       <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-6 text-center md:px-8">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="space-y-6"
-          >
+          <div className="animate-fade-in space-y-6">
             <h3 className="mx-auto max-w-md text-2xl font-bold text-rad-blue-900 sm:max-w-none sm:text-3xl md:text-4xl">
               {t('cta.title')}
             </h3>
@@ -348,7 +283,7 @@ export default function ContactPage() {
                 {t('cta.secondary')}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

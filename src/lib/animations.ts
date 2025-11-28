@@ -1,38 +1,39 @@
 import { Variants } from "framer-motion"
 
+// ✅ Optimisé : Contenu visible immédiatement (opacity: 1), animation subtile
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 0 },
+  hidden: { opacity: 1, y: 0 },  // ✅ Visible dès le départ
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    y: -8,  // ✅ Léger lift au scroll
+    transition: { duration: 0.3, ease: "easeOut" },  // ✅ 0.3s au lieu de 0.7s
   },
 }
 
 export const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: 0 },
+  hidden: { opacity: 1, x: 0 },  // ✅ Visible dès le départ
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    x: -8,  // ✅ Léger mouvement
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 }
 
 export const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 0 },
+  hidden: { opacity: 1, x: 0 },  // ✅ Visible dès le départ
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    x: 8,  // ✅ Léger mouvement
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 }
 
 export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },  // ✅ Visible dès le départ
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,  // ✅ 0.05s au lieu de 0.1s
     },
   },
 }

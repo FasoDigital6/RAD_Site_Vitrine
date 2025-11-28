@@ -1,7 +1,4 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { fadeUp } from "@/lib/animations"
+// ✅ APRÈS : Conversion CSS pur - Affichage immédiat, pas de "use client"
 
 export interface TeamMember {
   key: string
@@ -19,14 +16,9 @@ export function TeamGrid({ members }: TeamGridProps) {
   return (
     <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
       {members.map((member, idx) => (
-        <motion.div
+        <div
           key={member.key}
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ delay: idx * 0.1 }}
-          className="overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl"
+          className={`animate-scale-in overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl delay-${idx * 50}`}
         >
           <div className="relative h-48 sm:h-56 md:h-64">
             <img
@@ -46,7 +38,7 @@ export function TeamGrid({ members }: TeamGridProps) {
               {member.expertise}
             </p>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   )

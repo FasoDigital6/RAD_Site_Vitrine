@@ -1,8 +1,6 @@
-"use client"
+// ✅ APRÈS : Conversion CSS pur - Affichage immédiat, pas de "use client"
 
-import { motion } from "framer-motion"
 import { LucideIcon } from "lucide-react"
-import { fadeInLeft, fadeUp, fadeInRight } from "@/lib/animations"
 
 export interface MissionVisionValueItem {
   title: string
@@ -30,13 +28,7 @@ export function MissionVisionValuesCards({
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-0">
         <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
           {/* Mission */}
-          <motion.div
-            variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 sm:rounded-3xl sm:p-10"
-          >
+          <div className="animate-scale-in rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-10">
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
               <MissionIcon className="h-7 w-7 sm:h-8 sm:w-8" />
             </div>
@@ -46,16 +38,10 @@ export function MissionVisionValuesCards({
             <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:mt-4 sm:text-base">
               {mission.content}
             </p>
-          </motion.div>
+          </div>
 
           {/* Vision */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 sm:rounded-3xl sm:p-10"
-          >
+          <div className="animate-scale-in delay-100 rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-10">
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
               <VisionIcon className="h-7 w-7 sm:h-8 sm:w-8" />
             </div>
@@ -65,16 +51,10 @@ export function MissionVisionValuesCards({
             <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:mt-4 sm:text-base">
               {vision.content}
             </p>
-          </motion.div>
+          </div>
 
           {/* Values */}
-          <motion.div
-            variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 sm:rounded-3xl sm:p-10"
-          >
+          <div className="animate-scale-in delay-200 rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-10">
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
               <ValuesIcon className="h-7 w-7 sm:h-8 sm:w-8" />
             </div>
@@ -84,7 +64,7 @@ export function MissionVisionValuesCards({
             <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:mt-4 sm:text-base">
               {values.content}
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
