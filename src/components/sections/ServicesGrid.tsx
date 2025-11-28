@@ -18,9 +18,10 @@ export interface Service {
 interface ServicesGridProps {
   services: Service[]
   linkHref?: string
+  learnMoreText?: string
 }
 
-export function ServicesGrid({ services, linkHref = "/services#domaines" }: ServicesGridProps) {
+export function ServicesGrid({ services, linkHref = "/services#domaines", learnMoreText = "Learn more" }: ServicesGridProps) {
   return (
     <div className="grid gap-5 sm:gap-6 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service, index) => {
@@ -38,9 +39,8 @@ export function ServicesGrid({ services, linkHref = "/services#domaines" }: Serv
                 delay: index * 0.05,          // ✅ 0.05s au lieu de 0.1s
                 ease: "easeOut"
               }}
-              className={`group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[300px] sm:rounded-3xl sm:p-6 md:min-h-[340px] md:p-7 ${
-                isFeatured ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              className={`group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[300px] sm:rounded-3xl sm:p-6 md:min-h-[340px] md:p-7 ${isFeatured ? "md:col-span-2 lg:col-span-1" : ""
+                }`}
             >
               {/* Badge "Phare" pour services mis en avant */}
               {isFeatured && (
@@ -51,9 +51,8 @@ export function ServicesGrid({ services, linkHref = "/services#domaines" }: Serv
 
               {/* Icône */}
               <div
-                className={`mb-3 flex items-center justify-center rounded-xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 text-white shadow-lg shadow-rad-blue-900/30 transition-all duration-500 group-hover:scale-110 group-hover:from-rad-orange group-hover:to-rad-orange-hover group-hover:shadow-xl group-hover:shadow-rad-orange/40 sm:mb-5 ${
-                  isFeatured ? "h-16 w-16 sm:h-20 sm:w-20" : "h-14 w-14 sm:h-16 sm:w-16"
-                }`}
+                className={`mb-3 flex items-center justify-center rounded-xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 text-white shadow-lg shadow-rad-blue-900/30 transition-all duration-500 group-hover:scale-110 group-hover:from-rad-orange group-hover:to-rad-orange-hover group-hover:shadow-xl group-hover:shadow-rad-orange/40 sm:mb-5 ${isFeatured ? "h-16 w-16 sm:h-20 sm:w-20" : "h-14 w-14 sm:h-16 sm:w-16"
+                  }`}
               >
                 <IconComponent className={isFeatured ? "h-8 w-8 sm:h-10 sm:w-10" : "h-7 w-7 sm:h-8 sm:w-8"} />
               </div>
@@ -77,7 +76,7 @@ export function ServicesGrid({ services, linkHref = "/services#domaines" }: Serv
 
               {/* Flèche de navigation au hover */}
               <div className="mt-3 flex items-center gap-2 text-xs font-semibold text-rad-orange opacity-0 transition-all group-hover:opacity-100 sm:mt-5 sm:text-sm">
-                <span>En savoir plus</span>
+                <span>{learnMoreText}</span>
                 <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

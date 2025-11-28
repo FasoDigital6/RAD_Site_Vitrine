@@ -127,6 +127,7 @@ export function HomeContent() {
                 slide={currentSlideData}
                 badge={tHero("badge")}
                 scrollText="Scroll"
+                exploreButtonText={tCommon("discoverServices")}
                 onExploreClick={navigateToServices}
                 totalSlides={3}
             />
@@ -180,7 +181,7 @@ export function HomeContent() {
                         subtitle={tHome("services.subtitle")}
                         className="mb-8 sm:mb-12"
                     />
-                    <ServicesGrid services={services} linkHref="/services" />
+                    <ServicesGrid services={services} linkHref="/services" learnMoreText={tCommon("learnMore")} />
                 </div>
             </section>
 
@@ -236,24 +237,24 @@ export function HomeContent() {
 
             {/* PRÉSENCE INTERNATIONALE */}
             <InternationalPresence
-                title="Une présence sur 2 continents"
-                subtitle="RAD opère en Afrique et en Amérique du Nord, combinant expertise locale et vision internationale pour servir ses clients."
+                title={tHome("internationalPresence.title")}
+                subtitle={tHome("internationalPresence.subtitle")}
                 countries={[
                     {
-                        name: "Guinée",
-                        flag: "🇬🇳",
-                        city: "Siguiri",
-                        offices: "Siège social",
-                        employees: "300+",
-                        description: "Notre siège social basé à Siguiri, Guinée pilote l'ensemble de nos opérations en Afrique de l'Ouest, avec une expertise reconnue dans le mining, la construction et la logistique.",
+                        name: tHome("internationalPresence.guinea.name"),
+                        flag: tHome("internationalPresence.guinea.flag"),
+                        city: tHome("internationalPresence.guinea.city"),
+                        offices: tHome("internationalPresence.guinea.offices"),
+                        employees: tHome("internationalPresence.guinea.employees"),
+                        description: tHome("internationalPresence.guinea.description"),
                     },
                     {
-                        name: "Canada",
-                        flag: "🇨🇦",
-                        city: "Moncton",
-                        offices: "Bureau",
-                        employees: "50+",
-                        description: "Notre bureau canadien assure la liaison avec nos partenaires internationaux et facilite l'accès aux technologies et équipements de pointe pour nos projets africains.",
+                        name: tHome("internationalPresence.canada.name"),
+                        flag: tHome("internationalPresence.canada.flag"),
+                        city: tHome("internationalPresence.canada.city"),
+                        offices: tHome("internationalPresence.canada.offices"),
+                        employees: tHome("internationalPresence.canada.employees"),
+                        description: tHome("internationalPresence.canada.description"),
                     },
                 ]}
             />

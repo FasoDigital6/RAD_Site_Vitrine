@@ -15,12 +15,20 @@ interface InternationalPresenceProps {
   title: string
   subtitle: string
   countries: Country[]
+  badgeText?: string
+  officesLabel?: string
+  teamLabel?: string
+  mapIndicatorText?: string
 }
 
 export function InternationalPresence({
   title,
   subtitle,
   countries,
+  badgeText = "International Presence",
+  officesLabel = "Offices",
+  teamLabel = "Team",
+  mapIndicatorText = "2 countries • 2 continents • 1 vision",
 }: InternationalPresenceProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900 py-16 sm:py-20 md:py-24">
@@ -34,7 +42,7 @@ export function InternationalPresence({
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-md">
             <Globe className="h-5 w-5 text-rad-orange" />
             <span className="text-sm font-semibold uppercase tracking-wider">
-              Présence Internationale
+              {badgeText}
             </span>
           </div>
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
@@ -79,7 +87,7 @@ export function InternationalPresence({
                 <div className="rounded-xl bg-rad-blue-900/5 p-4">
                   <div className="mb-2 flex items-center gap-2 text-rad-blue-900">
                     <Building2 className="h-5 w-5" />
-                    <span className="text-sm font-semibold">Bureaux</span>
+                    <span className="text-sm font-semibold">{officesLabel}</span>
                   </div>
                   <p className="text-2xl font-bold text-rad-blue-900">
                     {country.offices}
@@ -90,7 +98,7 @@ export function InternationalPresence({
                   <div className="rounded-xl bg-rad-orange/5 p-4">
                     <div className="mb-2 flex items-center gap-2 text-rad-orange">
                       <Users className="h-5 w-5" />
-                      <span className="text-sm font-semibold">Équipe</span>
+                      <span className="text-sm font-semibold">{teamLabel}</span>
                     </div>
                     <p className="text-2xl font-bold text-rad-orange">
                       {country.employees}
@@ -110,7 +118,7 @@ export function InternationalPresence({
           <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 text-white backdrop-blur-md">
             <MapPin className="h-5 w-5 text-rad-orange" />
             <span className="text-sm font-medium">
-              2 pays • 2 continents • 1 vision
+              {mapIndicatorText}
             </span>
           </div>
         </div>

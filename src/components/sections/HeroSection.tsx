@@ -14,6 +14,7 @@ interface HeroSectionProps {
   slide: HeroSlide
   badge: string
   scrollText: string
+  exploreButtonText?: string
   onExploreClick?: () => void
   totalSlides?: number
 }
@@ -23,6 +24,7 @@ export function HeroSection({
   slide,
   badge,
   scrollText,
+  exploreButtonText = "Explore our services",
   onExploreClick,
   totalSlides = 3,
 }: HeroSectionProps) {
@@ -79,10 +81,10 @@ export function HeroSection({
             <div className="pt-1 sm:pt-2">
               <button
                 onClick={onExploreClick}
-                aria-label="Explorer nos services et domaines d'activité"
+                aria-label={exploreButtonText}
                 className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-full bg-rad-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rad-orange/50 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/70 sm:gap-3 sm:px-8 sm:py-3.5 sm:text-base md:px-9 md:py-4"
               >
-                <span>Explorer nos services</span>
+                <span>{exploreButtonText}</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5 sm:h-5 sm:w-5" />
               </button>
             </div>

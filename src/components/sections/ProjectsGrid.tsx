@@ -25,19 +25,19 @@ interface ProjectsGridProps {
 
 export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: ProjectsGridProps) {
   return (
-    <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
+    <div className="grid gap-8 sm:gap-6 md:grid-cols-2">
       {projects.map((project, index) => (
         <Link key={project.id} href={`/contracts/${project.id}` as any}>
           <motion.article
-            initial={{ opacity: 1, y: 0 }}  
-            whileInView={{ y: -8 }}       
-            viewport={{ once: true, amount: 0.1 }} 
+            initial={{ opacity: 1, y: 0 }}
+            whileInView={{ y: -8 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
-              duration: 0.3,               
-              delay: index * 0.05,          
+              duration: 0.3,
+              delay: index * 0.05,
               ease: "easeOut"
             }}
-            className="group relative flex h-full min-h-[400px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[480px] sm:rounded-3xl md:min-h-[540px]"
+            className="group relative flex flex-col h-[480px] sm:h-[520px] md:h-[540px] overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl"
           >
             {/* Image */}
             <div className="relative h-48 w-full overflow-hidden sm:h-56 md:h-64 lg:h-72">
@@ -63,11 +63,10 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               {/* Status badge */}
               <div className="absolute left-4 top-4">
                 <span
-                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-lg backdrop-blur-sm ${
-                    project.status === "Terminé" || project.status === "Completed"
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-lg backdrop-blur-sm ${project.status === "Terminé" || project.status === "Completed"
                       ? "bg-green-500/90 text-white"
                       : "bg-rad-orange/90 text-white"
-                  }`}
+                    }`}
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-white" />
                   {project.status}

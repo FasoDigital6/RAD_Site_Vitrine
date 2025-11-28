@@ -180,6 +180,30 @@
       "title": "They trust us",
       "subtitle": "Strong partnerships with global industry leaders"
     },
+    "internationalPresence": {
+      "badge": "International Presence",
+      "title": "A presence across 2 continents",
+      "subtitle": "RAD operates in Africa and North America, combining local expertise and international vision to serve its clients.",
+      "officesLabel": "Offices",
+      "teamLabel": "Team",
+      "mapIndicator": "2 countries • 2 continents • 1 vision",
+      "guinea": {
+        "name": "Guinea",
+        "flag": "🇬🇳",
+        "city": "Siguiri",
+        "offices": "Headquarters",
+        "employees": "300+",
+        "description": "Our headquarters based in Siguiri, Guinea, manages all our operations in West Africa, with recognized expertise in mining, construction and logistics."
+      },
+      "canada": {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "city": "Moncton",
+        "offices": "Office",
+        "employees": "50+",
+        "description": "Our Canadian office ensures liaison with our international partners and facilitates access to cutting-edge technologies and equipment for our African projects."
+      }
+    },
     "cta": {
       "title": "Ready to launch your project?",
       "subtitle": "Let's discuss your needs and build sustainable solutions for Africa together.",
