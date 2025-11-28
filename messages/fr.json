@@ -529,7 +529,10 @@
           "placeholder": "Décrivez votre projet, vos besoins ou vos questions..."
         }
       },
-      "submit": "Envoyer ma demande"
+      "submit": "Envoyer ma demande",
+      "sending": "Envoi en cours...",
+      "success": "Votre formulaire a été soumis avec succès ! Nous vous contacterons sous peu.",
+      "error": "Une erreur est survenue. Veuillez réessayer."
     },
     "info": {
       "title": "Coordonnées",

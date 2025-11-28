@@ -4,22 +4,76 @@ import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-reac
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
-import { useSearchParams } from "next/navigation"
+import { useState, FormEvent } from "react"
 import { Suspense } from "react"
 
 function ContactForm() {
     const t = useTranslations('contact')
-    const searchParams = useSearchParams()
-    const isSent = searchParams?.get("sent") === "1"
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+    const [error, setError] = useState<string | null>(null)
     const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-form-id"
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        setError(null)
+
+        const form = e.currentTarget
+        const formData = new FormData(form)
+
+        try {
+            const response = await fetch(formAction, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+
+            console.log('Response status:', response.status)
+            console.log('Response ok:', response.ok)
+
+            if (response.ok) {
+                setIsSuccess(true)
+                form.reset()
+                // Auto-hide success message after 8 seconds
+                setTimeout(() => setIsSuccess(false), 8000)
+            } else {
+                const errorData = await response.json()
+                console.error('Error from Formspree:', errorData)
+                setError(t('form.error', { default: 'Une erreur est survenue. Veuillez réessayer.' }))
+            }
+        } catch (err) {
+            console.error('Fetch error:', err)
+            setError(t('form.error', { default: 'Une erreur est survenue. Veuillez réessayer.' }))
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
 
     return (
         <div className="animate-slide-up delay-100 rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60">
-            {isSent && (
-                <div className="mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
-                    {t('form.success', { default: "Message envoyé. Nous revenons vers vous rapidement." })}
+            {isSuccess && (
+                <div className="mb-6 animate-fade-in rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm font-semibold text-emerald-800">
+                    <div className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 flex-shrink-0 text-emerald-600" />
+                        <div>
+                            <p className="font-bold">{t('form.success', { default: 'Message envoyé avec succès !' })}</p>
+                            <p className="mt-1 text-xs font-normal text-emerald-700">
+                                Nous vous contacterons sous peu.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             )}
+
+            {error && (
+                <div className="mb-6 animate-fade-in rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-800">
+                    {error}
+                </div>
+            )}
+
             <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
                 {t('form.title')}
             </h3>
@@ -27,9 +81,8 @@ function ContactForm() {
                 {t('form.subtitle')}
             </p>
 
-            <form className="mt-6 space-y-5" action={formAction} method="POST">
+            <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
                 <input type="hidden" name="_subject" value="Nouveau message RAD (formulaire contact)" />
-                <input type="hidden" name="_redirect" value="/contact?sent=1" />
                 {/* Honeypot anti-spam */}
                 <label className="sr-only" htmlFor="website">Ne pas remplir</label>
                 <input
@@ -133,11 +186,18 @@ function ContactForm() {
 
                 <button
                     type="submit"
-                    className="group w-full rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
+                    disabled={isSubmitting}
+                    className="group w-full rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg shadow-rad-orange/40 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
                     <span className="flex items-center justify-center gap-2">
-                        {t('form.submit')}
-                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        {isSubmitting ? t('form.sending', { default: 'Envoi en cours...' }) : t('form.submit')}
+                        {!isSubmitting && <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />}
+                        {isSubmitting && (
+                            <svg className="h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        )}
                     </span>
                 </button>
             </form>

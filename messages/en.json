@@ -530,7 +530,10 @@
           "placeholder": "Describe your project, needs or questions..."
         }
       },
-      "submit": "Send my request"
+      "submit": "Send my request",
+      "sending": "Sending...",
+      "success": "Your form has been successfully submitted! We will contact you shortly.",
+      "error": "An error occurred. Please try again."
     },
     "info": {
       "title": "Contact details",

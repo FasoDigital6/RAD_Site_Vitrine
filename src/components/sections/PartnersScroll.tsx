@@ -22,12 +22,12 @@ export function PartnersScroll({ partners }: PartnersScrollProps) {
         {partners.map((partner, idx) => (
           <div
             key={`partner-1-${idx}`}
-            className="flex h-16 w-32 flex-shrink-0 items-center justify-center rounded-xl bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-400/40 sm:h-20 sm:w-40 md:h-24 md:w-48"
+            className="flex h-20 w-40 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200/60 bg-white p-3 shadow-md shadow-slate-300/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-400/40 sm:h-24 sm:w-48 md:h-28 md:w-56"
           >
             <img
               src={partner.logo}
               alt={partner.name}
-              className="h-full w-full object-contain opacity-70 transition-opacity hover:opacity-100"
+              className="max-h-full max-w-full object-contain opacity-95 transition-opacity hover:opacity-100"
             />
           </div>
         ))}
@@ -36,12 +36,12 @@ export function PartnersScroll({ partners }: PartnersScrollProps) {
         {partners.map((partner, idx) => (
           <div
             key={`partner-2-${idx}`}
-            className="flex h-16 w-32 flex-shrink-0 items-center justify-center rounded-xl bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-400/40 sm:h-20 sm:w-40 md:h-24 md:w-48"
+            className="flex h-20 w-40 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200/60 bg-white p-3 shadow-md shadow-slate-300/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-400/40 sm:h-24 sm:w-48 md:h-28 md:w-56"
           >
             <img
               src={partner.logo}
               alt={partner.name}
-              className="h-full w-full object-contain opacity-70 transition-opacity hover:opacity-100"
+              className="max-h-full max-w-full object-contain opacity-95 transition-opacity hover:opacity-100"
             />
           </div>
         ))}

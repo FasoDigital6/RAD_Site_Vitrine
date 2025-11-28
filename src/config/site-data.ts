@@ -74,7 +74,7 @@ export const partenaires: Partner[] = [
   },
   {
     name: "Toyota",
-    logo: "/images/partners/toyota-logo.png",
+    logo: "/images/partners/toyota.png",
     alt: "Toyota - Véhicules et équipements",
   },
   {
@@ -91,5 +91,10 @@ export const partenaires: Partner[] = [
     name: "Kourousa Gold",
     logo: "/images/partners/kourrousaGold.jpeg",
     alt: "Kourousa Gold - Mines d'or",
+  },
+  {
+    name: "Traction",
+    logo: "/images/partners/traction.jpg",
+    alt: "Traction - Partenaire industriel",
   },
 ] as const
