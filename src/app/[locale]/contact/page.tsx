@@ -4,10 +4,14 @@ import { Phone, Mail, MapPin, Clock, CheckCircle, ArrowRight } from "lucide-reac
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
+import { useSearchParams } from "next/navigation"
 
 export default function ContactPage() {
   const t = useTranslations('contact')
   const tCommon = useTranslations('common')
+  const searchParams = useSearchParams()
+  const isSent = searchParams?.get("sent") === "1"
+  const formAction = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-form-id"
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
@@ -141,6 +145,11 @@ export default function ContactPage() {
 
             {/* Colonne droite – formulaire */}
             <div className="animate-slide-up delay-100 rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60">
+              {isSent && (
+                <div className="mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
+                  {t('form.success', { default: "Message envoyé. Nous revenons vers vous rapidement." })}
+                </div>
+              )}
               <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
                 {t('form.title')}
               </h3>
@@ -148,7 +157,20 @@ export default function ContactPage() {
                 {t('form.subtitle')}
               </p>
 
-              <form className="mt-6 space-y-5">
+              <form className="mt-6 space-y-5" action={formAction} method="POST">
+                <input type="hidden" name="_subject" value="Nouveau message RAD (formulaire contact)" />
+                <input type="hidden" name="_redirect" value="/contact?sent=1" />
+                {/* Honeypot anti-spam */}
+                <label className="sr-only" htmlFor="website">Ne pas remplir</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <label htmlFor="nom" className="mb-2 block text-sm font-semibold text-slate-700">
@@ -211,6 +233,7 @@ export default function ContactPage() {
                   </label>
                   <select
                     id="project-type"
+                    name="service"
                     required
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-rad-orange focus:outline-none focus:ring-2 focus:ring-rad-orange/20"
                   >
