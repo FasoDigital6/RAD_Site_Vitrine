@@ -53,7 +53,7 @@ function ContactForm() {
     }
 
     return (
-        <div className="animate-slide-up delay-100 rounded-3xl bg-white p-8 shadow-xl shadow-slate-300/60">
+        <div className="animate-slide-up rounded-3xl bg-white p-6 shadow-xl shadow-slate-300/60 sm:p-8" style={{ animationDelay: '100ms' }}>
             {isSuccess && (
                 <div className="mb-6 animate-fade-in rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm font-semibold text-emerald-800">
                     <div className="flex items-start gap-3">
@@ -248,7 +248,8 @@ export function ContactContent() {
                         ].map((item, idx) => (
                             <div
                                 key={idx}
-                                className={`animate-scale-in flex items-center justify-center gap-3 rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/50 ring-1 ring-slate-100 delay-${idx * 100}`}
+                                className="animate-scale-in flex items-center justify-center gap-3 rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/50 ring-1 ring-slate-100"
+                                style={{ animationDelay: `${idx * 100}ms` }}
                             >
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rad-orange/10 text-rad-orange">
                                     {item.icon}
@@ -360,19 +361,19 @@ export function ContactContent() {
                         <div className="flex flex-col items-stretch justify-center gap-3 pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                             <Link
                                 href="/services"
-                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
+                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange sm:w-auto"
                             >
                                 {tCommon('seeServices')}
                             </Link>
                             <Link
                                 href="/contracts"
-                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
+                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange sm:w-auto"
                             >
                                 {tCommon('seeProjects')}
                             </Link>
                             <Link
                                 href="/about"
-                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-blue-900/5 sm:w-auto"
+                                className="w-full rounded-full border-2 border-rad-blue-900 px-8 py-4 text-base font-semibold text-rad-blue-900 transition-all duration-300 hover:-translate-y-1 hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange sm:w-auto"
                             >
                                 {t('cta.secondary')}
                             </Link>

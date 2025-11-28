@@ -67,8 +67,8 @@ export function CTASection({
                     isPrimary
                       ? "bg-rad-orange text-white shadow-lg shadow-rad-orange/40 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
                       : variant === "gradient"
-                        ? "border-2 border-white text-white hover:bg-white/10"
-                        : "border-2 border-rad-blue-900 text-rad-blue-900 hover:bg-rad-blue-900/5"
+                        ? "border-2 border-white text-white hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange"
+                        : "border-2 border-rad-blue-900 text-rad-blue-900 hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange"
                   }`}
                 >
                   <span>{button.text}</span>

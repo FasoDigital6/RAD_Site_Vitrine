@@ -44,7 +44,7 @@ export function AboutContent() {
                         title={t("hero.title")}
                         subtitle={t("hero.subtitle")}
                         centered
-                        className="text-white [&_h2]:text-white [&_p]:text-slate-200"
+                        className="text-white [&_h2]:text-white [&_p]:text-slate-200 [&_.badge-container]:bg-white/10 [&_.badge-container]:text-white"
                     />
                 </div>
             </section>
@@ -97,7 +97,7 @@ export function AboutContent() {
                 subtitle={t("cta.subtitle")}
                 buttons={[
                     { text: t("cta.primary"), href: "/contact", variant: "primary" },
-                    { text: t("cta.secondary"), href: "/projects", variant: "secondary" },
+                    { text: t("cta.secondary"), href: "/contracts", variant: "secondary" },
                 ]}
                 variant="gradient"
             />

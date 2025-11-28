@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   images: {
     // Désactiver l'optimisation d'images (obligatoire pour export statique)
     unoptimized: true,
+    // Ajouter les qualités utilisées dans le projet
+    qualities: [75, 80, 85],
   },
 
   // Désactiver le header X-Powered-By

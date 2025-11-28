@@ -37,10 +37,10 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               delay: index * 0.05,
               ease: "easeOut"
             }}
-            className="group relative flex flex-col h-[480px] sm:h-[520px] md:h-[540px] overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl"
+            className="group relative flex flex-col h-[400px] sm:h-[460px] md:h-[500px] overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl"
           >
             {/* Image */}
-            <div className="relative h-48 w-full overflow-hidden sm:h-56 md:h-64 lg:h-72">
+            <div className="relative h-40 w-full overflow-hidden sm:h-48 md:h-56 lg:h-64">
               <Image
                 src={project.image}
                 alt={project.title}

@@ -19,7 +19,8 @@ export function StatsSection({ stats, variant = "banner", className = "" }: Stat
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex h-full flex-col items-center justify-center rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 px-8 py-8 text-center text-white shadow-xl shadow-rad-blue-900/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:px-10 sm:py-10 md:px-12 md:py-12 delay-${idx * 100}`}
+              className="flex h-full flex-col items-center justify-center rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 px-8 py-8 text-center text-white shadow-xl shadow-rad-blue-900/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:px-10 sm:py-10 md:px-12 md:py-12"
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div className="mb-3 text-3xl sm:mb-4 sm:text-4xl">{stat.icon}</div>
               <p className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
@@ -43,7 +44,8 @@ export function StatsSection({ stats, variant = "banner", className = "" }: Stat
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-center text-white shadow-xl shadow-rad-blue-900/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl sm:p-10 md:p-12 delay-${idx * 100}`}
+              className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-center text-white shadow-xl shadow-rad-blue-900/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl sm:p-10 md:p-12"
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div className="mb-3 text-3xl sm:mb-4 sm:text-4xl md:text-5xl">{stat.icon}</div>
               <p className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">

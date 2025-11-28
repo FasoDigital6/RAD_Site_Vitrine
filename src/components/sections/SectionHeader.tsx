@@ -22,7 +22,7 @@ export function SectionHeader({
       className={`animate-fade-in ${centered ? "text-center" : ""} ${className}`}
     >
       {badge && (
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rad-blue-900/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-rad-blue-900 sm:mb-6 sm:gap-3 sm:text-sm">
+        <div className="badge-container mb-4 inline-flex items-center gap-2 rounded-full bg-rad-blue-900/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-rad-blue-900 sm:mb-6 sm:gap-3 sm:text-sm">
           <span className="flex h-1 w-8 overflow-hidden rounded-full sm:w-10">
             <span className="flex-1 bg-rad-red" />
             <span className="flex-1 bg-rad-yellow" />

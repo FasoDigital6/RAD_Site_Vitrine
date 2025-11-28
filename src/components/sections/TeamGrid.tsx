@@ -18,7 +18,8 @@ export function TeamGrid({ members }: TeamGridProps) {
       {members.map((member, idx) => (
         <div
           key={member.key}
-          className={`animate-scale-in group relative aspect-square overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/40 ring-1 ring-slate-300 transition-all duration-700 hover:-translate-y-3 hover:shadow-3xl hover:shadow-rad-orange/40 hover:ring-rad-orange/50 delay-${idx * 100}`}
+          className="animate-scale-in group relative aspect-square overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/40 ring-1 ring-slate-300 transition-all duration-700 hover:-translate-y-3 hover:shadow-3xl hover:shadow-rad-orange/40 hover:ring-rad-orange/50"
+          style={{ animationDelay: `${idx * 100}ms` }}
         >
           {/* Background Image - Full size */}
           <img

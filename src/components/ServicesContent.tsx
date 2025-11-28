@@ -101,7 +101,8 @@ export function ServicesContent() {
                             return (
                                 <article
                                     key={domaine.key}
-                                    className={`animate-scale-in group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 shadow-sm shadow-slate-200 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/10 hover:ring-rad-orange/20 delay-${index * 50}`}
+                                    className="animate-scale-in group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 shadow-sm shadow-slate-200 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/10 hover:ring-rad-orange/20"
+                                    style={{ animationDelay: `${index * 50}ms` }}
                                 >
                                     {/* Accent décoratif supérieur */}
                                     <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-rad-orange via-rad-orange-hover to-rad-orange transition-all duration-500 group-hover:h-1.5" />
@@ -152,14 +153,15 @@ export function ServicesContent() {
                             return (
                                 <article
                                   key={service.key}
-                                  className={`animate-slide-up grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:gap-10 sm:p-8 md:grid-cols-2 md:items-center delay-${index * 100} ${!isEven ? "md:grid-flow-dense" : ""}`}
+                                  className={`animate-slide-up grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:gap-10 sm:p-8 md:grid-cols-2 md:items-center ${!isEven ? "md:grid-flow-dense" : ""}`}
+                                  style={{ animationDelay: `${index * 100}ms` }}
                                 >
                                     {/* TEXTE */}
                                     <div className={`order-1 ${isEven ? "md:order-1" : "md:order-2"} flex flex-col items-start text-left`}>
                                         <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-4 sm:h-12 sm:w-12">
                                             <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2} />
                                         </div>
-                                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-rad-orange sm:text-xs">
+                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rad-orange">
                                             {t('details.serviceLabel')} {String(index + 1).padStart(2, "0")}
                                         </p>
                                         <h3 className="mt-1 text-xl font-bold leading-tight text-rad-blue-900 sm:text-3xl md:text-4xl">
@@ -211,7 +213,8 @@ export function ServicesContent() {
                         {['1', '2', '3', '4'].map((num, idx) => (
                             <div
                                 key={num}
-                                className={`animate-scale-in rounded-3xl bg-white/10 p-6 text-slate-100 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/15 delay-${idx * 100}`}
+                                className="animate-scale-in rounded-3xl bg-white/10 p-6 text-slate-100 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/15"
+                                style={{ animationDelay: `${idx * 100}ms` }}
                             >
                                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-rad-orange text-2xl font-bold text-white shadow-lg shadow-rad-orange/30">
                                     {num}

@@ -27,21 +27,21 @@ export function Footer() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -57,7 +57,7 @@ export function Footer() {
                 { label: tNav('home'), href: "/" },
                 { label: tNav('about'), href: "/about" },
                 { label: tNav('services'), href: "/services" },
-                { label: tNav('projects'), href: "/projects" },
+                { label: tNav('projects'), href: "/contracts" },
                 { label: tNav('contact'), href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>
