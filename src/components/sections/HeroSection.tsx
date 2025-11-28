@@ -43,7 +43,7 @@ export function HeroSection({
           className="object-cover transition-opacity duration-1000 ease-in-out"
           priority={currentSlide === 0}
           loading={currentSlide === 0 ? "eager" : "lazy"}
-          quality={90}
+          quality={85}
           sizes="100vw"
         />
       </div>

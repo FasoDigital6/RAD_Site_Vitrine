@@ -14,7 +14,7 @@ interface TeamGridProps {
 
 export function TeamGrid({ members }: TeamGridProps) {
   return (
-    <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
       {members.map((member, idx) => (
         <div
           key={member.key}
@@ -31,10 +31,10 @@ export function TeamGrid({ members }: TeamGridProps) {
             <h3 className="text-base font-bold text-rad-blue-900 sm:text-lg">
               {member.name}
             </h3>
-            <p className="mt-1 text-xs font-medium text-rad-orange sm:text-sm">
+            <p className="mt-1 text-sm font-medium text-rad-orange sm:text-base">
               {member.role}
             </p>
-            <p className="mt-2 text-xs text-slate-600 sm:mt-3">
+            <p className="mt-2 text-sm text-slate-600 sm:mt-3 sm:text-base">
               {member.expertise}
             </p>
           </div>

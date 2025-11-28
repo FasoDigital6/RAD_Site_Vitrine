@@ -25,19 +25,19 @@ interface ProjectsGridProps {
 
 export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: ProjectsGridProps) {
   return (
-    <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+    <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
       {projects.map((project, index) => (
         <Link key={project.id} href={`/contracts/${project.id}` as any}>
           <motion.article
-            initial={{ opacity: 1, y: 0 }}  // ✅ Visible dès le départ
-            whileInView={{ y: -8 }}         // ✅ Léger lift au scroll
-            viewport={{ once: true, amount: 0.1 }}  // ✅ 10% au lieu de 20%
+            initial={{ opacity: 1, y: 0 }}  
+            whileInView={{ y: -8 }}       
+            viewport={{ once: true, amount: 0.1 }} 
             transition={{
-              duration: 0.3,                // ✅ 0.3s au lieu de 0.7s
-              delay: index * 0.05,          // ✅ 0.05s au lieu de 0.1s
+              duration: 0.3,               
+              delay: index * 0.05,          
               ease: "easeOut"
             }}
-            className="group relative flex h-full min-h-[450px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[560px] sm:rounded-3xl md:min-h-[600px]"
+            className="group relative flex h-full min-h-[400px] flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[480px] sm:rounded-3xl md:min-h-[540px]"
           >
             {/* Image */}
             <div className="relative h-48 w-full overflow-hidden sm:h-56 md:h-64 lg:h-72">
@@ -46,6 +46,8 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                quality={80}
               />
 
               {/* Gradient overlay on hover */}
@@ -93,7 +95,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
                 {project.title}
               </h3>
 
-              <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm md:text-base">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 sm:mt-3 sm:text-base md:text-base">
                 {project.description}
               </p>
 

@@ -22,7 +22,7 @@ interface ServicesGridProps {
 
 export function ServicesGrid({ services, linkHref = "/services#domaines" }: ServicesGridProps) {
   return (
-    <div className="grid gap-4 sm:gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 sm:gap-6 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service, index) => {
         const IconComponent = service.icon
         const isFeatured = service.featured
@@ -38,7 +38,7 @@ export function ServicesGrid({ services, linkHref = "/services#domaines" }: Serv
                 delay: index * 0.05,          // ✅ 0.05s au lieu de 0.1s
                 ease: "easeOut"
               }}
-              className={`group relative flex min-h-[280px] flex-col overflow-hidden rounded-2xl bg-white p-5 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[360px] sm:rounded-3xl sm:p-7 md:min-h-[380px] ${
+              className={`group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:min-h-[300px] sm:rounded-3xl sm:p-6 md:min-h-[340px] md:p-7 ${
                 isFeatured ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
@@ -64,13 +64,13 @@ export function ServicesGrid({ services, linkHref = "/services#domaines" }: Serv
               </h3>
 
               {/* Description */}
-              <p className="mt-1.5 flex-1 text-xs leading-relaxed text-slate-600 sm:mt-2 sm:text-sm md:text-base">
+              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-600 sm:mt-2 sm:text-base md:text-base">
                 {service.description}
               </p>
 
               {/* Détails */}
               {service.details && (
-                <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-rad-orange sm:mt-3">
+                <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-rad-orange sm:mt-3">
                   {service.details}
                 </p>
               )}

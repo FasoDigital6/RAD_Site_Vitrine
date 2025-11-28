@@ -12,16 +12,16 @@ export function Footer() {
   return (
     <footer className="bg-rad-blue-900 text-white">
       {/* Footer principal */}
-      <div className="py-16">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-0">
+      <div className="py-12 sm:py-14 md:py-16">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 md:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-4 lg:px-0">
           {/* Colonne 1 : Logo + Tagline + Réseaux sociaux */}
           <div className="lg:col-span-1">
             <img
               src="/rad-logo.jpeg"
               alt="RAD Logo"
-              className="mb-4 h-auto w-40 rounded-lg"
+              className="mb-3 h-auto w-36 rounded-lg sm:mb-4 sm:w-40"
             />
-            <p className="mb-6 text-sm leading-relaxed text-slate-300">
+            <p className="mb-4 text-sm leading-relaxed text-slate-300 sm:mb-6">
               {t('tagline')}
             </p>
             <div className="flex gap-4">

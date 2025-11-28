@@ -75,6 +75,11 @@ export const defaultMetadata: Metadata = {
     // yandex: "your-yandex-verification-code",
     // bing: "your-bing-verification-code",
   },
+  icons: {
+    icon: "/rad-logo.jpeg",
+    shortcut: "/rad-logo.jpeg",
+    apple: "/rad-logo.jpeg",
+  },
   alternates: {
     canonical: siteUrl,
     languages: {

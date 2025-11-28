@@ -11,10 +11,11 @@ import {
 } from "@/components/sections"
 
 const projectImages = [
-  "/projet.jpg",
-  "/informatique.jpg",
-  "/surface-equipment-miningtrucks.jpg",
-  "/route.jpg",
+  "/images/projects/project-1.jpg",
+  "/images/projects/project-2.jpg",
+  "/images/projects/project-3.jpg",
+  "/images/projects/project-4.jpg",
+  
 ]
 
 export default function ProjectsPage() {

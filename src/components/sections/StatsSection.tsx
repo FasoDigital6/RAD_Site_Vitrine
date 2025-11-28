@@ -1,4 +1,3 @@
-// ✅ APRÈS : Conversion CSS pur - Affichage immédiat, pas de "use client"
 
 interface Stat {
   icon: string
