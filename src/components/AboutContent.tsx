@@ -11,15 +11,7 @@ import {
     CTASection,
     type TeamMember,
 } from "@/components/sections"
-
-const equipeImages = [
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80",
-    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
-]
-
-const equipeKeys = ["operations", "technical", "logistics", "admin"] as const
+import { equipeImages, equipeKeys } from "@/config/site-data"
 
 export function AboutContent() {
     const t = useTranslations("about")

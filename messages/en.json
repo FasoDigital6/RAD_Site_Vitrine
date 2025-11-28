@@ -151,28 +151,18 @@
       "cta": "View all our projects"
     },
     "team": {
-      "title": "A team of passionate experts",
-      "subtitle": "Dedicated professionals serving your success",
+      "title": "Our leadership",
+      "subtitle": "Two leaders committed to delivering your project",
       "groups": {
-        "operations": {
-          "name": "Operations Team",
-          "role": "Field & Projects",
-          "expertise": "15+ years of field experience"
+        "ceo": {
+          "name": "Chief Executive Officer",
+          "role": "CEO",
+          "expertise": "Strategic vision & growth"
         },
-        "technical": {
-          "name": "Technical Management",
-          "role": "Engineering & Innovation",
-          "expertise": "Mining & infrastructure projects"
-        },
-        "logistics": {
-          "name": "Logistics Team",
-          "role": "Supply Chain & Transport",
-          "expertise": "24/7 fleet management"
-        },
-        "admin": {
-          "name": "Administrative Staff",
-          "role": "Management & Coordination",
-          "expertise": "Integrated operational support"
+        "canada": {
+          "name": "Canada Representative",
+          "role": "Canada Relations",
+          "expertise": "International relations & Canada operations"
         }
       }
     },
@@ -462,6 +452,29 @@
         ]
       }
     },
+    "detail": {
+      "aboutTitle": "About this project",
+      "about": {
+        "paragraph1": "This project represents a major step in the development of infrastructure in West Africa. Our team worked closely with local and international stakeholders to ensure the success of this initiative.",
+        "paragraph2": "The work was carried out in compliance with the strictest international standards, using cutting-edge technologies and mobilizing multi-sector expertise."
+      },
+      "impactsTitle": "Impacts & Results",
+      "galleryTitle": "Gallery",
+      "infoTitle": "Key information",
+      "labels": {
+        "sector": "Sector",
+        "location": "Location",
+        "year": "Year",
+        "status": "Status"
+      },
+      "ctaTitle": "A similar project?",
+      "ctaDescription": "Let's discuss your project and discover how we can support you.",
+      "partnersTitle": "Partners",
+      "partnersDescription": "This project was carried out in collaboration with our local and international strategic partners.",
+      "otherProjectsTitle": "Other projects",
+      "otherProjectsSubtitle": "Discover our other achievements",
+      "viewAll": "View all projects"
+    },
     "cta": {
       "title": "Want to launch a similar project?",
       "subtitle": "RAD can support you in the analysis, structuring and deployment of your projects. Mining, construction, logistics, import-export or real estate: our team is available to discuss it.",
@@ -592,28 +605,18 @@
       "content": "Integrity, excellence, respect for communities, innovation and long-term commitment."
     },
     "team": {
-      "title": "Our team",
-      "subtitle": "Passionate and experienced professionals",
+      "title": "Our leadership",
+      "subtitle": "Two leaders committed to delivering your project",
       "groups": {
-        "operations": {
-          "name": "Operations Team",
-          "role": "Field & Projects",
-          "expertise": "15+ years of field experience"
+        "ceo": {
+          "name": "Chief Executive Officer",
+          "role": "CEO",
+          "expertise": "Strategic vision & growth"
         },
-        "technical": {
-          "name": "Technical Management",
-          "role": "Engineering & Innovation",
-          "expertise": "Mining & infrastructure projects"
-        },
-        "logistics": {
-          "name": "Logistics Team",
-          "role": "Supply Chain & Transport",
-          "expertise": "24/7 fleet management"
-        },
-        "admin": {
-          "name": "Administrative Staff",
-          "role": "Management & Coordination",
-          "expertise": "Integrated operational support"
+        "canada": {
+          "name": "Canada Representative",
+          "role": "Canada Relations",
+          "expertise": "International relations & Canada operations"
         }
       }
     },

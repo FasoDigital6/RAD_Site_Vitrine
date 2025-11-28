@@ -43,19 +43,15 @@ export const realisationImages = [
 
 // ==================== ÉQUIPE ====================
 export const equipeKeys = [
-  "operations",
-  "technical",
-  "logistics",
-  "admin",
+  "ceo",
+  "canada",
 ] as const
 
 export type EquipeKey = (typeof equipeKeys)[number]
 
 export const equipeImages = [
-  "/images/team/operations.jpg", // Operations - Construction/terrain
-  "/images/team/technical.jpg", // Technical - Ingénierie/mining
-  "/images/team/logistics.jpg", // Logistics - Transport/logistique
-  "/images/team/admin.jpg", // Admin - Bureau/gestion
+  "/images/team/operations.jpg", // CEO portrait (placeholder)
+  "/images/team/admin.jpg", // Canada representative (placeholder)
 ] as const
 
 // ==================== PARTENAIRES ====================

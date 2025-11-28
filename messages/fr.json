@@ -151,28 +151,18 @@
       "cta": "Voir tous nos projets"
     },
     "team": {
-      "title": "Une équipe d'experts passionnés",
-      "subtitle": "Des professionnels engagés au service de votre réussite",
+      "title": "Notre direction",
+      "subtitle": "Deux leaders engagés pour porter votre projet",
       "groups": {
-        "operations": {
-          "name": "Équipe Opérations",
-          "role": "Terrain & Projets",
-          "expertise": "15+ ans d'expérience terrain"
+        "ceo": {
+          "name": "Direction générale",
+          "role": "PDG",
+          "expertise": "Vision stratégique & développement"
         },
-        "technical": {
-          "name": "Direction Technique",
-          "role": "Ingénierie & Innovation",
-          "expertise": "Projets miniers & infrastructures"
-        },
-        "logistics": {
-          "name": "Équipe Logistique",
-          "role": "Supply Chain & Transport",
-          "expertise": "Gestion de flotte 24/7"
-        },
-        "admin": {
-          "name": "Staff Administratif",
-          "role": "Gestion & Coordination",
-          "expertise": "Support opérationnel intégré"
+        "canada": {
+          "name": "Représentant Canada",
+          "role": "Relations Canada",
+          "expertise": "Relations internationales & opérations Canada"
         }
       }
     },
@@ -461,6 +451,29 @@
         ]
       }
     },
+    "detail": {
+      "aboutTitle": "À propos du projet",
+      "about": {
+        "paragraph1": "Ce projet représente une étape majeure dans le développement des infrastructures en Afrique de l'Ouest. Notre équipe a travaillé en étroite collaboration avec les parties prenantes locales et internationales pour garantir la réussite de cette initiative.",
+        "paragraph2": "Les travaux ont été réalisés dans le respect des normes internationales les plus strictes, en utilisant des technologies de pointe et en mobilisant une expertise multisectorielle."
+      },
+      "impactsTitle": "Impacts & Résultats",
+      "galleryTitle": "Galerie",
+      "infoTitle": "Informations clés",
+      "labels": {
+        "sector": "Secteur",
+        "location": "Localisation",
+        "year": "Année",
+        "status": "Statut"
+      },
+      "ctaTitle": "Un projet similaire ?",
+      "ctaDescription": "Discutons de votre projet et découvrons comment nous pouvons vous accompagner.",
+      "partnersTitle": "Partenaires",
+      "partnersDescription": "Ce projet a été réalisé en collaboration avec nos partenaires stratégiques locaux et internationaux.",
+      "otherProjectsTitle": "Autres projets",
+      "otherProjectsSubtitle": "Découvrez nos autres réalisations",
+      "viewAll": "Voir tous les projets"
+    },
     "cta": {
       "title": "Vous souhaitez lancer un projet similaire\u00A0?",
       "subtitle": "RAD peut vous accompagner dans l'analyse, la structuration et le déploiement de vos projets. Mines, construction, logistique, import-export ou immobilier\u00A0: notre équipe est disponible pour en parler.",
@@ -591,28 +604,18 @@
       "content": "Intégrité, excellence, respect des communautés, innovation et engagement à long terme."
     },
     "team": {
-      "title": "Notre équipe",
-      "subtitle": "Des professionnels passionnés et expérimentés",
+      "title": "Notre direction",
+      "subtitle": "Deux leaders engagés pour porter votre projet",
       "groups": {
-        "operations": {
-          "name": "Équipe Opérations",
-          "role": "Terrain & Projets",
-          "expertise": "15+ ans d'expérience terrain"
+        "ceo": {
+          "name": "Direction générale",
+          "role": "PDG",
+          "expertise": "Vision stratégique & développement"
         },
-        "technical": {
-          "name": "Direction Technique",
-          "role": "Ingénierie & Innovation",
-          "expertise": "Projets miniers & infrastructures"
-        },
-        "logistics": {
-          "name": "Équipe Logistique",
-          "role": "Supply Chain & Transport",
-          "expertise": "Gestion de flotte 24/7"
-        },
-        "admin": {
-          "name": "Staff Administratif",
-          "role": "Gestion & Coordination",
-          "expertise": "Support opérationnel intégré"
+        "canada": {
+          "name": "Représentant Canada",
+          "role": "Relations Canada",
+          "expertise": "Relations internationales & opérations Canada"
         }
       }
     },

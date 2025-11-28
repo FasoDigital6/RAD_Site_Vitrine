@@ -15,37 +15,37 @@ export function ServicesContent() {
             key: 'commerce',
             icon: ShoppingCart,
             featured: true,
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+            image: "/images/services/commerce.png",
         },
         {
             key: 'mining',
             icon: Pickaxe,
             featured: true,
-            image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
+            image: "/images/services/mining.png",
         },
         {
             key: 'transport',
             icon: Truck,
             featured: false,
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+            image: "/images/services/transport.png",
         },
         {
             key: 'construction',
             icon: Building2,
             featured: false,
-            image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
+            image: "/images/services/construction.png",
         },
         {
             key: 'services',
             icon: UserCog,
             featured: false,
-            image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+            image: "/images/services/services.png",
         },
         {
             key: 'consulting',
             icon: Lightbulb,
             featured: false,
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+            image: "/images/services/audit.png",
         },
     ]
 
@@ -138,49 +138,49 @@ export function ServicesContent() {
             </section>
 
             {/* DÉTAILS DES SERVICES - ALTERNANCE */}
-            <section className="bg-white py-16 sm:py-20 md:py-24">
-                <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-                    <h2 className="animate-fade-in mb-16 text-center text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
+            <section className="bg-white py-10 sm:py-14 md:py-24">
+                <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-8 lg:px-0">
+                    <h2 className="animate-fade-in mb-8 text-center text-2xl font-bold leading-tight text-rad-blue-900 sm:mb-12 sm:text-4xl md:text-5xl">
                         {t('details.title')}
                     </h2>
 
-                    <div className="space-y-14">
+                    <div className="space-y-8 sm:space-y-12">
                         {domainesConfig.map((service, index) => {
                             const isEven = index % 2 === 0
                             const IconComponent = service.icon
 
                             return (
                                 <article
-                                    key={service.key}
-                                    className={`animate-slide-up grid gap-10 md:grid-cols-2 md:items-center delay-${index * 100} ${!isEven ? "md:grid-flow-dense" : ""}`}
+                                  key={service.key}
+                                  className={`animate-slide-up grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:gap-10 sm:p-8 md:grid-cols-2 md:items-center delay-${index * 100} ${!isEven ? "md:grid-flow-dense" : ""}`}
                                 >
                                     {/* TEXTE */}
-                                    <div className={`${isEven ? "order-1" : "order-2 md:order-1"} flex flex-col items-center text-center md:items-start md:text-left`}>
-                                        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30">
-                                            <IconComponent className="h-7 w-7" strokeWidth={2} />
+                                    <div className={`order-1 ${isEven ? "md:order-1" : "md:order-2"} flex flex-col items-start text-left`}>
+                                        <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-4 sm:h-12 sm:w-12">
+                                            <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2} />
                                         </div>
-                                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rad-orange">
+                                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-rad-orange sm:text-xs">
                                             {t('details.serviceLabel')} {String(index + 1).padStart(2, "0")}
                                         </p>
-                                        <h3 className="mt-1 text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
+                                        <h3 className="mt-1 text-xl font-bold leading-tight text-rad-blue-900 sm:text-3xl md:text-4xl">
                                             {t(`domains.${service.key}.title`)}
                                         </h3>
-                                        <p className="mt-3 text-base leading-relaxed text-slate-700">
+                                        <p className="mt-2 text-base leading-relaxed text-slate-700 sm:mt-3 sm:text-lg">
                                             {t(`domains.${service.key}.description`)}
                                         </p>
 
-                                        <ul className="mt-4 space-y-2 text-sm text-slate-700 w-full">
+                                        <ul className="mt-3 space-y-2 text-sm text-slate-700 w-full sm:mt-4 sm:space-y-2.5 sm:text-base">
                                             {t.raw(`domains.${service.key}.bullets`).map((bullet: string, i: number) => (
-                                                <li key={i} className="flex gap-2 items-start justify-center md:justify-start">
+                                                <li key={i} className="flex gap-2 items-start">
                                                     <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-rad-orange" />
-                                                    <span className="text-left md:text-left">{bullet}</span>
+                                                    <span>{bullet}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
 
                                     {/* IMAGE */}
-                                    <div className={isEven ? "order-2" : "order-1"}>
+                                    <div className={`order-2 ${isEven ? "md:order-2" : "md:order-1"}`}>
                                         <div className="relative h-64 w-full overflow-hidden rounded-3xl bg-slate-200 shadow-lg shadow-slate-300/80">
                                             <Image
                                                 src={service.image}

@@ -26,6 +26,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const { id } = await params
   const t = await getTranslations('projects')
   const tCommon = await getTranslations('common')
+  const tDetail = await getTranslations('projects.detail')
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
@@ -106,17 +107,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {/* Description détaillée */}
                 <div className="rounded-3xl bg-white p-8 shadow-lg">
                   <h2 className="mb-6 text-3xl font-bold text-rad-blue-900">
-                    À propos du projet
+                    {tDetail("aboutTitle")}
                   </h2>
                   <div className="prose prose-slate max-w-none">
                     <p className="text-lg leading-relaxed text-slate-700">
-                      Ce projet représente une étape majeure dans le développement des infrastructures en Afrique de l'Ouest.
-                      Notre équipe a travaillé en étroite collaboration avec les parties prenantes locales et internationales
-                      pour garantir la réussite de cette initiative.
+                      {tDetail("about.paragraph1")}
                     </p>
                     <p className="text-lg leading-relaxed text-slate-700">
-                      Les travaux ont été réalisés dans le respect des normes internationales les plus strictes,
-                      en utilisant des technologies de pointe et en mobilisant une expertise multisectorielle.
+                      {tDetail("about.paragraph2")}
                     </p>
                   </div>
                 </div>
@@ -125,7 +123,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="rounded-3xl bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 p-8 text-white shadow-lg">
                   <h2 className="mb-6 flex items-center gap-3 text-3xl font-bold">
                     <CheckCircle className="h-8 w-8 text-rad-orange" />
-                    Impacts & Résultats
+                    {tDetail("impactsTitle")}
                   </h2>
                   <div className="space-y-4">
                     {t.raw(`list.${id}.impacts`).map((impact: string, i: number) => (
@@ -140,14 +138,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {/* Galerie d'images */}
                 <div className="rounded-3xl bg-white p-8 shadow-lg">
                   <h2 className="mb-6 text-3xl font-bold text-rad-blue-900">
-                    Galerie
+                    {tDetail("galleryTitle")}
                   </h2>
                   <div className="grid gap-4 sm:grid-cols-2">
                     {[1, 2, 3, 4].map((i) => (
                       <div key={i} className="relative h-48 overflow-hidden rounded-2xl bg-slate-200">
                         <Image
                           src={projectImages[id] || projectImages["1"]}
-                          alt={`Galerie ${i}`}
+                          alt={`${tDetail("galleryTitle")} ${i}`}
                           fill
                           className="object-cover opacity-60 transition hover:opacity-100"
                         />
@@ -164,29 +162,29 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {/* Informations clés */}
                 <div className="rounded-3xl bg-white p-6 shadow-lg">
                   <h3 className="mb-4 text-xl font-bold text-rad-blue-900">
-                    Informations clés
+                    {tDetail("infoTitle")}
                   </h3>
                   <div className="space-y-4">
                     <div className="border-b border-slate-200 pb-3">
-                      <p className="text-sm font-semibold text-slate-500">Secteur</p>
+                      <p className="text-sm font-semibold text-slate-500">{tDetail("labels.sector")}</p>
                       <p className="mt-1 text-base font-bold text-rad-blue-900">
                         {t(`list.${id}.sector`)}
                       </p>
                     </div>
                     <div className="border-b border-slate-200 pb-3">
-                      <p className="text-sm font-semibold text-slate-500">Localisation</p>
+                      <p className="text-sm font-semibold text-slate-500">{tDetail("labels.location")}</p>
                       <p className="mt-1 text-base font-bold text-rad-blue-900">
                         {t(`list.${id}.location`)}
                       </p>
                     </div>
                     <div className="border-b border-slate-200 pb-3">
-                      <p className="text-sm font-semibold text-slate-500">Année</p>
+                      <p className="text-sm font-semibold text-slate-500">{tDetail("labels.year")}</p>
                       <p className="mt-1 text-base font-bold text-rad-blue-900">
                         {t(`list.${id}.year`)}
                       </p>
                     </div>
                     <div className="pb-3">
-                      <p className="text-sm font-semibold text-slate-500">Statut</p>
+                      <p className="text-sm font-semibold text-slate-500">{tDetail("labels.status")}</p>
                       <p className="mt-1 text-base font-bold text-green-600">
                         {t(`list.${id}.status`)}
                       </p>
@@ -197,10 +195,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {/* CTA Contact */}
                 <div className="rounded-3xl bg-gradient-to-br from-rad-orange to-rad-orange-hover p-6 text-white shadow-lg">
                   <h3 className="mb-3 text-xl font-bold">
-                    Un projet similaire ?
+                    {tDetail("ctaTitle")}
                   </h3>
                   <p className="mb-4 text-sm text-white/90">
-                    Discutons de votre projet et découvrons comment nous pouvons vous accompagner.
+                    {tDetail("ctaDescription")}
                   </p>
                   <Link
                     href="/contact"
@@ -215,11 +213,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="rounded-3xl bg-white p-6 shadow-lg">
                   <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-rad-blue-900">
                     <Users className="h-6 w-6" />
-                    Partenaires
+                    {tDetail("partnersTitle")}
                   </h3>
                   <div className="space-y-3">
                     <p className="text-sm text-slate-600">
-                      Ce projet a été réalisé en collaboration avec nos partenaires stratégiques locaux et internationaux.
+                      {tDetail("partnersDescription")}
                     </p>
                   </div>
                 </div>
@@ -234,10 +232,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
           <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-rad-blue-900">
-              Autres projets
+              {tDetail("otherProjectsTitle")}
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              Découvrez nos autres réalisations
+              {tDetail("otherProjectsSubtitle")}
             </p>
           </div>
 
@@ -247,7 +245,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               className="group rounded-full bg-rad-blue-900 px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-rad-blue-800"
             >
               <span className="flex items-center gap-2">
-                Voir tous les projets
+                {tDetail("viewAll")}
                 <ArrowLeft className="h-5 w-5 rotate-180 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
