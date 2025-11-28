@@ -439,8 +439,8 @@
       }
     },
     "cta": {
-      "title": "Vous souhaitez lancer un projet similaire ?",
-      "subtitle": "RAD peut vous accompagner dans l'analyse, la structuration et le déploiement de vos projets. Mines, construction, logistique, import-export ou immobilier : notre équipe est disponible pour en parler.",
+      "title": "Vous souhaitez lancer un projet similaire\u00A0?",
+      "subtitle": "RAD peut vous accompagner dans l'analyse, la structuration et le déploiement de vos projets. Mines, construction, logistique, import-export ou immobilier\u00A0: notre équipe est disponible pour en parler.",
       "primary": "Parler à RAD",
       "secondary": "Voir nos services"
     }

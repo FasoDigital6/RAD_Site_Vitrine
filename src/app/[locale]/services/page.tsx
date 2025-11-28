@@ -1,39 +1,10 @@
 "use client"
 
-import { motion, type Variants } from "framer-motion"
 import { Building2, ShoppingCart, Truck, ArrowRight, CheckCircle, Pickaxe, UserCog, Lightbulb } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
 import Image from "next/image"
-
-// Animations cohérentes
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
-
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-}
 
 export default function ServicesPage() {
   const t = useTranslations('services')
@@ -85,12 +56,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-rad-blue-900 via-rad-blue-800 to-rad-blue-900" />
 
         <div className="relative mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-center text-white"
-          >
+          <div className="animate-fade-in text-center text-white">
             {/* Badge tricolore */}
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-md ring-1 ring-white/20">
               <span className="flex h-1 w-10 overflow-hidden rounded-full">
@@ -107,7 +73,7 @@ export default function ServicesPage() {
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
               {t('hero.subtitle')}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -118,20 +84,14 @@ export default function ServicesPage() {
 
         <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
           {/* En-tête de section */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mb-16 text-center"
-          >
+          <div className="animate-fade-in mb-16 text-center">
             <h2 className="text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
               {t('intro.title')}
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
               {t('intro.subtitle')}
             </p>
-          </motion.div>
+          </div>
 
           {/* Grille des services - Design amélioré */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,14 +99,9 @@ export default function ServicesPage() {
               const IconComponent = domaine.icon
 
               return (
-                <motion.article
+                <article
                   key={domaine.key}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: index * 0.08 }}
-                  className="group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 shadow-sm shadow-slate-200 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/10 hover:ring-rad-orange/20"
+                  className={`animate-scale-in group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 shadow-sm shadow-slate-200 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/10 hover:ring-rad-orange/20 delay-${index * 50}`}
                 >
                   {/* Accent décoratif supérieur */}
                   <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-rad-orange via-rad-orange-hover to-rad-orange transition-all duration-500 group-hover:h-1.5" />
@@ -175,7 +130,7 @@ export default function ServicesPage() {
 
                   {/* Effet de brillance subtil */}
                   <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-rad-orange/5 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
-                </motion.article>
+                </article>
               )
             })}
           </div>
@@ -185,15 +140,9 @@ export default function ServicesPage() {
       {/* DÉTAILS DES SERVICES - ALTERNANCE */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mb-16 text-center text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl"
-          >
+          <h2 className="animate-fade-in mb-16 text-center text-3xl font-bold text-rad-blue-900 sm:text-4xl md:text-5xl">
             {t('details.title')}
-          </motion.h2>
+          </h2>
 
           <div className="space-y-14">
             {domainesConfig.map((service, index) => {
@@ -201,14 +150,9 @@ export default function ServicesPage() {
               const IconComponent = service.icon
 
               return (
-                <motion.article
+                <article
                   key={service.key}
-                  variants={isEven ? fadeInLeft : fadeInRight}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  className={`grid gap-10 md:grid-cols-2 md:items-center ${!isEven ? "md:grid-flow-dense" : ""
-                    }`}
+                  className={`animate-slide-up grid gap-10 md:grid-cols-2 md:items-center delay-${index * 100} ${!isEven ? "md:grid-flow-dense" : ""}`}
                 >
                   {/* TEXTE */}
                   <div className={`${isEven ? "order-1" : "order-2 md:order-1"} flex flex-col items-center text-center md:items-start md:text-left`}>
@@ -246,7 +190,7 @@ export default function ServicesPage() {
                       />
                     </div>
                   </div>
-                </motion.article>
+                </article>
               )
             })}
           </div>
@@ -256,42 +200,25 @@ export default function ServicesPage() {
       {/* SECTION MÉTHODOLOGIE */}
       <section className="bg-gradient-to-br from-rad-blue-900 to-rad-blue-800 py-16 sm:py-20 md:py-24 text-white">
         <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-0">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mb-4 text-center text-3xl font-bold sm:text-4xl md:text-5xl"
-          >
+          <h2 className="animate-fade-in mb-4 text-center text-3xl font-bold sm:text-4xl md:text-5xl">
             {t('methodology.title')}
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mb-10 text-center text-slate-200"
-          >
+          </h2>
+          <p className="animate-fade-in delay-100 mb-10 text-center text-slate-200">
             {t('methodology.subtitle')}
-          </motion.p>
+          </p>
 
           <div className="grid gap-6 md:grid-cols-4">
             {['1', '2', '3', '4'].map((num, idx) => (
-              <motion.div
+              <div
                 key={num}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: idx * 0.1 }}
-                className="rounded-3xl bg-white/10 p-6 text-slate-100 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/15"
+                className={`animate-scale-in rounded-3xl bg-white/10 p-6 text-slate-100 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/15 delay-${idx * 100}`}
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-rad-orange text-2xl font-bold text-white shadow-lg shadow-rad-orange/30">
                   {num}
                 </div>
                 <h3 className="mb-2 text-lg font-bold text-white">{t(`methodology.steps.${num}.title`)}</h3>
                 <p className="text-sm text-slate-100/90">{t(`methodology.steps.${num}.description`)}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -300,13 +227,7 @@ export default function ServicesPage() {
       {/* CTA FINAL */}
       <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-6 text-center md:px-8">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="space-y-6"
-          >
+          <div className="animate-fade-in space-y-6">
             <h3 className="text-2xl font-bold text-rad-blue-900 sm:text-3xl md:text-4xl">
               {t('cta.title')}
             </h3>
@@ -330,7 +251,7 @@ export default function ServicesPage() {
                 {t('cta.secondary')}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
