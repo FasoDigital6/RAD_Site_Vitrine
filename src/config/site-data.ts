@@ -51,7 +51,7 @@ export type EquipeKey = (typeof equipeKeys)[number]
 
 export const equipeImages = [
   "/images/team/operations.jpg", // CEO portrait (placeholder)
-  "/images/team/admin.jpg", // Canada representative (placeholder)
+  "/images/team/R-CA.jpg", // Canada representative
 ] as const
 
 // ==================== PARTENAIRES ====================

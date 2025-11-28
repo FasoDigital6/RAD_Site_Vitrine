@@ -14,31 +14,46 @@ interface TeamGridProps {
 
 export function TeamGrid({ members }: TeamGridProps) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
       {members.map((member, idx) => (
         <div
           key={member.key}
-          className={`animate-scale-in relative overflow-hidden rounded-3xl bg-white p-6 text-center shadow-lg shadow-slate-300/60 ring-1 ring-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 delay-${idx * 50}`}
+          className={`animate-scale-in group relative aspect-square overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/40 ring-1 ring-slate-300 transition-all duration-700 hover:-translate-y-3 hover:shadow-3xl hover:shadow-rad-orange/40 hover:ring-rad-orange/50 delay-${idx * 100}`}
         >
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-rad-orange/10 via-white to-rad-blue-50" />
-          <div className="relative mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full ring-4 ring-white shadow-lg sm:mb-5 sm:h-32 sm:w-32">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="h-full w-full object-cover"
-            />
+          {/* Background Image - Full size */}
+          <img
+            src={member.image}
+            alt={member.name}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+          {/* Content overlaid on image - Bottom aligned */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-center">
+            <div className="space-y-1">
+              {/* Name - Moderate size */}
+              <h3 className="text-2xl font-bold text-white drop-shadow-2xl sm:text-3xl lg:text-4xl">
+                {member.name}
+              </h3>
+
+              {/* Role - Subtle */}
+              <p className="text-base font-medium text-white/90 drop-shadow-lg sm:text-lg lg:text-xl">
+                {member.role}
+              </p>
+
+              {/* Expertise - Small */}
+              {member.expertise && (
+                <p className="text-xs text-white/75 drop-shadow-md sm:text-sm lg:text-base max-w-md mx-auto">
+                  {member.expertise}
+                </p>
+              )}
+            </div>
           </div>
-          <div className="relative space-y-1">
-            <p className="mx-auto inline-block rounded-full bg-rad-orange/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rad-orange">
-              {member.role}
-            </p>
-            <h3 className="text-lg font-bold text-rad-blue-900 sm:text-xl">
-              {member.name}
-            </h3>
-            <p className="text-sm text-slate-600 sm:text-base">
-              {member.expertise}
-            </p>
-          </div>
+
+          {/* Subtle hover glow effect */}
+          <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-gradient-to-br from-rad-orange/20 via-transparent to-transparent" />
         </div>
       ))}
     </div>
