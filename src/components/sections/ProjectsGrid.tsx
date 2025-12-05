@@ -53,13 +53,6 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-rad-blue-900/90 via-rad-blue-900/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              {/* Sector badge */}
-              <div className="absolute right-4 top-4">
-                <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-bold uppercase tracking-wide text-rad-blue-900 shadow-lg backdrop-blur-sm">
-                  {project.sector}
-                </span>
-              </div>
-
               {/* Status badge */}
               <div className="absolute left-4 top-4">
                 <span

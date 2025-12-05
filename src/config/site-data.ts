@@ -63,6 +63,11 @@ export interface Partner {
 
 export const partenaires: Partner[] = [
   {
+    name: "SAG",
+    logo: "/images/partners/sag-logo.jpg",
+    alt: "SAG - Partenaire minier",
+  },
+  {
     name: "Caterpillar",
     logo: "/images/partners/cat-logo.png",
     alt: "Caterpillar - Équipements industriels",
@@ -76,11 +81,6 @@ export const partenaires: Partner[] = [
     name: "Toyota",
     logo: "/images/partners/toyota.png",
     alt: "Toyota - Véhicules et équipements",
-  },
-  {
-    name: "SAG",
-    logo: "/images/partners/sag-logo.jpg",
-    alt: "SAG - Partenaire minier",
   },
   {
     name: "Mota-Engil",
