@@ -239,6 +239,10 @@ export function HomeContent() {
             <InternationalPresence
                 title={tHome("internationalPresence.title")}
                 subtitle={tHome("internationalPresence.subtitle")}
+                badgeText={tHome("internationalPresence.badge")}
+                officesLabel={tHome("internationalPresence.officesLabel")}
+                teamLabel={tHome("internationalPresence.teamLabel")}
+                mapIndicatorText={tHome("internationalPresence.mapIndicator")}
                 countries={[
                     {
                         name: tHome("internationalPresence.guinea.name"),
