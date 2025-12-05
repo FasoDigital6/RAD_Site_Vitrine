@@ -23,7 +23,7 @@ export function PartnersScroll({ partners }: PartnersScrollProps) {
               src={partner.logo}
               alt={partner.name}
               className={`max-h-full max-w-full object-contain opacity-95 transition-opacity hover:opacity-100 ${
-                idx === 0 ? 'scale-125' : ''
+                idx === 0 || idx === 5 || idx === 6 ? 'scale-125' : ''
               }`}
             />
           </div>
