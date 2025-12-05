@@ -68,24 +68,29 @@ export const partenaires: Partner[] = [
     alt: "SAG - Partenaire minier",
   },
   {
-    name: "Caterpillar",
-    logo: "/images/partners/cat-logo.png",
-    alt: "Caterpillar - Équipements industriels",
-  },
-  {
     name: "Rio Tinto",
     logo: "/images/partners/rio-tinto-logo.png",
     alt: "Rio Tinto - Partenaire minier",
   },
   {
-    name: "Toyota",
-    logo: "/images/partners/toyota.png",
-    alt: "Toyota - Véhicules et équipements",
-  },
-  {
     name: "Mota-Engil",
     logo: "/images/partners/moto-engil.png",
     alt: "Mota-Engil - Construction",
+  },
+  {
+    name: "SMB",
+    logo: "/images/partners/logo_smb.png",
+    alt: "SMB - Partenaire minier",
+  },
+  {
+    name: "Caterpillar",
+    logo: "/images/partners/cat-logo.png",
+    alt: "Caterpillar - Équipements industriels",
+  },
+  {
+    name: "Toyota",
+    logo: "/images/partners/toyota.png",
+    alt: "Toyota - Véhicules et équipements",
   },
   {
     name: "Kourousa Gold",

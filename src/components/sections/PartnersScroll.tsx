@@ -11,13 +11,13 @@ interface PartnersScrollProps {
 
 export function PartnersScroll({ partners }: PartnersScrollProps) {
   return (
-    <div className="w-full">
+    <div className="w-full px-4 sm:px-6 lg:px-0">
       {/* Grid statique affichant tous les partenaires */}
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-8">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 lg:gap-6">
         {partners.map((partner, idx) => (
           <div
             key={`partner-${idx}`}
-            className="flex h-24 items-center justify-center rounded-xl border border-slate-200/60 bg-white p-4 shadow-md shadow-slate-300/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-400/40 sm:h-28 sm:p-5 md:h-32 md:p-6"
+            className="flex aspect-square items-center justify-center rounded-lg border border-slate-200/60 bg-white p-3 shadow-sm shadow-slate-300/40 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md hover:shadow-slate-400/30 sm:rounded-xl sm:p-4 md:p-5"
             style={{ animationDelay: `${idx * 100}ms` }}
           >
             <img
