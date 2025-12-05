@@ -145,7 +145,7 @@
   }
 
   .animate-slide {
-    animation: slide 18s linear infinite;
+    animation: slide 30s linear infinite;
   }
 
   /* ✅ Animations CSS optimisées - Contenu visible immédiatement */
@@ -205,5 +205,15 @@
   .delay-200 { animation-delay: 0.2s; }
   .delay-250 { animation-delay: 0.25s; }
   .delay-300 { animation-delay: 0.3s; }
+
+  /* Cacher la scrollbar mais garder le scroll fonctionnel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 
 }
