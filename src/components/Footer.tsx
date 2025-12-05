@@ -1,7 +1,7 @@
 "use client"
 
 import { Link } from "@/i18n/routing"
-import { Facebook, Linkedin, Twitter, MapPin, Phone, Mail } from "lucide-react"
+import { Facebook, MapPin, Phone, Mail } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 export function Footer() {
@@ -26,25 +26,13 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61571396218636"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-rad-orange hover:text-white"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -132,13 +120,13 @@ export function Footer() {
             {t('legal.copyright', { year: currentYear })}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="#" className="hover:text-rad-orange hover:underline">
+            <Link href="/legal" className="hover:text-rad-orange hover:underline">
               {t('legal.terms')}
             </Link>
-            <Link href="#" className="hover:text-rad-orange hover:underline">
+            <Link href="/privacy" className="hover:text-rad-orange hover:underline">
               {t('legal.privacy')}
             </Link>
-            <Link href="#" className="hover:text-rad-orange hover:underline">
+            <Link href="/terms" className="hover:text-rad-orange hover:underline">
               {t('legal.cgv')}
             </Link>
           </div>

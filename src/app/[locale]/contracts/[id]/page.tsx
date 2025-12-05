@@ -1,4 +1,4 @@
-import { MapPin, Calendar, Users, Award, CheckCircle, ArrowLeft } from "lucide-react"
+import { MapPin, Calendar, Award, CheckCircle, ArrowLeft } from "lucide-react"
 import { Footer } from "@/components/Footer"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/routing"
@@ -134,25 +134,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     ))}
                   </div>
                 </div>
-
-                {/* Galerie d'images */}
-                <div className="rounded-3xl bg-white p-8 shadow-lg">
-                  <h2 className="mb-6 text-3xl font-bold text-rad-blue-900">
-                    {tDetail("galleryTitle")}
-                  </h2>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="relative h-48 overflow-hidden rounded-2xl bg-slate-200">
-                        <Image
-                          src={projectImages[id] || projectImages["1"]}
-                          alt={`${tDetail("galleryTitle")} ${i}`}
-                          fill
-                          className="object-cover opacity-60 transition hover:opacity-100"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -208,19 +189,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <ArrowLeft className="h-4 w-4 rotate-180" />
                   </Link>
                 </div>
-
-                {/* Partenaires */}
-                <div className="rounded-3xl bg-white p-6 shadow-lg">
-                  <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-rad-blue-900">
-                    <Users className="h-6 w-6" />
-                    {tDetail("partnersTitle")}
-                  </h3>
-                  <div className="space-y-3">
-                    <p className="text-sm text-slate-600">
-                      {tDetail("partnersDescription")}
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -242,7 +210,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="flex items-center justify-center">
             <Link
               href="/contracts"
-              className="group rounded-full bg-rad-blue-900 px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-rad-blue-800"
+              className="group rounded-full bg-rad-orange px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-rad-orange-hover"
             >
               <span className="flex items-center gap-2">
                 {tDetail("viewAll")}
