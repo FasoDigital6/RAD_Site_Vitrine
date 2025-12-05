@@ -32,7 +32,7 @@ export function Header() {
             alt="Logo RAD"
             width={160}
             height={70}
-            className="h-12 w-auto object-contain sm:h-14 md:h-16"
+            className="h-12 w-auto object-contain mix-blend-multiply sm:h-14 md:h-16"
             priority
           />
         </Link>

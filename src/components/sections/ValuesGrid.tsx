@@ -31,7 +31,7 @@ export function ValuesGrid({ values, iconComponent = CheckCircle }: ValuesGridPr
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: idx * 0.1 }}
-            className="rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-8"
+            className="rounded-2xl bg-white p-6 shadow-md shadow-slate-300/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-rad-orange/15 sm:rounded-3xl sm:p-8"
           >
             <ValueIcon className="h-10 w-10 text-rad-orange sm:h-12 sm:w-12" />
             <h3 className="mt-3 text-lg font-bold text-rad-blue-900 sm:mt-4 sm:text-xl">

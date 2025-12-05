@@ -56,13 +56,9 @@ export function HeroSection({
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-12 sm:px-8 sm:py-16 md:px-12 lg:px-16">
         <div className="max-w-4xl space-y-4 text-white sm:space-y-5 md:space-y-6 lg:space-y-7 animate-fade-up">
-          {/* Badge tricolore */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur-md ring-1 ring-white/20 sm:gap-3 sm:px-5 sm:py-2 sm:text-sm">
-            <span className="flex h-1.5 w-10 overflow-hidden rounded-full sm:w-12">
-              <span className="flex-1 bg-rad-red" />
-              <span className="flex-1 bg-rad-yellow" />
-              <span className="flex-1 bg-rad-green" />
-            </span>
+            <span className="h-2 w-2 rounded-full bg-rad-orange sm:h-2.5 sm:w-2.5"></span>
             <span>{badge}</span>
           </div>
 
@@ -82,7 +78,7 @@ export function HeroSection({
               <button
                 onClick={onExploreClick}
                 aria-label={exploreButtonText}
-                className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-full bg-rad-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rad-orange/50 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/70 sm:gap-3 sm:px-8 sm:py-3.5 sm:text-base md:px-9 md:py-4"
+                className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-full bg-rad-orange px-6 py-3 text-sm font-bold text-white shadow-md shadow-rad-orange/25 transition-all duration-300 hover:-translate-y-1 hover:bg-rad-orange-hover hover:shadow-lg hover:shadow-rad-orange/35 sm:gap-3 sm:px-8 sm:py-3.5 sm:text-base md:px-9 md:py-4"
               >
                 <span>{exploreButtonText}</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5 sm:h-5 sm:w-5" />

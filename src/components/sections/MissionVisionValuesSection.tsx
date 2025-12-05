@@ -42,9 +42,9 @@ export function MissionVisionValuesSection({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 sm:rounded-3xl sm:p-10"
+            className="rounded-2xl bg-white p-8 shadow-md shadow-slate-300/40 sm:rounded-3xl sm:p-10"
           >
-            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-md shadow-rad-orange/15 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
               <MissionIcon className="h-7 w-7 sm:h-8 sm:w-8" />
             </div>
             <h3 className="text-xl font-bold text-rad-blue-900 sm:text-2xl">
@@ -61,9 +61,9 @@ export function MissionVisionValuesSection({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl bg-white p-8 shadow-xl shadow-slate-300/60 sm:rounded-3xl sm:p-10"
+            className="rounded-2xl bg-white p-8 shadow-md shadow-slate-300/40 sm:rounded-3xl sm:p-10"
           >
-            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-lg shadow-rad-orange/30 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-rad-orange to-rad-orange-hover text-white shadow-md shadow-rad-orange/15 sm:mb-6 sm:h-16 sm:w-16 sm:rounded-2xl">
               <VisionIcon className="h-7 w-7 sm:h-8 sm:w-8" />
             </div>
             <h3 className="text-xl font-bold text-rad-blue-900 sm:text-2xl">
@@ -98,7 +98,7 @@ export function MissionVisionValuesSection({
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: idx * 0.1 }}
-              className="rounded-2xl bg-white p-6 shadow-lg shadow-slate-300/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/20 sm:rounded-3xl sm:p-8"
+              className="rounded-2xl bg-white p-6 shadow-md shadow-slate-300/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-rad-orange/15 sm:rounded-3xl sm:p-8"
             >
               <CheckCircle className="h-10 w-10 text-rad-orange sm:h-12 sm:w-12" />
               <h4 className="mt-3 text-lg font-bold text-rad-blue-900 sm:mt-4 sm:text-xl">

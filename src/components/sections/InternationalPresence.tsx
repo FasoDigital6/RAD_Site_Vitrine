@@ -58,7 +58,7 @@ export function InternationalPresence({
           {countries.map((country, index) => (
             <div
               key={country.name}
-              className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-rad-orange/20 md:p-10 animate-fade-up"
+              className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-lg shadow-slate-300/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-rad-orange/15 md:p-10 animate-fade-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Flag emoji large */}

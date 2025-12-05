@@ -65,7 +65,7 @@ export function CTASection({
                   href={button.href}
                   className={`group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 hover:-translate-y-1 sm:w-auto sm:px-8 sm:py-4 sm:text-base ${
                     isPrimary
-                      ? "bg-rad-orange text-white shadow-lg shadow-rad-orange/40 hover:bg-rad-orange-hover hover:shadow-xl hover:shadow-rad-orange/60"
+                      ? "bg-rad-orange text-white shadow-md shadow-rad-orange/25 hover:bg-rad-orange-hover hover:shadow-lg hover:shadow-rad-orange/35"
                       : variant === "gradient"
                         ? "border-2 border-white text-white hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange"
                         : "border-2 border-rad-blue-900 text-rad-blue-900 hover:border-rad-orange hover:bg-rad-orange/10 hover:text-rad-orange"

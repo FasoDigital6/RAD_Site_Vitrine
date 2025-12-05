@@ -25,7 +25,7 @@ interface ProjectsGridProps {
 
 export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: ProjectsGridProps) {
   return (
-    <div className="grid gap-8 sm:gap-6 md:grid-cols-2">
+    <div className="grid gap-8 sm:gap-8 md:grid-cols-2 md:gap-10">
       {projects.map((project, index) => (
         <Link key={project.id} href={`/contracts/${project.id}` as any}>
           <motion.article
@@ -37,7 +37,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
               delay: index * 0.05,
               ease: "easeOut"
             }}
-            className="group relative flex flex-col h-[400px] sm:h-[460px] md:h-[500px] overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-300/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rad-orange/40 sm:rounded-3xl"
+            className="group relative flex flex-col h-[400px] sm:h-[460px] md:h-[500px] overflow-hidden rounded-2xl bg-white shadow-sm shadow-slate-300/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-rad-orange/15 sm:rounded-3xl"
           >
             {/* Image */}
             <div className="relative h-40 w-full overflow-hidden sm:h-48 md:h-56 lg:h-64">
@@ -45,7 +45,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 quality={80}
               />
@@ -89,7 +89,7 @@ export function ProjectsGrid({ projects, learnMoreText = "En savoir plus" }: Pro
             </div>
 
             {/* Content */}
-            <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-8">
+            <div className="flex flex-1 flex-col p-6 sm:p-8 md:p-10">
               <h3 className="text-lg font-bold text-rad-blue-900 transition-colors group-hover:text-rad-orange sm:text-xl md:text-2xl">
                 {project.title}
               </h3>
