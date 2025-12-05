@@ -50,7 +50,7 @@ export const equipeKeys = [
 export type EquipeKey = (typeof equipeKeys)[number]
 
 export const equipeImages = [
-  "/images/team/operations.jpg", // CEO portrait (placeholder)
+  "/images/team/pdg.jpg", // CEO portrait
   "/images/team/R-CA.jpg", // Canada representative
 ] as const
 
