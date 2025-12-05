@@ -75,15 +75,37 @@ export function Header() {
           ))}
         </div>
 
-        {/* Bouton hamburger - Mobile */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex shrink-0 items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 md:hidden min-h-[44px] min-w-[44px]"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Sélecteur de langue + Bouton hamburger - Mobile */}
+        <div className="flex items-center gap-2 md:hidden">
+          {/* Sélecteur de langue FR / EN - Mobile */}
+          <div className="flex items-center gap-1.5">
+            {(["fr", "en"] as const).map((code) => (
+              <button
+                key={code}
+                type="button"
+                onClick={() => handleLanguageChange(code)}
+                className={
+                  "rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition min-h-[44px] min-w-[44px] " +
+                  (locale === code
+                    ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
+                    : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
+                }
+              >
+                {code}
+              </button>
+            ))}
+          </div>
+
+          {/* Bouton hamburger */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex shrink-0 items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 min-h-[44px] min-w-[44px]"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Menu mobile */}
@@ -132,28 +154,6 @@ export function Header() {
               >
                 {t('contact')}
               </Link>
-
-              {/* Sélecteur de langue - Mobile */}
-              <div className="mt-4 flex items-center gap-2 border-t border-slate-200 px-4 pt-4">
-                {(["fr", "en"] as const).map((code) => (
-                  <button
-                    key={code}
-                    type="button"
-                    onClick={() => {
-                      handleLanguageChange(code)
-                      closeMobileMenu()
-                    }}
-                    className={
-                      "flex-1 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-wide transition " +
-                      (locale === code
-                        ? "border-rad-blue-900 bg-rad-blue-900 text-white shadow-sm shadow-rad-blue-900/30"
-                        : "border-slate-300 text-slate-600 hover:border-rad-blue-900 hover:text-rad-blue-900")
-                    }
-                  >
-                    {code}
-                  </button>
-                ))}
-              </div>
             </nav>
           </motion.div>
         )}
